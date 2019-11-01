@@ -5,11 +5,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: linux-cnf7
+  name: linux-cnf17
   annotations:
     contivpp.io/custom-if: tap1/tap/stub
   labels:
-    cnf: linux-cnf7
+    cnf: linux-cnf17
 spec:
   containers:
     - name: busybox
@@ -27,11 +27,11 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: linux-cnf8
+  name: linux-cnf18
   annotations:
     contivpp.io/custom-if: tap1/tap/stub
   labels:
-    cnf: linux-cnf8
+    cnf: linux-cnf18
 spec:
   containers:
     - name: busybox
@@ -42,3 +42,4 @@ spec:
       command:
         - sleep
         - "3600"
+  nodeName: k8s-master

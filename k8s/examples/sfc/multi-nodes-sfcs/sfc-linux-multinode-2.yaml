@@ -5,14 +5,14 @@ metadata:
   name: linux-chain2
 spec:
   chain:
-    - name: CNF 7
+    - name: CNF 17
       type: Pod
       podSelector:
-        cnf: linux-cnf7
+        cnf: linux-cnf17
       outputInterface: tap1
 
-    - name: CNF 8
+    - name: CNF 18
       type: Pod
       podSelector:
-        cnf: linux-cnf8
+        cnf: linux-cnf18
       inputInterface: tap1

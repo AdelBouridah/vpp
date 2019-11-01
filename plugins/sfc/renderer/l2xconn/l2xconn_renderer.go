@@ -139,10 +139,8 @@ func (rndr *Renderer) renderChain(sfc *renderer.ContivSFC, isDelete bool) (confi
 
 		if iface != "" && prevIface != "" {
 			if rndr.shouldChainLocalSFs(sf, prevSF) {
-				if rndr.shouldChainLocalSFs(sf, prevSF) {
-					xconnect := rndr.crossConnectIfaces(prevIface, iface, sfc.Unidirectional)
-					rndr.mergeConfiguration(config, xconnect)
-				}
+				xconnect := rndr.crossConnectIfaces(prevIface, iface, sfc.Unidirectional)
+				rndr.mergeConfiguration(config, xconnect)
 			} else if rndr.shouldChainToRemoteSF(prevSF, sf) {
 				// one of the SFs (prevSF or SF) is local and the other not - use VXLAN to interconnect between them
 				// allocate a VNI for this SF interconnection - each SF may need an exclusive VNI
