@@ -1,0 +1,44 @@
+---
+# Linux CNF 1 pod definition. Pod is connected with one additional tap interface
+# in the "stub" network = meaning that it won't have any IP address assigned.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: linux-cnf21
+  annotations:
+    contivpp.io/custom-if: tap1/tap/stub
+  labels:
+    cnf: linux-cnf21
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      imagePullPolicy: IfNotPresent
+      securityContext:
+        privileged: true
+      command:
+        - sleep
+        - "3600"
+  nodeName: k8s-master
+---
+# Linux CNF 2 pod definition. Pod is connected with one additional tap interface
+# in the "stub" network = meaning that it won't have any IP address assigned.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: linux-cnf22
+  annotations:
+    contivpp.io/custom-if: tap1/tap/stub
+  labels:
+    cnf: linux-cnf22
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      imagePullPolicy: IfNotPresent
+      securityContext:
+        privileged: true
+      command:
+        - sleep
+        - "3600"
+  nodeName: k8s-master

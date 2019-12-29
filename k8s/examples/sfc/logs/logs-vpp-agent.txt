@@ -1,0 +1,484 @@
+2019-11-12 15:04:17,196 CRIT Supervisor running as root (no user in config file)
+2019-11-12 15:04:17,200 INFO supervisord started with pid 1
+2019-11-12 15:04:18,204 INFO spawned: 'vpp_or_agent_not_running' with pid 10
+2019-11-12 15:04:18,206 INFO spawned: 'vpp' with pid 11
+2019-11-12 15:04:18,208 INFO spawned: 'agent' with pid 12
+2019-11-12 15:04:18,218 DEBG 'vpp' stdout output:
+vlib_plugin_early_init:361: plugin path /usr/lib/x86_64-linux-gnu/vpp_plugins:/usr/lib/vpp_plugins
+
+2019-11-12 15:04:18,219 INFO success: agent entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+2019-11-12 15:04:18,219 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: abf_plugin.so (ACL based Forwarding)
+
+2019-11-12 15:04:18,220 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: acl_plugin.so (Access Control Lists)
+
+2019-11-12 15:04:18,220 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: avf_plugin.so (Intel Adaptive Virtual Function (AVF) Device Plugin)
+load_one_plugin:191: Loaded plugin: cdp_plugin.so
+load_one_plugin:189: Loaded plugin: crypto_ia32_plugin.so (Intel AESNI Software Crypto Backend Plugin)
+
+2019-11-12 15:04:18,221 DEBG 'vpp_or_agent_not_running' stdout output:
+READY
+
+2019-11-12 15:04:18,221 DEBG vpp_or_agent_not_running: ACKNOWLEDGED -> READY
+2019-11-12 15:04:18,221 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: crypto_ipsecmb_plugin.so (Intel IPSEC multi-buffer)
+load_one_plugin:189: Loaded plugin: crypto_openssl_plugin.so (OpenSSL Crypto Engine Plugin)
+load_one_plugin:189: Loaded plugin: ct6_plugin.so (ipv6 connection tracker)
+
+2019-11-12 15:04:18,223 DEBG 'agent' stdout output:
+Starting vpp-agent..
+
+2019-11-12 15:04:18,234 DEBG 'agent' stdout output:
+                                      __
+ _  _____  ___ _______ ____ ____ ___ / /_
+| |/ / _ \/ _ /___/ _ '/ _ '/ -_/ _ / __/
+|___/ .__/ .__/   \_'_/\_' /\__/_//_\__/  v2.1.1
+   /_/  /_/           /___/
+
+
+2019-11-12 15:04:18,234 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:18.23467" level=info msg="Starting agent version: v2.1.1" BuildDate="2019-05-27T08:04-07:00" CommitHash=9f328f75b4a0b742cb9da240ea5c4966adebbeb9 loc="agent/agent.go(134)" logger=agent
+
+2019-11-12 15:04:18,235 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:18.23476" level=debug msg="Microservice label is set to vpp-cnf1" loc="servicelabel/plugin_impl_servicelabel.go(44)" logger=defaultLogger
+
+2019-11-12 15:04:18,236 DEBG 'vpp' stdout output:
+load_one_plugin:106: Plugin disabled: dpdk_plugin.so
+
+2019-11-12 15:04:18,236 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: flowprobe_plugin.so (Flow per Packet)
+
+2019-11-12 15:04:18,237 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: gbp_plugin.so (Group Based Policy)
+
+2019-11-12 15:04:18,237 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: gtpu_plugin.so (GTPv1-U)
+
+2019-11-12 15:04:18,237 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: igmp_plugin.so (IGMP messaging)
+
+2019-11-12 15:04:18,238 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: ikev2_plugin.so (IKEv2)
+load_one_plugin:189: Loaded plugin: ila_plugin.so (Identifier-locator addressing for IPv6)
+
+2019-11-12 15:04:18,238 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: ioam_plugin.so (Inbound OAM)
+
+2019-11-12 15:04:18,238 DEBG 'vpp' stdout output:
+load_one_plugin:117: Plugin disabled (default): ixge_plugin.so
+load_one_plugin:189: Loaded plugin: l2e_plugin.so (L2 Emulation)
+
+2019-11-12 15:04:18,238 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: lacp_plugin.so (Link Aggregation Control Protocol)
+
+2019-11-12 15:04:18,243 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: lb_plugin.so (Load Balancer)
+
+2019-11-12 15:04:18,243 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: mactime_plugin.so (Time-based MAC source-address filter)
+load_one_plugin:189: Loaded plugin: map_plugin.so (Mapping of address and port (MAP))
+
+2019-11-12 15:04:18,243 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: memif_plugin.so (Packet Memory Interface (experimental))
+
+2019-11-12 15:04:18,244 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: nat_plugin.so (Network Address Translation)
+
+2019-11-12 15:04:18,244 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: nsh_plugin.so (Network Service Header)
+
+2019-11-12 15:04:18,244 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: nsim_plugin.so (network delay simulator plugin)
+
+2019-11-12 15:04:18,245 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: perfmon_plugin.so (Performance monitor plugin)
+load_one_plugin:189: Loaded plugin: pppoe_plugin.so (PPPoE)
+
+2019-11-12 15:04:18,245 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: quic_plugin.so (Quic transport protocol)
+
+2019-11-12 15:04:18,245 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: rdma_plugin.so (RDMA (ibverb) Device Plugin)
+load_one_plugin:189: Loaded plugin: srv6ad_plugin.so (Dynamic SRv6 proxy)
+
+2019-11-12 15:04:18,245 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: srv6am_plugin.so (Masquerading SRv6 proxy)
+load_one_plugin:189: Loaded plugin: srv6as_plugin.so (Static SRv6 proxy)
+
+2019-11-12 15:04:18,245 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: stn_plugin.so (VPP Steals the NIC for Container integration)
+load_one_plugin:189: Loaded plugin: svs_plugin.so (Source VRF Select)
+
+2019-11-12 15:04:18,246 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: tlsmbedtls_plugin.so (mbedtls based TLS Engine)
+
+2019-11-12 15:04:18,246 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: tlsopenssl_plugin.so (openssl based TLS Engine)
+
+2019-11-12 15:04:18,246 DEBG 'vpp' stdout output:
+load_one_plugin:117: Plugin disabled (default): unittest_plugin.so
+
+2019-11-12 15:04:18,246 DEBG 'vpp' stdout output:
+load_one_plugin:189: Loaded plugin: vmxnet3_plugin.so (VMWare Vmxnet3 Device Plugin)
+
+2019-11-12 15:04:18,251 DEBG 'vpp' stdout output:
+/usr/bin/vpp[11]: clib_elf_parse_file: open `linux-vdso.so.1': No such file or directory
+
+2019-11-12 15:04:18,299 DEBG 'vpp' stdout output:
+/usr/bin/vpp[11]: buffer: vlib_physmem_shared_map_create: clib_mem_create_hugetlb_fd: open: No such file or directory
+
+/usr/bin/vpp[11]: buffer: falling back to non-hugepage backed buffer pool
+
+2019-11-12 15:04:18,375 DEBG 'vpp' stdout output:
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: avf_test_plugin.so
+
+2019-11-12 15:04:18,376 DEBG 'vpp' stdout output:
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: mactime_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: lb_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: flowprobe_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: ioam_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: ct6_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: stn_test_plugin.so
+
+2019-11-12 15:04:18,376 DEBG 'vpp' stdout output:
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: nat_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: pppoe_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: lacp_test_plugin.so
+
+2019-11-12 15:04:18,376 DEBG 'vpp' stdout output:
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: acl_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: nsim_test_plugin.so
+
+2019-11-12 15:04:18,376 DEBG 'vpp' stdout output:
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: nsh_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: ikev2_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: vmxnet3_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: gtpu_test_plugin.so
+
+2019-11-12 15:04:18,376 DEBG 'vpp' stdout output:
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: cdp_test_plugin.so
+/usr/bin/vpp[11]: load_one_vat_plugin:67: Loaded plugin: memif_test_plugin.so
+
+2019-11-12 15:04:19,393 INFO success: vpp_or_agent_not_running entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-11-12 15:04:19,394 INFO success: vpp entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-11-12 15:04:28,238 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.23791" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:04:28,240 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.23830" level=info msg="Consul config not found, skip loading this plugin" loc="consul/plugin.go(137)" logger=consul
+time="2019-11-12 15:04:28.23855" level=info msg="Redis config not found, skip loading this plugin" loc="redis/plugin_impl_redis.go(123)" logger=redis
+time="2019-11-12 15:04:28.23917" level=info msg="ETCD server [contiv-etcd.kube-system.svc.cluster.local:12379] not reachable in init phase. Agent will continue to try to connect every 2000000000 second(s)" loc="etcd/plugin_impl_etcd.go(203)" logger=etcd
+
+2019-11-12 15:04:28,246 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.24592" level=debug msg="found compatible version:vpp1901" loc="logging/log_api.go(34)" logger=defaultLogger
+
+2019-11-12 15:04:28,246 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.24652" level=info msg="VPP version: 19.04.1-rc0~5-g6f05f724f" loc="govppmux/plugin_impl_govppmux.go(408)" logger=govpp
+
+2019-11-12 15:04:28,247 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.24774" level=info msg="Namespace plugin initialized" loc="nsplugin/ns_plugin.go(110)" logger=linux-nsplugin
+
+2019-11-12 15:04:28,248 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.24839" level=info msg="kafka config not found  - skip loading this plugin" loc="kafka/plugin_impl_kafka.go(72)" logger=kafka
+
+2019-11-12 15:04:28,249 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.24924" level=info msg="Interface state updater initialized" loc="ifplugin/interface_state.go(118)" logger=vpp-ifplugin.if-state
+
+2019-11-12 15:04:28,250 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25031" level=warning msg="Error by initializing iptables handler: errr by initializing iptables v6 handler: exec: \"ip6tables\": executable file not found in $PATH" loc="iptablesplugin/iptablesplugin.go(81)" logger=linux-iptablesplugin
+
+2019-11-12 15:04:28,250 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25070" level=info msg="GRPC config not found, skip loading this plugin" loc="grpc/plugin_impl_grpc.go(135)" logger=grpc
+
+2019-11-12 15:04:28,251 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25107" level=info msg="grpc server not available" loc="orchestrator/orchestrator.go(68)" logger=orchestrator.dispatcher
+
+2019-11-12 15:04:28,251 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25162" level=info msg="Watch starting for 25 registered NB prefixes" loc="orchestrator/orchestrator.go(73)" logger=orchestrator.dispatcher
+
+2019-11-12 15:04:28,252 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25258" level=debug msg="found compatible version:vpp1901" loc="logging/log_api.go(34)" logger=defaultLogger
+
+2019-11-12 15:04:28,252 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25283" level=debug msg="found compatible version: 19.04" loc="logging/log_api.go(34)" logger=defaultLogger
+
+2019-11-12 15:04:28,254 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25458" level=info msg="Listening on http://0.0.0.0:9191" loc="rest/plugin_impl_rest.go(108)" logger=http
+
+2019-11-12 15:04:28,255 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25497" level=info msg="Status check for etcd was started" loc="etcd/plugin_impl_etcd.go(121)" logger=etcd
+
+2019-11-12 15:04:28,255 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25522" level=info msg="Agent plugin state update." lastErr="<nil>" loc="statuscheck/plugin_impl_statuscheck.go(182)" logger=status-check plugin=govpp state=ok
+
+2019-11-12 15:04:28,256 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25617" level=info msg="Starting health http-probe on port 9191" loc="probe/plugin_impl_probe.go(74)" logger=probe
+
+2019-11-12 15:04:28,256 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25625" level=info msg="Unable to register prometheus-probe handler, Prometheus is nil" loc="probe/plugin_impl_probe.go(86)" logger=probe
+time="2019-11-12 15:04:28.25629" level=info msg="Serving /metrics on port 9191" loc="prometheus/plugin_impl_prometheus.go(87)" logger=prometheus
+
+2019-11-12 15:04:28,256 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25649" level=info msg="Serving /vpp on port 9191" loc="prometheus/plugin_impl_prometheus.go(87)" logger=prometheus
+
+2019-11-12 15:04:28,256 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25656" level=warning msg="No registrations, skipping resync" loc="resync/plugin_impl_resync.go(98)" logger=resync
+time="2019-11-12 15:04:28.25659" level=info msg="Agent started with 37 plugins (took 10.022s)" loc="agent/agent.go(179)" logger=agent
+
+2019-11-12 15:04:28,256 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:28.25675" level=debug msg="found compatible version: 19.04" loc="logging/log_api.go(34)" logger=defaultLogger
+
+2019-11-12 15:04:30,240 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:30.23974" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:04:33,255 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:33.25567" level=info msg="Agent plugin state update." lastErr="no ETCD connection available" loc="statuscheck/plugin_impl_statuscheck.go(182)" logger=status-check plugin=etcd state=error
+
+2019-11-12 15:04:40,251 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:40.24979" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:04:42,254 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:42.25374" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:04:52,254 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:52.25424" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:04:54,261 DEBG 'agent' stdout output:
+time="2019-11-12 15:04:54.26093" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:05:04,261 DEBG 'agent' stdout output:
+time="2019-11-12 15:05:04.26142" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:05:06,271 DEBG 'agent' stdout output:
+time="2019-11-12 15:05:06.26972" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:05:16,275 DEBG 'agent' stdout output:
+time="2019-11-12 15:05:16.27523" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:05:18,276 DEBG 'agent' stdout output:
+time="2019-11-12 15:05:18.27594" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:05:28,277 DEBG 'agent' stdout output:
+time="2019-11-12 15:05:28.27680" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:05:30,282 DEBG 'agent' stdout output:
+time="2019-11-12 15:05:30.28153" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:05:40,290 DEBG 'agent' stdout output:
+time="2019-11-12 15:05:40.28985" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:05:42,303 DEBG 'agent' stdout output:
+time="2019-11-12 15:05:42.30334" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:05:52,305 DEBG 'agent' stdout output:
+time="2019-11-12 15:05:52.30476" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:05:54,315 DEBG 'agent' stdout output:
+time="2019-11-12 15:05:54.31515" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:06:04,317 DEBG 'agent' stdout output:
+time="2019-11-12 15:06:04.31665" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:06:06,323 DEBG 'agent' stdout output:
+time="2019-11-12 15:06:06.32319" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:06:16,332 DEBG 'agent' stdout output:
+time="2019-11-12 15:06:16.33122" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:06:18,336 DEBG 'agent' stdout output:
+time="2019-11-12 15:06:18.33636" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:06:28,337 DEBG 'agent' stdout output:
+time="2019-11-12 15:06:28.33755" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:06:30,355 DEBG 'agent' stdout output:
+time="2019-11-12 15:06:30.35484" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:06:40,360 DEBG 'agent' stdout output:
+time="2019-11-12 15:06:40.35950" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:06:42,360 DEBG 'agent' stdout output:
+time="2019-11-12 15:06:42.35996" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:06:52,371 DEBG 'agent' stdout output:
+time="2019-11-12 15:06:52.37161" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:06:54,372 DEBG 'agent' stdout output:
+time="2019-11-12 15:06:54.37252" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:07:04,379 DEBG 'agent' stdout output:
+time="2019-11-12 15:07:04.37887" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:07:06,385 DEBG 'agent' stdout output:
+time="2019-11-12 15:07:06.38499" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:07:16,387 DEBG 'agent' stdout output:
+time="2019-11-12 15:07:16.38699" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:07:18,389 DEBG 'agent' stdout output:
+time="2019-11-12 15:07:18.38860" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:07:28,402 DEBG 'agent' stdout output:
+time="2019-11-12 15:07:28.40176" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:07:30,405 DEBG 'agent' stdout output:
+time="2019-11-12 15:07:30.40506" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:07:40,424 DEBG 'agent' stdout output:
+time="2019-11-12 15:07:40.42359" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:07:42,425 DEBG 'agent' stdout output:
+time="2019-11-12 15:07:42.42461" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:07:52,425 DEBG 'agent' stdout output:
+time="2019-11-12 15:07:52.42551" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:07:54,428 DEBG 'agent' stdout output:
+time="2019-11-12 15:07:54.42783" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:08:04,445 DEBG 'agent' stdout output:
+time="2019-11-12 15:08:04.44531" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:08:06,482 DEBG 'agent' stdout output:
+time="2019-11-12 15:08:06.48203" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:08:16,500 DEBG 'agent' stdout output:
+time="2019-11-12 15:08:16.49992" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:08:18,523 DEBG 'agent' stdout output:
+time="2019-11-12 15:08:18.52334" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:08:28,527 DEBG 'agent' stdout output:
+time="2019-11-12 15:08:28.52558" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:08:30,526 DEBG 'agent' stdout output:
+time="2019-11-12 15:08:30.52606" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:08:40,530 DEBG 'agent' stdout output:
+time="2019-11-12 15:08:40.52961" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:08:42,531 DEBG 'agent' stdout output:
+time="2019-11-12 15:08:42.53124" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:08:52,537 DEBG 'agent' stdout output:
+time="2019-11-12 15:08:52.53696" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:08:54,551 DEBG 'agent' stdout output:
+time="2019-11-12 15:08:54.55088" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:09:04,572 DEBG 'agent' stdout output:
+time="2019-11-12 15:09:04.57193" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:09:06,582 DEBG 'agent' stdout output:
+time="2019-11-12 15:09:06.58008" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:09:16,583 DEBG 'agent' stdout output:
+time="2019-11-12 15:09:16.58275" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:09:18,591 DEBG 'agent' stdout output:
+time="2019-11-12 15:09:18.59100" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:09:28,598 DEBG 'agent' stdout output:
+time="2019-11-12 15:09:28.59781" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:09:30,611 DEBG 'agent' stdout output:
+time="2019-11-12 15:09:30.61070" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:09:40,616 DEBG 'agent' stdout output:
+time="2019-11-12 15:09:40.61623" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:09:42,620 DEBG 'agent' stdout output:
+time="2019-11-12 15:09:42.62039" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:09:52,622 DEBG 'agent' stdout output:
+time="2019-11-12 15:09:52.62221" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:09:54,622 DEBG 'agent' stdout output:
+time="2019-11-12 15:09:54.62260" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:10:04,623 DEBG 'agent' stdout output:
+time="2019-11-12 15:10:04.62358" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:10:06,627 DEBG 'agent' stdout output:
+time="2019-11-12 15:10:06.62769" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:10:16,629 DEBG 'agent' stdout output:
+time="2019-11-12 15:10:16.62928" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:10:18,633 DEBG 'agent' stdout output:
+time="2019-11-12 15:10:18.63319" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:10:28,635 DEBG 'agent' stdout output:
+time="2019-11-12 15:10:28.63520" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:10:30,641 DEBG 'agent' stdout output:
+time="2019-11-12 15:10:30.64069" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:10:40,652 DEBG 'agent' stdout output:
+time="2019-11-12 15:10:40.65188" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:10:42,652 DEBG 'agent' stdout output:
+time="2019-11-12 15:10:42.65238" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:10:52,659 DEBG 'agent' stdout output:
+time="2019-11-12 15:10:52.65947" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:10:54,662 DEBG 'agent' stdout output:
+time="2019-11-12 15:10:54.66184" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:11:04,663 DEBG 'agent' stdout output:
+time="2019-11-12 15:11:04.66332" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:11:06,664 DEBG 'agent' stdout output:
+time="2019-11-12 15:11:06.66423" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:11:16,671 DEBG 'agent' stdout output:
+time="2019-11-12 15:11:16.66959" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:11:18,671 DEBG 'agent' stdout output:
+time="2019-11-12 15:11:18.67131" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:11:28,679 DEBG 'agent' stdout output:
+time="2019-11-12 15:11:28.67924" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:11:30,697 DEBG 'agent' stdout output:
+time="2019-11-12 15:11:30.69726" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:11:40,698 DEBG 'agent' stdout output:
+time="2019-11-12 15:11:40.69824" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:11:42,699 DEBG 'agent' stdout output:
+time="2019-11-12 15:11:42.69901" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:11:52,717 DEBG 'agent' stdout output:
+time="2019-11-12 15:11:52.71641" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:11:54,717 DEBG 'agent' stdout output:
+time="2019-11-12 15:11:54.71747" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:12:04,725 DEBG 'agent' stdout output:
+time="2019-11-12 15:12:04.72491" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:12:06,727 DEBG 'agent' stdout output:
+time="2019-11-12 15:12:06.72715" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:12:16,733 DEBG 'agent' stdout output:
+time="2019-11-12 15:12:16.73250" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:12:18,749 DEBG 'agent' stdout output:
+time="2019-11-12 15:12:18.74856" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:12:28,750 DEBG 'agent' stdout output:
+time="2019-11-12 15:12:28.74983" level=warning msg="Failed to connect to Etcd: dial tcp: lookup contiv-etcd.kube-system.svc.cluster.local: Temporary failure in name resolution" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:12:30,763 DEBG 'agent' stdout output:
+time="2019-11-12 15:12:30.76300" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+
+2019-11-12 15:12:40,767 DEBG 'agent' stdout output:
+time="2019-11-12 15:12:40.76736" level=warning msg="Failed to connect to Etcd: context deadline exceeded" endpoints="[contiv-etcd.kube-system.svc.cluster.local:12379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+
+2019-11-12 15:12:42,772 DEBG 'agent' stdout output:
+time="2019-11-12 15:12:42.77203" level=info msg="Connecting to ETCD [contiv-etcd.kube-system.svc.cluster.local:12379] ..." loc="etcd/plugin_impl_etcd.go(208)" logger=etcd
+

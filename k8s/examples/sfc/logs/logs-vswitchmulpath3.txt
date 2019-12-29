@@ -1,0 +1,1395 @@
+time="2019-12-06 16:32:29.79736" level=debug msg="Starting contiv-init process" loc="contiv-init/main.go(304)" logger=contiv-init
+time="2019-12-06 16:32:29.79779" level=debug msg="Connecting to Etcd.." endpoints="[10.20.0.10:32379]" loc="etcd/bytes_broker_impl.go(60)" logger=contiv-init
+time="2019-12-06 16:32:29.79982" level=info msg="Connected to Etcd (took 2.070077ms)" endpoints="[10.20.0.10:32379]" loc="etcd/bytes_broker_impl.go(60)" logger=contiv-init
+time="2019-12-06 16:32:29.80395" level=debug msg="STN not requested" loc="contiv-init/main.go(381)" logger=contiv-init
+time="2019-12-06 16:32:29.80402" level=debug msg="Starting VPP" loc="contiv-init/main.go(409)" logger=contiv-init
+time="2019-12-06 16:32:29.80250" level=info msg="bolt path: /var/bolt/bolt.db" loc="bolt/bolt.go(66)" logger=bolt
+time="2019-12-06 16:32:29.80377" level=info msg="Contiv configuration: {InterfaceConfig:{MTUSize:1450 UseTAPInterfaces:true TAPInterfaceVersion:2 TAPv2RxRingSize:1024 TAPv2TxRingSize:1024 Vmxnet3RxRingSize:0 Vmxnet3TxRingSize:0 InterfaceRxMode: TCPChecksumOffloadDisabled:true EnableGSO:true} RoutingConfig:{MainVRFID:0 PodVRFID:1 NodeToNodeTransport:vxlan UseSRv6ForServices:false UseSRv6ForServiceFunctionChaining:false UseDX6ForSrv6NodetoNodeTransport:false RouteServiceCIDRToVPP:true} IPNeighborScanConfig:{ScanIPNeighbors:true IPNeighborScanInterval:1 IPNeighborStaleThreshold:4} StealFirstNIC:false StealInterface: STNSocketFile:/var/run/contiv/stn.sock STNVersion:2 NatExternalTraffic:true EnablePacketTrace:false CRDNodeConfigurationDisabled:true IPAMConfig:{UseExternalIPAM:false ContivCIDR: ServiceCIDR:10.96.0.0/12 NodeInterconnectDHCP:false PodSubnetCIDR:10.1.0.0/16 PodSubnetOneNodePrefixLen:24 VPPHostSubnetCIDR:172.30.0.0/16 VPPHostSubnetOneNodePrefixLen:24 NodeInterconnectCIDR:192.168.16.0/24 VxlanCIDR:192.168.30.0/24 DefaultGateway:192.168.16.100 SRv6:{ServicePolicyBSIDSubnetCIDR:8fff::/16 ServicePodLocalSIDSubnetCIDR:9300::/16 ServiceHostLocalSIDSubnetCIDR:9300::/16 ServiceNodeLocalSIDSubnetCIDR:9000::/16 NodeToNodePodLocalSIDSubnetCIDR:9501::/16 NodeToNodeHostLocalSIDSubnetCIDR:9500::/16 NodeToNodePodPolicySIDSubnetCIDR:8501::/16 NodeToNodeHostPolicySIDSubnetCIDR:8500::/16 SFCPolicyBSIDSubnetCIDR:8eee::/16 SFCServiceFunctionSIDSubnetCIDR:9600::/16 SFCEndLocalSIDSubnetCIDR:9310::/16 SFCIDLengthUsedInSidForServiceFunction:16}} NodeConfig:[]}" loc="contivconf/contivconf.go(355)" logger=contivconf
+time="2019-12-06 16:32:29.80390" level=info msg="ContivConf state after re-load: useDHCP=false, mainInterface=, mainInterfaceIPs=[], otherInterfaces=[], defaultGw=192.168.16.100, dpdkIfaces=[], stnInterface=, stnIPAddresses=[], stnGW=<nil>, stnRoutes=[]" loc="contivconf/contivconf.go(846)" logger=contivconf
+time="2019-12-06 16:32:29.82011" level=debug msg="Starting contiv-agent" loc="contiv-init/main.go(421)" logger=contiv-init
+time="2019-12-06 16:32:29.86783" level=debug msg="vlib_plugin_early_init:361: plugin path /usr/lib/x86_64-linux-gnu/vpp_plugins:/usr/lib/vpp_plugins\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.87023" level=debug msg="load_one_plugin:189: Loaded plugin: abf_plugin.so (Access Control List (ACL) Based Forwarding)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.87452" level=debug msg="load_one_plugin:189: Loaded plugin: acl_plugin.so (Access Control Lists (ACL))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.87525" level=debug msg="load_one_plugin:189: Loaded plugin: avf_plugin.so (Intel Adaptive Virtual Function (AVF) Device Driver)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.87548" level=debug msg="load_one_plugin:189: Loaded plugin: cdp_plugin.so (Cisco Discovery Protocol (CDP))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.87566" level=debug msg="load_one_plugin:189: Loaded plugin: crypto_ia32_plugin.so (Intel IA32 Software Crypto Engine)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.88161" level=debug msg="load_one_plugin:189: Loaded plugin: crypto_ipsecmb_plugin.so (Intel IPSEC Multi-buffer Crypto Engine)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.88187" level=debug msg="load_one_plugin:189: Loaded plugin: crypto_openssl_plugin.so (OpenSSL Crypto Engine)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.88212" level=debug msg="load_one_plugin:189: Loaded plugin: ct6_plugin.so (IPv6 Connection Tracker)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93026" level=debug msg="load_one_plugin:189: Loaded plugin: dpdk_plugin.so (Data Plane Development Kit (DPDK))\nload_one_plugin:189: Loaded plugin: flowprobe_plugin.so (Flow per Packet)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93134" level=debug msg="load_one_plugin:189: Loaded plugin: gbp_plugin.so (Group Based Policy (GBP))\nload_one_plugin:189: Loaded plugin: gtpu_plugin.so (GPRS Tunnelling Protocol, User Data (GTPv1-U))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93138" level=debug msg="load_one_plugin:189: Loaded plugin: igmp_plugin.so (Internet Group Management Protocol (IGMP))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93160" level=debug msg="load_one_plugin:189: Loaded plugin: ikev2_plugin.so (Internet Key Exchange (IKEv2) Protocol)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93171" level=debug msg="load_one_plugin:189: Loaded plugin: ila_plugin.so (Identifier Locator Addressing (ILA) for IPv6)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93261" level=debug msg="load_one_plugin:189: Loaded plugin: ioam_plugin.so (Inbound Operations, Administration, and Maintenance (OAM))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93298" level=debug msg="load_one_plugin:117: Plugin disabled (default): ixge_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93309" level=debug msg="load_one_plugin:189: Loaded plugin: l2e_plugin.so (Layer 2 (L2) Emulation)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93332" level=debug msg="load_one_plugin:189: Loaded plugin: lacp_plugin.so (Link Aggregation Control Protocol (LACP))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93348" level=debug msg="load_one_plugin:189: Loaded plugin: lb_plugin.so (Load Balancer (LB))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93356" level=debug msg="load_one_plugin:189: Loaded plugin: mactime_plugin.so (Time-based MAC Source Address Filter)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93378" level=debug msg="load_one_plugin:189: Loaded plugin: map_plugin.so (Mapping of Address and Port (MAP))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93507" level=debug msg="load_one_plugin:189: Loaded plugin: memif_plugin.so (Packet Memory Interface (memif) -- Experimental)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93988" level=debug msg="load_one_plugin:189: Loaded plugin: nat_plugin.so (Network Address Translation (NAT))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94056" level=debug msg="load_one_plugin:189: Loaded plugin: nsh_plugin.so (Network Service Header (NSH))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94066" level=debug msg="load_one_plugin:189: Loaded plugin: nsim_plugin.so (Network Delay Simulator)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94182" level=debug msg="load_one_plugin:189: Loaded plugin: perfmon_plugin.so (Performance Monitor)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94191" level=debug msg="load_one_plugin:189: Loaded plugin: pppoe_plugin.so (PPP over Ethernet (PPPoE))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94217" level=debug msg="load_one_plugin:189: Loaded plugin: quic_plugin.so (Quic Transport Protocol)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94277" level=debug msg="load_one_plugin:189: Loaded plugin: rdma_plugin.so (RDMA IBverbs Device Driver)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94289" level=debug msg="load_one_plugin:189: Loaded plugin: srv6ad_plugin.so (Dynamic Segment Routing for IPv6 (SRv6) Proxy)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94295" level=debug msg="load_one_plugin:189: Loaded plugin: srv6am_plugin.so (Masquerading Segment Routing for IPv6 (SRv6) Proxy)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94303" level=debug msg="load_one_plugin:189: Loaded plugin: srv6as_plugin.so (Static Segment Routing for IPv6 (SRv6) Proxy)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94320" level=debug msg="load_one_plugin:189: Loaded plugin: stn_plugin.so (VPP Steals the NIC (STN) for Container Integration)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94327" level=debug msg="load_one_plugin:189: Loaded plugin: svs_plugin.so (Source Virtual Routing and Fowarding (VRF) Select)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94416" level=debug msg="load_one_plugin:189: Loaded plugin: tlsmbedtls_plugin.so (Transport Layer Security (TLS) Engine, Mbedtls Based)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94542" level=debug msg="load_one_plugin:189: Loaded plugin: tlsopenssl_plugin.so (Transport Layer Security (TLS) Engine, OpenSSL Based)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94797" level=debug msg="load_one_plugin:117: Plugin disabled (default): unittest_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94871" level=debug msg="load_one_plugin:189: Loaded plugin: vmxnet3_plugin.so (VMWare Vmxnet3 Device Driver)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.95106" level=info msg="Starting agent version: v3.3.2-10-g0bf74cd9c-dirty" BuildDate="2019-12-06T12:02+01:00" CommitHash=0bf74cd9cb43252a92a09531c4ee468fa39662b6 loc="agent/agent.go(134)" logger=agent
+time="2019-12-06 16:32:29.95212" level=debug msg="/usr/bin/vpp[11349]: clib_elf_parse_file: open `linux-vdso.so.1': No such file or directory\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.95211" level=debug msg="setting logger level: statscollector -> info" loc="logrus/registry.go(171)" logger=defaultLogger
+time="2019-12-06 16:32:29.95215" level=debug msg="-> Init(): status-check" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95219" level=debug msg="-> Init(): probe" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95223" level=debug msg="-> Init(): prometheus" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95227" level=debug msg="-> Init(): kvscheduler" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95253" level=debug msg="kvscheduler config found: &{RecordTransactionHistory:true TransactionHistoryAgeLimit:60 PermanentlyRecordedInitPeriod:10 EnableTxnSimulation:false PrintTxnSummary:true}" loc="kvscheduler/plugin_scheduler.go(214)" logger=kvscheduler
+time="2019-12-06 16:32:29.95258" level=debug msg="KVScheduler configuration: {RecordTransactionHistory:true TransactionHistoryAgeLimit:60 PermanentlyRecordedInitPeriod:10 EnableTxnSimulation:false PrintTxnSummary:true}" loc="kvscheduler/plugin_scheduler.go(166)" logger=kvscheduler
+time="2019-12-06 16:32:29.95271" level=debug msg="Registering handler: /scheduler/txn-history" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95277" level=debug msg="Registering handler: /scheduler/key-timeline" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95281" level=debug msg="Registering handler: /scheduler/graph-snapshot" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95286" level=debug msg="Registering handler: /scheduler/flag-stats" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95291" level=debug msg="Registering handler: /scheduler/downstream-resync" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95296" level=debug msg="Registering handler: /scheduler/dump" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95301" level=debug msg="Registering handler: /scheduler/status" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95305" level=debug msg="Registering handler: /scheduler/graph" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95309" level=debug msg="Registering handler: /scheduler/stats" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95316" level=debug msg="-> Init(): resync" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95322" level=debug msg="-> Init(): govpp" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95406" level=debug msg="config loaded from file \"/etc/vpp-agent/govpp.conf\"" loc="govppmux/config.go(62)" logger=govpp
+time="2019-12-06 16:32:29.95412" level=debug msg="config: &{TraceEnabled:false ReconnectResync:false HealthCheckProbeInterval:3s HealthCheckReplyTimeout:500ms HealthCheckThreshold:3 ReplyTimeout:3s ConnectViaShm:false ShmPrefix: BinAPISocketPath: StatsSocketPath: RetryRequestCount:0 RetryRequestTimeout:500ms RetryConnectCount:0 RetryConnectTimeout:1s}" loc="govppmux/plugin_impl_govppmux.go(90)" logger=govpp
+time="2019-12-06 16:32:29.95416" level=debug msg="Registering handler: /govppmux/stats" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95421" level=debug msg="connecting to VPP.." loc="govppmux/plugin_impl_govppmux.go(122)" logger=govpp
+time="2019-12-06 16:32:30.06660" level=debug msg="/usr/bin/vpp[11349]: tls_init_ca_chain:753: Could not initialize TLS CA certificates\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.06725" level=debug msg="/usr/bin/vpp[11349]: tls_openssl_init:824: failed to initialize TLS CA chain\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.06787" level=debug msg="/usr/bin/vpp[11349]: tls_init_ca_chain:585: Could not initialize TLS CA certificates\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.06844" level=debug msg="/usr/bin/vpp[11349]: tls_mbedtls_init:624: failed to initialize TLS CA chain\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07529" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: avf_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07593" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: mactime_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07661" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: lb_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07716" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: flowprobe_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07776" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: ioam_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07830" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: ct6_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07879" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: stn_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07938" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: nat_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07988" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: pppoe_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08033" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: lacp_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08082" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: acl_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08133" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: nsim_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08184" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: nsh_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08248" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: ikev2_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08302" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: vmxnet3_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08351" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: gtpu_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08398" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: cdp_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08453" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: memif_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.09774" level=debug msg="/usr/bin/vpp[11349]: dpdk: EAL init args: -c 2 -n 4 --in-memory --file-prefix vpp -w 0000:00:08.0 --master-lcore 1 \n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:37.57458" level=debug msg="connection to VPP established (took 7.62s)" loc="govppmux/plugin_impl_govppmux.go(142)" logger=govpp
+time="2019-12-06 16:32:37.57472" level=debug msg="found compatible version:19.04" loc="logging/log_api.go(34)" logger=defaultLogger
+time="2019-12-06 16:32:37.57575" level=debug msg="vpp# show version verbose\nVersion:                  v19.04.2-rc0~11-gbf5049a3b\nCompiled by:              root\nCompile host:             89b4a69a83b3\nCompile date:             Mon Jul  1 08:43:41 UTC 2019\nCompile location:         /opt/vpp-agent/dev/vpp\nCompiler:                 GCC 7.4.0\nCurrent PID:              11349\n" loc="govppmux/plugin_impl_govppmux.go(224)" logger=govpp
+time="2019-12-06 16:32:37.57602" level=debug msg="vpp# show version cmdline:\nCommand line arguments:    /usr/bin/vpp  unix    {    nodaemon    cli-listen    /run/vpp/cli.sock    cli-no-pager    coredump-size    unlimited    full-coredump    poll-sleep-usec    100    }  dpdk    {    dev    0000:00:08.0    }  nat    {    endpoint-dependent    translation    hash    buckets    1048576    translation    hash    memory    268435456    user    hash    buckets    1024    max    translations    per    user    10000    }  acl-plugin    {    hash    lookup    heap    size    512M    hash    lookup    hash    memory    512M    use    tuple    merge    0    }  api-trace    {    on    nitems    5000    }  socksvr    {    default    }  statseg    {    default    }  buffers    {    buffers-per-numa    131072    }" loc="govppmux/plugin_impl_govppmux.go(232)" logger=govpp
+time="2019-12-06 16:32:37.57637" level=info msg="VPP version: 19.04.2-rc0~11-gbf5049a3b" loc="govppmux/plugin_impl_govppmux.go(240)" logger=govpp
+time="2019-12-06 16:32:37.57723" level=debug msg="loaded 51 VPP modules: [memclnt-2.1.0 bond-1.0.0 af_packet-1.0.0 netmap-1.0.0 vhost_user-2.0.0 tapv2-2.0.0 gre-1.0.1 ipip-1.1.0 interface-2.2.0 l2-2.1.2 l2tp-1.0.0 span-1.0.0 ip-2.0.0 rd_cp-1.0.0 vxlan-1.1.0 geneve-1.0.0 lldp-1.0.0 vxlan_gpe-1.0.0 bfd-1.0.0 ipsec-3.0.0 ipsec_gre-1.1.0 lisp-1.0.0 lisp_gpe-1.0.0 one-1.0.0 session-1.6.0 mpls-1.1.0 sr-1.2.0 sr_mpls-1.0.0 classify-2.0.0 ipfix_export-1.0.0 dhcp-2.0.1 cop-1.0.0 policer-1.0.0 p2p_ethernet-1.0.0 tcp-1.0.0 dns-1.0.0 udp-1.1.0 bier-1.1.0 punt-2.0.0 pg-1.0.0 feature-1.0.1 sctp-1.0.0 qos-1.0.0 dhcp6_pd_client_cp-1.0.0 dhcp6_ia_na_client_cp-1.0.0 pipe-1.0.0 vxlan_gbp-1.1.0 syslog-1.0.0 virtio-1.0.0 vpe-1.1.0 oam-1.0.0]" ClientID=0 PID=11349 loc="govppmux/plugin_impl_govppmux.go(247)" logger=govpp
+time="2019-12-06 16:32:37.57765" level=debug msg="-> Init(): contivconf" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.57862" level=info msg="Contiv configuration: {InterfaceConfig:{MTUSize:1450 UseTAPInterfaces:true TAPInterfaceVersion:2 TAPv2RxRingSize:1024 TAPv2TxRingSize:1024 Vmxnet3RxRingSize:0 Vmxnet3TxRingSize:0 InterfaceRxMode: TCPChecksumOffloadDisabled:true EnableGSO:true} RoutingConfig:{MainVRFID:0 PodVRFID:1 NodeToNodeTransport:vxlan UseSRv6ForServices:false UseSRv6ForServiceFunctionChaining:false UseDX6ForSrv6NodetoNodeTransport:false RouteServiceCIDRToVPP:true} IPNeighborScanConfig:{ScanIPNeighbors:true IPNeighborScanInterval:1 IPNeighborStaleThreshold:4} StealFirstNIC:false StealInterface: STNSocketFile:/var/run/contiv/stn.sock STNVersion:2 NatExternalTraffic:true EnablePacketTrace:false CRDNodeConfigurationDisabled:true IPAMConfig:{UseExternalIPAM:false ContivCIDR: ServiceCIDR:10.96.0.0/12 NodeInterconnectDHCP:false PodSubnetCIDR:10.1.0.0/16 PodSubnetOneNodePrefixLen:24 VPPHostSubnetCIDR:172.30.0.0/16 VPPHostSubnetOneNodePrefixLen:24 NodeInterconnectCIDR:192.168.16.0/24 VxlanCIDR:192.168.30.0/24 DefaultGateway:192.168.16.100 SRv6:{ServicePolicyBSIDSubnetCIDR:8fff::/16 ServicePodLocalSIDSubnetCIDR:9300::/16 ServiceHostLocalSIDSubnetCIDR:9300::/16 ServiceNodeLocalSIDSubnetCIDR:9000::/16 NodeToNodePodLocalSIDSubnetCIDR:9501::/16 NodeToNodeHostLocalSIDSubnetCIDR:9500::/16 NodeToNodePodPolicySIDSubnetCIDR:8501::/16 NodeToNodeHostPolicySIDSubnetCIDR:8500::/16 SFCPolicyBSIDSubnetCIDR:8eee::/16 SFCServiceFunctionSIDSubnetCIDR:9600::/16 SFCEndLocalSIDSubnetCIDR:9310::/16 SFCIDLengthUsedInSidForServiceFunction:16}} NodeConfig:[]}" loc="contivconf/contivconf.go(355)" logger=contivconf
+time="2019-12-06 16:32:37.57877" level=debug msg="-> Init(): etcd" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.57933" level=debug msg="Connecting to Etcd.." endpoints="[10.20.0.10:32379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+time="2019-12-06 16:32:37.58224" level=info msg="Connected to Etcd (took 3.274223ms)" endpoints="[10.20.0.10:32379]" loc="etcd/bytes_broker_impl.go(60)" logger=etcd
+time="2019-12-06 16:32:37.58781" level=debug msg="-> Init(): nodesync" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.58790" level=debug msg="-> Init(): grpc" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.58807" level=debug msg="-> Init(): podmanager" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.58854" level=debug msg="-> Init(): device" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.58865" level=info msg="Starting device plugin server at: /var/lib/kubelet/device-plugins/contiv-vpp.sock" loc="devicemanager/devicemanager.go(535)" logger=device
+time="2019-12-06 16:32:37.58963" level=info msg="contivpp.io/memif device plugin endpoint started serving" loc="devicemanager/devicemanager.go(559)" logger=device
+time="2019-12-06 16:32:37.59063" level=debug msg="-> Init(): idalloc" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59068" level=debug msg="-> Init(): ipam" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59120" level=debug msg="Registering handler: /contiv/v1/ipam/allocations" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.59130" level=info msg="IP Allocation REST handler registered: GET /contiv/v1/ipam/allocations" loc="ipam/rest.go(30)" logger=ipam
+time="2019-12-06 16:32:37.59135" level=debug msg="-> Init(): service" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59187" level=info msg="Service plugin configuration: {CleanupIdleNATSessions:true TCPNATSessionTimeout:180 OtherNATSessionTimeout:5 ServiceLocalEndpointWeight:1 DisableNATVirtualReassembly:false}" loc="service/plugin_impl_service.go(163)" logger=service
+time="2019-12-06 16:32:37.59196" level=debug msg="-> Init(): sfc" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59202" level=info msg="SFC plugin configuration: {SFCRenderer:l2xconn}" loc="sfc/plugin_impl_sfc.go(134)" logger=sfc
+time="2019-12-06 16:32:37.59205" level=debug msg="-> Init(): policy" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59210" level=debug msg="-> Init(): bgpreflector" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59213" level=debug msg="-> Init(): bolt" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59282" level=info msg="bolt path: /var/bolt/bolt.db" loc="bolt/bolt.go(66)" logger=bolt
+time="2019-12-06 16:32:37.59337" level=info msg="BoltDB started with: /var/bolt/bolt.db" loc="bolt/plugin.go(82)" logger=bolt
+time="2019-12-06 16:32:37.59341" level=debug msg="-> Init(): grpc2" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59350" level=debug msg="-> Init(): bolt2" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59376" level=info msg="bolt path: /var/bolt/grpc.db" loc="bolt/bolt.go(66)" logger=bolt
+time="2019-12-06 16:32:37.59438" level=info msg="BoltDB started with: /var/bolt/grpc.db" loc="bolt/plugin.go(82)" logger=bolt2
+time="2019-12-06 16:32:37.59442" level=debug msg="-> Init(): contiv-grpc" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59450" level=debug msg="-> Init(): controller" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59471" level=debug msg="controller config found: &{EnableRetry:true DelayRetry:1s MaxRetryAttempts:3 EnableExpBackoffRetry:true DelayLocalResync:5s StartupResyncDeadline:30s EnablePeriodicHealing:false PeriodicHealingInterval:30s DelayAfterErrorHealing:5s RemoteDBProbingInterval:3s RecordEventHistory:true EventHistoryAgeLimit:60 PermanentlyRecordedInitPeriod:10 EnableVerification:false}" loc="controller/plugin_controller.go(1017)" logger=controller
+time="2019-12-06 16:32:37.59480" level=info msg="Controller configuration: {EnableRetry:true DelayRetry:1s MaxRetryAttempts:3 EnableExpBackoffRetry:true DelayLocalResync:5s StartupResyncDeadline:30s EnablePeriodicHealing:false PeriodicHealingInterval:30s DelayAfterErrorHealing:5s RemoteDBProbingInterval:3s RecordEventHistory:true EventHistoryAgeLimit:60 PermanentlyRecordedInitPeriod:10 EnableVerification:false}" loc="controller/plugin_controller.go(322)" logger=controller
+time="2019-12-06 16:32:37.59485" level=debug msg="Plugin controller: status check probe registered" loc="statuscheck/plugin_impl_statuscheck.go(137)" logger=status-check
+time="2019-12-06 16:32:37.59491" level=debug msg="Registering handler: /controller/event-history" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.59497" level=debug msg="Registering handler: /controller/resync" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.59503" level=debug msg="-> Init(): netalloc" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59511" level=debug msg="-> Init(): linux-nsplugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59517" level=debug msg="Linux NsPlugin config not found" loc="nsplugin/ns_plugin.go(215)" logger=linux-nsplugin
+time="2019-12-06 16:32:37.59526" level=debug msg="Using docker client endpoint: unix:///var/run/docker.sock" loc="descriptor/microservice.go(111)" logger=linux-nsplugin
+time="2019-12-06 16:32:37.59528" level=info msg="Namespace plugin initialized" loc="nsplugin/ns_plugin.go(110)" logger=linux-nsplugin
+time="2019-12-06 16:32:37.59531" level=debug msg="-> Init(): linux-ifplugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59544" level=debug msg="Linux IfPlugin config found" loc="ifplugin/ifplugin.go(164)" logger=linux-ifplugin
+time="2019-12-06 16:32:37.59553" level=debug msg="Linux interface plugin config: &{Disabled:false GoRoutinesCnt:10}" loc="ifplugin/ifplugin.go(82)" logger=linux-ifplugin
+time="2019-12-06 16:32:37.59597" level=debug msg="-> Init(): vpp-ifplugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59620" level=debug msg="config  not found" loc="ifplugin/config.go(54)" logger=vpp-ifplugin
+time="2019-12-06 16:32:37.59625" level=debug msg="setting default noop writer for PublishErrors dependency" loc="ifplugin/ifplugin.go(357)" logger=vpp-ifplugin
+time="2019-12-06 16:32:37.59628" level=debug msg="setting default noop writer for NotifyStatistics dependency" loc="ifplugin/ifplugin.go(365)" logger=vpp-ifplugin
+time="2019-12-06 16:32:37.59630" level=debug msg="setting default noop watcher for Watcher dependency" loc="ifplugin/ifplugin.go(369)" logger=vpp-ifplugin
+time="2019-12-06 16:32:37.59634" level=info msg="Starting the main event loop" loc="controller/plugin_controller.go(461)" logger=controller
+time="2019-12-06 16:32:37.59708" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/if_vppcalls.go(247)" logger=vpp-ifplugin
+time="2019-12-06 16:32:37.59733" level=debug msg="found compatible version:vpp1904" loc="vppcalls/if_vppcalls.go(251)" logger=vpp-ifplugin
+time="2019-12-06 16:32:37.59773" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/if_vppcalls.go(247)" logger=vpp-ifplugin.if-handler
+time="2019-12-06 16:32:37.59783" level=debug msg="found compatible version:vpp1904" loc="vppcalls/if_vppcalls.go(251)" logger=vpp-ifplugin.if-handler
+time="2019-12-06 16:32:37.59790" level=debug msg="Watch ifplugin_ifstate" loc="mem/inmemory_name_mapping.go(179)" logger=vpp-ifplugin.if-descriptor
+time="2019-12-06 16:32:37.59797" level=warning msg="reading interface stats is DISABLED!" loc="ifplugin/interface_state.go(112)" logger=vpp-ifplugin.if-state
+time="2019-12-06 16:32:37.59803" level=debug msg="subscribe to 1 status prefixes: [vpp/status/v2/interface/]" loc="ifplugin/ifplugin.go(253)" logger=vpp-ifplugin
+time="2019-12-06 16:32:37.59807" level=debug msg="Start watching interface state events" loc="ifplugin/publish_state.go(18)" logger=vpp-ifplugin
+time="2019-12-06 16:32:37.59808" level=debug msg="Started watcher on DHCP notifications" loc="descriptor/dhcp.go(219)" logger=vpp-ifplugin.dhcp-descriptor
+time="2019-12-06 16:32:37.59817" level=debug msg="-> Init(): ipnet" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59822" level=debug msg="setting logger level: linux-nsplugin.ms-descriptor -> info" loc="logrus/registry.go(171)" logger=defaultLogger
+time="2019-12-06 16:32:37.59862" level=debug msg="Registering handler: /contiv/v1/ipam" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.59880" level=info msg="IPAM REST handler registered: GET /contiv/v1/ipam" loc="ipnet/rest.go(30)" logger=ipnet
+time="2019-12-06 16:32:37.59885" level=debug msg="-> Init(): statscollector" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59940" level=debug msg="-> Init(): linux-l3plugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59956" level=debug msg="Linux L3 plugin config: &{Disabled:false GoRoutinesCnt:10}" loc="l3plugin/l3plugin.go(74)" logger=linux-l3plugin
+time="2019-12-06 16:32:37.59973" level=debug msg="-> Init(): linux-iptablesplugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.59979" level=debug msg="Linux IPTablesPlugin config not found" loc="iptablesplugin/iptablesplugin.go(110)" logger=linux-iptablesplugin
+time="2019-12-06 16:32:37.59986" level=debug msg="Linux iptables config: &{Disabled:false GoRoutinesCnt:10}" loc="iptablesplugin/iptablesplugin.go(69)" logger=linux-iptablesplugin
+time="2019-12-06 16:32:37.60901" level=debug msg="-> Init(): vpp-l2plugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.61020" level=debug msg="found compatible version:vpp1904" loc="vppcalls/l2_vppcalls.go(146)" logger=vpp-l2plugin
+time="2019-12-06 16:32:37.61042" level=debug msg="version vpp2001 not compatible" loc="vppcalls/l2_vppcalls.go(143)" logger=vpp-l2plugin
+time="2019-12-06 16:32:37.61052" level=debug msg="found compatible version:vpp1904" loc="vppcalls/l2_vppcalls.go(146)" logger=vpp-l2plugin
+time="2019-12-06 16:32:37.61064" level=debug msg="-> Init(): vpp-l3plugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.61078" level=debug msg="found compatible version:vpp1904" loc="vppcalls/l3_vppcalls.go(220)" logger=vpp-l3plugin
+time="2019-12-06 16:32:37.61088" level=debug msg="version vpp1908 not compatible" loc="vppcalls/l3_vppcalls.go(217)" logger=vpp-l3plugin
+time="2019-12-06 16:32:37.61094" level=debug msg="version vpp2001 not compatible" loc="vppcalls/l3_vppcalls.go(217)" logger=vpp-l3plugin
+time="2019-12-06 16:32:37.61104" level=debug msg="found compatible version:vpp1904" loc="vppcalls/l3_vppcalls.go(220)" logger=vpp-l3plugin
+time="2019-12-06 16:32:37.61120" level=debug msg="-> Init(): vpp-natplugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.61128" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/nat_vppcalls.go(77)" logger=vpp-natplugin
+time="2019-12-06 16:32:37.61139" level=debug msg="found compatible version:vpp1904" loc="vppcalls/nat_vppcalls.go(81)" logger=vpp-natplugin
+time="2019-12-06 16:32:37.61150" level=debug msg="-> Init(): vpp-aclplugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.61157" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/acl_vppcalls.go(124)" logger=vpp-aclplugin
+time="2019-12-06 16:32:37.61164" level=debug msg="found compatible version:vpp1904" loc="vppcalls/acl_vppcalls.go(128)" logger=vpp-aclplugin
+time="2019-12-06 16:32:37.61176" level=debug msg="-> Init(): vpp-stn-plugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.61183" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/stn_vppcalls.go(63)" logger=vpp-stn-plugin
+time="2019-12-06 16:32:37.61189" level=debug msg="found compatible version:vpp1904" loc="vppcalls/stn_vppcalls.go(67)" logger=vpp-stn-plugin
+time="2019-12-06 16:32:37.61196" level=debug msg="-> Init(): vpp-punt-plugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.61232" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/punt_vppcalls.go(98)" logger=vpp-punt-plugin
+time="2019-12-06 16:32:37.61270" level=debug msg="found compatible version:vpp1904" loc="vppcalls/punt_vppcalls.go(102)" logger=vpp-punt-plugin
+time="2019-12-06 16:32:37.61287" level=debug msg="-> Init(): vpp-srplugin" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.61302" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/api_vppcalls.go(73)" logger=vpp-srplugin
+time="2019-12-06 16:32:37.61313" level=debug msg="found compatible version:vpp1904" loc="vppcalls/api_vppcalls.go(77)" logger=vpp-srplugin
+time="2019-12-06 16:32:37.61328" level=debug msg="-> Init(): telemetry" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.61359" level=debug msg="Telemetry config found: &{PollingInterval:30s Disabled:true Skipped:[]}" loc="telemetry/config.go(56)" logger=telemetry
+time="2019-12-06 16:32:37.61371" level=info msg="Telemetry plugin disabled via config file" loc="telemetry/telemetry.go(77)" logger=telemetry
+time="2019-12-06 16:32:37.61383" level=debug msg="-> Init(): restpapi" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.61398" level=debug msg="version 20.01 not compatible" loc="logging/log_api.go(37)" logger=defaultLogger
+time="2019-12-06 16:32:37.61410" level=debug msg="found compatible version:19.04" loc="logging/log_api.go(34)" logger=defaultLogger
+time="2019-12-06 16:32:37.61428" level=debug msg="found compatible version:19.04" loc="logging/log_api.go(34)" logger=defaultLogger
+time="2019-12-06 16:32:37.61471" level=debug msg="telemetry checking release: 19.04" loc="logging/log_api.go(34)" logger=defaultLogger
+time="2019-12-06 16:32:37.61480" level=debug msg="telemetry found compatible release: 19.04" loc="logging/log_api.go(34)" logger=defaultLogger
+time="2019-12-06 16:32:37.61492" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/if_vppcalls.go(247)" logger=restpapi
+time="2019-12-06 16:32:37.61509" level=debug msg="found compatible version:vpp1904" loc="vppcalls/if_vppcalls.go(251)" logger=restpapi
+time="2019-12-06 16:32:37.61519" level=debug msg="found compatible version:vpp1904" loc="vppcalls/l2_vppcalls.go(146)" logger=restpapi
+time="2019-12-06 16:32:37.61531" level=debug msg="found compatible version:vpp1904" loc="vppcalls/l3_vppcalls.go(220)" logger=restpapi
+time="2019-12-06 16:32:37.61540" level=info msg="VPP IPSec handler is not available, it will be skipped" loc="restapi/plugin_restapi.go(145)" logger=restpapi
+time="2019-12-06 16:32:37.61548" level=info msg="ABF handler is not available, it will be skipped" loc="restapi/plugin_restapi.go(151)" logger=restpapi
+time="2019-12-06 16:32:37.61555" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/acl_vppcalls.go(124)" logger=restpapi
+time="2019-12-06 16:32:37.61563" level=debug msg="found compatible version:vpp1904" loc="vppcalls/acl_vppcalls.go(128)" logger=restpapi
+time="2019-12-06 16:32:37.61571" level=debug msg="checking compatibility with vpp2001" loc="vppcalls/nat_vppcalls.go(77)" logger=restpapi
+time="2019-12-06 16:32:37.61581" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/nat_vppcalls.go(77)" logger=restpapi
+time="2019-12-06 16:32:37.61593" level=debug msg="found compatible version:vpp1904" loc="vppcalls/nat_vppcalls.go(81)" logger=restpapi
+time="2019-12-06 16:32:37.61602" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/punt_vppcalls.go(98)" logger=restpapi
+time="2019-12-06 16:32:37.61611" level=debug msg="found compatible version:vpp1904" loc="vppcalls/punt_vppcalls.go(102)" logger=restpapi
+time="2019-12-06 16:32:37.61620" level=debug msg="-> Init(): ContivAgent" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:37.61628" level=debug msg="-- AfterInit(): service-label (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61636" level=debug msg="-> AfterInit(): http" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61651" level=info msg="Listening on http://0.0.0.0:9999" loc="rest/plugin_impl_rest.go(108)" logger=http
+time="2019-12-06 16:32:37.61659" level=debug msg="-> AfterInit(): logs" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61667" level=debug msg="Registering handler: /log/{logger}/{level:debug|info|warn|error|fatal|panic}" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.61685" level=debug msg="Registering handler: /log/list" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.61695" level=debug msg="-> AfterInit(): status-check" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61704" level=debug msg="-> AfterInit(): probe" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61708" level=info msg="Starting health http-probe on port 9999" loc="probe/plugin_impl_probe.go(74)" logger=probe
+time="2019-12-06 16:32:37.61716" level=debug msg="Registering handler: /liveness" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.61728" level=debug msg="Registering handler: /readiness" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.61740" level=info msg="Unable to register prometheus-probe handler, Prometheus is nil" loc="probe/plugin_impl_probe.go(86)" logger=probe
+time="2019-12-06 16:32:37.61748" level=debug msg="-> AfterInit(): prometheus" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61756" level=debug msg="Registering handler: /metrics" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.61764" level=info msg="Serving /metrics on port 9999" loc="prometheus/plugin_impl_prometheus.go(87)" logger=prometheus
+time="2019-12-06 16:32:37.61776" level=debug msg="Registering handler: /stats" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.61786" level=info msg="Serving /stats on port 9999" loc="prometheus/plugin_impl_prometheus.go(87)" logger=prometheus
+time="2019-12-06 16:32:37.61792" level=debug msg="-- AfterInit(): kvscheduler (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61800" level=debug msg="-- AfterInit(): resync (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61807" level=debug msg="-> AfterInit(): govpp" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61814" level=debug msg="Plugin govpp: status check probe registered" loc="statuscheck/plugin_impl_statuscheck.go(137)" logger=status-check
+time="2019-12-06 16:32:37.61824" level=info msg="Agent plugin state update." lastErr="<nil>" loc="statuscheck/plugin_impl_statuscheck.go(182)" logger=status-check plugin=govpp state=ok
+time="2019-12-06 16:32:37.61832" level=debug msg="-- AfterInit(): contivconf (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61838" level=debug msg="-> AfterInit(): etcd" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61844" level=debug msg="-- AfterInit(): nodesync (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61850" level=debug msg="-> AfterInit(): grpc" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61857" level=info msg="exposing GRPC services via HTTP (port 9999) on: /service" loc="grpc/plugin_impl_grpc.go(90)" logger=grpc
+time="2019-12-06 16:32:37.61863" level=debug msg="Registering handler: /service" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.61878" level=info msg="Listening GRPC on: /var/run/contiv/cni.sock" loc="grpc/plugin_impl_grpc.go(104)" logger=grpc
+time="2019-12-06 16:32:37.61885" level=debug msg="-- AfterInit(): podmanager (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61891" level=debug msg="-- AfterInit(): device (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61897" level=debug msg="-- AfterInit(): idalloc (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61904" level=debug msg="-- AfterInit(): ipam (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61910" level=debug msg="-> AfterInit(): service" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61916" level=debug msg="-> AfterInit(): sfc" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61925" level=debug msg="-- AfterInit(): policy (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61932" level=debug msg="-- AfterInit(): bgpreflector (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61938" level=debug msg="-- AfterInit(): bolt (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61946" level=debug msg="-> AfterInit(): grpc2" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61953" level=info msg="HTTP not set, skip exposing GRPC services" loc="grpc/plugin_impl_grpc.go(96)" logger=grpc2
+time="2019-12-06 16:32:37.61962" level=info msg="Listening GRPC on: 0.0.0.0:9111" loc="grpc/plugin_impl_grpc.go(104)" logger=grpc2
+time="2019-12-06 16:32:37.61966" level=debug msg="-- AfterInit(): bolt2 (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61976" level=debug msg="-- AfterInit(): contiv-grpc (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61982" level=debug msg="-> AfterInit(): controller" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.61992" level=debug msg="-- AfterInit(): netalloc (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.61999" level=debug msg="-- AfterInit(): linux-nsplugin (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.62007" level=debug msg="-- AfterInit(): linux-ifplugin (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.62011" level=debug msg="-> AfterInit(): vpp-ifplugin" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.62025" level=info msg="NAT session cleanup enabled, TCP timeout=3h0m0s, other timeout=5m0s." loc="nat44/nat44_renderer.go(594)" logger=service.-nat44Renderer
+time="2019-12-06 16:32:37.62033" level=info msg="GaugeFunc('tcpNatSessions') registered." loc="prometheus/plugin_impl_prometheus.go(192)" logger=prometheus
+time="2019-12-06 16:32:37.62044" level=info msg="GaugeFunc('otherNatSessions') registered." loc="prometheus/plugin_impl_prometheus.go(192)" logger=prometheus
+time="2019-12-06 16:32:37.62052" level=debug msg="Plugin vpp-ifplugin: status check probe registered" loc="statuscheck/plugin_impl_statuscheck.go(137)" logger=status-check
+time="2019-12-06 16:32:37.62059" level=debug msg="-- AfterInit(): ipnet (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.62068" level=debug msg="-- AfterInit(): statscollector (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.62075" level=debug msg="-- AfterInit(): linux-l3plugin (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.62081" level=debug msg="-- AfterInit(): linux-iptablesplugin (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.62092" level=debug msg="-> AfterInit(): vpp-l2plugin" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.62098" level=debug msg="Plugin vpp-l2plugin: status check probe registered" loc="statuscheck/plugin_impl_statuscheck.go(137)" logger=status-check
+time="2019-12-06 16:32:37.62107" level=debug msg="-> AfterInit(): vpp-l3plugin" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.62108" level=info msg="GaugeFunc('deletedTCPNatSessions') registered." loc="prometheus/plugin_impl_prometheus.go(192)" logger=prometheus
+time="2019-12-06 16:32:37.62122" level=info msg="GaugeFunc('deletedOtherNatSessions') registered." loc="prometheus/plugin_impl_prometheus.go(192)" logger=prometheus
+time="2019-12-06 16:32:37.62128" level=info msg="GaugeFunc('natSessionDeleteErrors') registered." loc="prometheus/plugin_impl_prometheus.go(192)" logger=prometheus
+time="2019-12-06 16:32:37.62123" level=debug msg="Plugin vpp-l3plugin: status check probe registered" loc="statuscheck/plugin_impl_statuscheck.go(137)" logger=status-check
+time="2019-12-06 16:32:37.62137" level=debug msg="-> AfterInit(): vpp-natplugin" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.62141" level=debug msg="Plugin vpp-natplugin: status check probe registered" loc="statuscheck/plugin_impl_statuscheck.go(137)" logger=status-check
+time="2019-12-06 16:32:37.62178" level=info msg="Connection to Remote DB was (re-)established" loc="controller/dbwatcher.go(200)" logger=controller.dbwatcher
+time="2019-12-06 16:32:37.62206" level=debug msg="-> AfterInit(): vpp-aclplugin" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.62223" level=debug msg="Plugin vpp-aclplugin: status check probe registered" loc="statuscheck/plugin_impl_statuscheck.go(137)" logger=status-check
+time="2019-12-06 16:32:37.62227" level=debug msg="-> AfterInit(): vpp-stn-plugin" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.62252" level=debug msg="-> AfterInit(): vpp-punt-plugin" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.62256" level=debug msg="-> AfterInit(): vpp-srplugin" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.62261" level=debug msg="Plugin vpp-srplugin: status check probe registered" loc="statuscheck/plugin_impl_statuscheck.go(137)" logger=status-check
+time="2019-12-06 16:32:37.62291" level=debug msg="-> AfterInit(): telemetry" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.62294" level=debug msg="-> AfterInit(): restpapi" loc="agent/agent.go(237)" logger=agent
+time="2019-12-06 16:32:37.62297" level=debug msg="Registering handler: /vpp/telemetry" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62325" level=debug msg="Registering handler: /vpp/telemetry/memory" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62334" level=debug msg="Registering handler: /vpp/telemetry/runtime" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62394" level=debug msg="Registering handler: /vpp/telemetry/nodecount" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62404" level=debug msg="Registering handler: /vpp/command" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62411" level=debug msg="Registering handler: /dump/vpp/v2/interfaces" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62442" level=debug msg="Registering handler: /dump/vpp/v2/interfaces/loopback" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62452" level=debug msg="Registering handler: /dump/vpp/v2/interfaces/ethernet" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62519" level=debug msg="Registering handler: /dump/vpp/v2/interfaces/memif" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62525" level=debug msg="Registering handler: /dump/vpp/v2/interfaces/tap" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62537" level=debug msg="Registering handler: /dump/vpp/v2/interfaces/afpacket" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62571" level=debug msg="Registering handler: /dump/vpp/v2/interfaces/vxlan" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62582" level=debug msg="Registering handler: /dump/vpp/v2/bd" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62587" level=debug msg="Registering handler: /dump/vpp/v2/fib" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62595" level=debug msg="Registering handler: /dump/vpp/v2/xc" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62599" level=debug msg="Registering handler: /dump/vpp/v2/arps" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62606" level=debug msg="Registering handler: /dump/vpp/v2/proxyarp/interfaces" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62611" level=debug msg="Registering handler: /dump/vpp/v2/proxyarp/ranges" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62617" level=debug msg="Registering handler: /dump/vpp/v2/routes" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62657" level=debug msg="Registering handler: /dump/vpp/v2/ipscanneigh" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62663" level=debug msg="Registering handler: /dump/vpp/v2/ipsec/spds" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62667" level=debug msg="Registering handler: /dump/vpp/v2/ipsec/sas" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62671" level=debug msg="Registering handler: /dump/vpp/v2/abf" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62675" level=debug msg="Registering handler: /dump/vpp/v2/acl/ip" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62678" level=debug msg="Registering handler: /dump/vpp/v2/acl/macip" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62717" level=debug msg="Registering handler: /dump/vpp/v2/nat/global" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62722" level=debug msg="Registering handler: /dump/vpp/v2/nat/dnat" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62726" level=debug msg="Registering handler: /dump/vpp/v2/punt/sockets" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62730" level=debug msg="Registering handler: /dump/linux/v2/interfaces" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62733" level=debug msg="Registering handler: /dump/linux/v2/routes" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62739" level=debug msg="Registering handler: /dump/linux/v2/arps" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62798" level=debug msg="Registering handler: /" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62807" level=debug msg="Registering handler: /vpp/binapitrace" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62812" level=debug msg="Registering handler: /stats/configurator" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:37.62816" level=debug msg="-- AfterInit(): ContivAgent (not used)" loc="agent/agent.go(242)" logger=agent
+time="2019-12-06 16:32:37.62825" level=info msg="Agent started with 44 plugins (took 7.677s)" loc="agent/agent.go(179)" logger=agent
+time="2019-12-06 16:32:37.66795" level=debug msg="checking compatibility with vpp1904" loc="vppcalls/if_vppcalls.go(247)" logger=contivconf
+time="2019-12-06 16:32:37.66808" level=debug msg="found compatible version:vpp1904" loc="vppcalls/if_vppcalls.go(251)" logger=contivconf
+time="2019-12-06 16:32:37.70966" level=debug msg="Memif socket dump completed, found 1 entries: map[/run/vpp/memif.sock:0]" loc="vpp1904/dump_interface_vppcalls.go(287)" logger=contivconf
+time="2019-12-06 16:32:37.73794" level=debug msg="Physical NIC not taken from NodeConfig, but heuristic was used: GigabitEthernet0/8/0 " loc="contivconf/contivconf.go(786)" logger=contivconf
+time="2019-12-06 16:32:37.73802" level=info msg="ContivConf state after re-load: useDHCP=false, mainInterface=GigabitEthernet0/8/0, mainInterfaceIPs=[], otherInterfaces=[], defaultGw=192.168.16.100, dpdkIfaces=[GigabitEthernet0/8/0], stnInterface=, stnIPAddresses=[], stnGW=<nil>, stnRoutes=[]" loc="contivconf/contivconf.go(846)" logger=contivconf
+time="2019-12-06 16:32:37.73808" level=info msg="ID of the node is 2" loc="nodesync/nodesync.go(258)" logger=nodesync
+time="2019-12-06 16:32:37.73813" level=info msg="NodeSync after resync: {k8s-master: <ID: 1, Name: k8s-master, VPP-IPs: [(192.168.16.1, 192.168.16.0/24)], Mgmt-IPs: [10.20.0.2], k8s-worker1: <ID: 2, Name: k8s-worker1, VPP-IPs: [(192.168.16.2, 192.168.16.0/24)], Mgmt-IPs: [10.20.0.10]}" loc="nodesync/nodesync.go(259)" logger=nodesync
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*   NEW EVENT: Database Resync (Remote DB)                                                                                    #0 *
+*              * 6x endpoints                                                                                                    *
+*                  - default/kubernetes                                                                                          *
+*                  - kube-system/contiv-etcd                                                                                     *
+*                  - kube-system/contiv-ui-svc                                                                                   *
+*                  - kube-system/kube-controller-manager                                                                         *
+*                  - kube-system/kube-dns                                                                                        *
+*                  - kube-system/kube-scheduler                                                                                  *
+*              * 3x namespace                                                                                                    *
+*                  - default                                                                                                     *
+*                  - kube-public                                                                                                 *
+*                  - kube-system                                                                                                 *
+*              * 2x node                                                                                                         *
+*                  - k8s-master                                                                                                  *
+*                  - k8s-worker1                                                                                                 *
+*              * 19x pod                                                                                                         *
+*                  - default/linux-cnf11                                                                                         *
+*                  - default/linux-cnf12                                                                                         *
+*                  - default/linux-cnf21                                                                                         *
+*                  - default/linux-cnf22                                                                                         *
+*                  - default/linux-cnf23                                                                                         *
+*                  - kube-system/contiv-crd-6bpbl                                                                                *
+*                  - kube-system/contiv-etcd-0                                                                                   *
+*                  - kube-system/contiv-ksr-jf9jf                                                                                *
+*                  - kube-system/contiv-ui-7cd697dd66-9ctxc                                                                      *
+*                  - kube-system/contiv-vswitch-j8jpd                                                                            *
+*                  - kube-system/contiv-vswitch-n7mzl                                                                            *
+*                  - kube-system/coredns-576cbf47c7-6hdtl                                                                        *
+*                  - kube-system/coredns-576cbf47c7-k49bm                                                                        *
+*                  - kube-system/etcd-k8s-master                                                                                 *
+*                  - kube-system/kube-apiserver-k8s-master                                                                       *
+*                  - kube-system/kube-controller-manager-k8s-master                                                              *
+*                  - kube-system/kube-proxy-6k2ms                                                                                *
+*                  - kube-system/kube-proxy-wll7k                                                                                *
+*                  - kube-system/kube-scheduler-k8s-master                                                                       *
+*              * 4x service                                                                                                      *
+*                  - default/kubernetes                                                                                          *
+*                  - kube-system/contiv-etcd                                                                                     *
+*                  - kube-system/contiv-ui-svc                                                                                   *
+*                  - kube-system/kube-dns                                                                                        *
+*              * 1x servicefunctionchain                                                                                         *
+*                  - linux-chain                                                                                                 *
+*              * 2x vppnode                                                                                                      *
+*                  - k8s-master                                                                                                  *
+*                  - k8s-worker1                                                                                                 *
+*   EVENT HANDLERS: contivconf, nodesync, podmanager, device, idalloc, ipam, ipnet, service, sfc, policy                         *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+time="2019-12-06 16:32:38.20619" level=info msg="Delete pod request received {0.3.1 ce31fe6cc61ae7bcdb6697af301320345d3a4178be8ff47b1f51968094c97a76 /proc/10245/ns/net eth0 {\"cniVersion\":\"0.3.1\",\"grpcServer\":\"/var/run/contiv/cni.sock\",\"logFile\":\"/var/run/contiv/cni.log\",\"name\":\"k8s-pod-network\",\"type\":\"contiv-cni\"} IgnoreUnknown=1;K8S_POD_NAMESPACE=default;K8S_POD_NAME=linux-cnf21;K8S_POD_INFRA_CONTAINER_ID=ce31fe6cc61ae7bcdb6697af301320345d3a4178be8ff47b1f51968094c97a76   {} [] 0}" loc="podmanager/podmanager.go(311)" logger=podmanager
+time="2019-12-06 16:32:38.29714" level=debug msg="Ignoring non-running sandbox container: 2a0570245841deb66e31252db9e3ffb11c695a8809713fe9ae2dcb5611f76fd7" loc="podmanager/podmanager.go(182)" logger=podmanager
+time="2019-12-06 16:32:38.29870" level=debug msg="Found locally running Pod: Pod <ID:default/linux-cnf11, Container:98ec392494c1ded61b6cf63536ee6ced3e845eebc19f63fa1ede2444e4313cb0, Ns:/proc/10450/ns/net>" loc="podmanager/podmanager.go(212)" logger=podmanager
+time="2019-12-06 16:32:38.29998" level=debug msg="Found locally running Pod: Pod <ID:default/linux-cnf21, Container:ce31fe6cc61ae7bcdb6697af301320345d3a4178be8ff47b1f51968094c97a76, Ns:/proc/10245/ns/net>" loc="podmanager/podmanager.go(212)" logger=podmanager
+time="2019-12-06 16:32:38.30097" level=debug msg="Found locally running Pod: Pod <ID:default/linux-cnf22, Container:73ed5e29a526c2ba15dc14108f17a9ebb193ad9a9d052d363ad554ae15bcf98e, Ns:/proc/10027/ns/net>" loc="podmanager/podmanager.go(212)" logger=podmanager
+time="2019-12-06 16:32:38.30103" level=debug msg="Ignoring non-running sandbox container: 344b1971e88b00d9432a03fa045b14ae5f0a2581ffe43034bc56aa8db666867e" loc="podmanager/podmanager.go(182)" logger=podmanager
+time="2019-12-06 16:32:38.30107" level=debug msg="Ignoring non-running sandbox container: a3b996c74c9dce9fcbef50e37462da92ec6e3d9b1d066b99c02c6a605cbf18ca" loc="podmanager/podmanager.go(182)" logger=podmanager
+time="2019-12-06 16:32:38.30116" level=debug msg="Ignoring non-running sandbox container: 6e44d0f5bd565de86c357544433b4b4a5696643a553fe99672094d8b29c023cb" loc="podmanager/podmanager.go(182)" logger=podmanager
+time="2019-12-06 16:32:38.30120" level=debug msg="Ignoring non-running sandbox container: 451aecb0f817f28c38cd225200ec0dc65c4009a41019ec2a13624b265394c91c" loc="podmanager/podmanager.go(182)" logger=podmanager
+time="2019-12-06 16:32:38.30123" level=debug msg="Ignoring non-running sandbox container: cc67ee798147790edb6b72d51b8a70278b3100fb693f00f566eee79c82389105" loc="podmanager/podmanager.go(182)" logger=podmanager
+time="2019-12-06 16:32:38.30228" level=debug msg="Found locally running Pod: Pod <ID:kube-system/contiv-vswitch-j8jpd, Container:29d592085c0f28434e321ebbe77c0672cdbb1cf57afe9489854ced2d9ee64b4c, Ns:/proc/1706/ns/net>" loc="podmanager/podmanager.go(212)" logger=podmanager
+time="2019-12-06 16:32:38.30306" level=debug msg="Found locally running Pod: Pod <ID:kube-system/kube-proxy-wll7k, Container:398cb16040b8807a4a8d2722b7d79ba7611748ae727f8f1a04ac77aa08b5b865, Ns:/proc/1683/ns/net>" loc="podmanager/podmanager.go(212)" logger=podmanager
+time="2019-12-06 16:32:38.30315" level=debug msg="Ignoring non-running sandbox container: 1d78d13bb12b08230e8757bc1031ae28287b1038bcea0b1bbe922d572e907a0b" loc="podmanager/podmanager.go(182)" logger=podmanager
+time="2019-12-06 16:32:38.30336" level=debug msg="PodManager state after resync: localPods={default/linux-cnf11: Pod <ID:default/linux-cnf11, Container:98ec392494c1ded61b6cf63536ee6ced3e845eebc19f63fa1ede2444e4313cb0, Ns:/proc/10450/ns/net>, default/linux-cnf21: Pod <ID:default/linux-cnf21, Container:ce31fe6cc61ae7bcdb6697af301320345d3a4178be8ff47b1f51968094c97a76, Ns:/proc/10245/ns/net>, default/linux-cnf22: Pod <ID:default/linux-cnf22, Container:73ed5e29a526c2ba15dc14108f17a9ebb193ad9a9d052d363ad554ae15bcf98e, Ns:/proc/10027/ns/net>, kube-system/contiv-vswitch-j8jpd: Pod <ID:kube-system/contiv-vswitch-j8jpd, Container:29d592085c0f28434e321ebbe77c0672cdbb1cf57afe9489854ced2d9ee64b4c, Ns:/proc/1706/ns/net>, kube-system/kube-proxy-wll7k: Pod <ID:kube-system/kube-proxy-wll7k, Container:398cb16040b8807a4a8d2722b7d79ba7611748ae727f8f1a04ac77aa08b5b865, Ns:/proc/1683/ns/net>}, pods={kube-system/contiv-ksr-jf9jf: Pod <ID:kube-system/contiv-ksr-jf9jf, IP:10.20.0.2, Labels:map[controller-revision-hash:b6fdfdbcf k8s-app:contiv-ksr pod-template-generation:1], Annotations:map[]>, kube-system/kube-apiserver-k8s-master: Pod <ID:kube-system/kube-apiserver-k8s-master, IP:10.20.0.2, Labels:map[component:kube-apiserver tier:control-plane], Annotations:map[]>, kube-system/kube-proxy-wll7k: Pod <ID:kube-system/kube-proxy-wll7k, IP:10.20.0.10, Labels:map[controller-revision-hash:769c955888 k8s-app:kube-proxy pod-template-generation:1], Annotations:map[]>, default/linux-cnf23: Pod <ID:default/linux-cnf23, IP:, Labels:map[cnf:linux-cnf2], Annotations:map[contivpp.io/custom-if:tap1/tap/stub]>, kube-system/etcd-k8s-master: Pod <ID:kube-system/etcd-k8s-master, IP:10.20.0.2, Labels:map[component:etcd tier:control-plane], Annotations:map[]>, kube-system/contiv-vswitch-j8jpd: Pod <ID:kube-system/contiv-vswitch-j8jpd, IP:10.20.0.10, Labels:map[controller-revision-hash:69fc4d8f49 k8s-app:contiv-vswitch pod-template-generation:1], Annotations:map[]>, kube-system/kube-proxy-6k2ms: Pod <ID:kube-system/kube-proxy-6k2ms, IP:10.20.0.2, Labels:map[controller-revision-hash:769c955888 k8s-app:kube-proxy pod-template-generation:1], Annotations:map[]>, kube-system/contiv-etcd-0: Pod <ID:kube-system/contiv-etcd-0, IP:10.20.0.2, Labels:map[controller-revision-hash:contiv-etcd-c58ff9d79 k8s-app:contiv-etcd statefulset.kubernetes.io/pod-name:contiv-etcd-0], Annotations:map[]>, kube-system/kube-controller-manager-k8s-master: Pod <ID:kube-system/kube-controller-manager-k8s-master, IP:10.20.0.2, Labels:map[component:kube-controller-manager tier:control-plane], Annotations:map[]>, default/linux-cnf12: Pod <ID:default/linux-cnf12, IP:, Labels:map[cnf:linux-cnf1], Annotations:map[contivpp.io/custom-if:tap1/tap/stub]>, kube-system/contiv-crd-6bpbl: Pod <ID:kube-system/contiv-crd-6bpbl, IP:10.20.0.2, Labels:map[controller-revision-hash:86977f6cc4 k8s-app:contiv-crd pod-template-generation:1], Annotations:map[]>, kube-system/coredns-576cbf47c7-k49bm: Pod <ID:kube-system/coredns-576cbf47c7-k49bm, IP:, Labels:map[k8s-app:kube-dns pod-template-hash:576cbf47c7], Annotations:map[]>, default/linux-cnf21: Pod <ID:default/linux-cnf21, IP:, Labels:map[cnf:linux-cnf2], Annotations:map[contivpp.io/custom-if:tap1/tap/stub]>, kube-system/contiv-ui-7cd697dd66-9ctxc: Pod <ID:kube-system/contiv-ui-7cd697dd66-9ctxc, IP:10.1.1.4, Labels:map[pod-template-hash:7cd697dd66 run:contiv-ui], Annotations:map[]>, kube-system/contiv-vswitch-n7mzl: Pod <ID:kube-system/contiv-vswitch-n7mzl, IP:10.20.0.2, Labels:map[controller-revision-hash:69fc4d8f49 k8s-app:contiv-vswitch pod-template-generation:1], Annotations:map[]>, kube-system/kube-scheduler-k8s-master: Pod <ID:kube-system/kube-scheduler-k8s-master, IP:10.20.0.2, Labels:map[component:kube-scheduler tier:control-plane], Annotations:map[]>, kube-system/coredns-576cbf47c7-6hdtl: Pod <ID:kube-system/coredns-576cbf47c7-6hdtl, IP:, Labels:map[k8s-app:kube-dns pod-template-hash:576cbf47c7], Annotations:map[]>, default/linux-cnf11: Pod <ID:default/linux-cnf11, IP:, Labels:map[cnf:linux-cnf1], Annotations:map[contivpp.io/custom-if:tap1/tap/stub]>, default/linux-cnf22: Pod <ID:default/linux-cnf22, IP:, Labels:map[cnf:linux-cnf2], Annotations:map[contivpp.io/custom-if:tap1/tap/stub]>}" loc="podmanager/podmanager.go(221)" logger=podmanager
+time="2019-12-06 16:32:38.30783" level=debug msg="IDAllocator state after resync: map[]" loc="idalloc/idalloc.go(102)" logger=idalloc
+time="2019-12-06 16:32:38.30799" level=info msg="IPAM state after startup RESYNC: podNetworks=map[default:<podSubnetAllNodes=10.1.0.0/16, podSubnetThisNode=10.1.2.0/24, podSubnetGatewayIP=10.1.2.1, lastPodIPAssigned=1>], excludedIPsfromNodeSubnet=[192.168.16.100], hostInterconnectSubnetAllNodes=172.30.0.0/16, hostInterconnectSubnetThisNode=172.30.2.0/24, hostInterconnectIPInVpp=172.30.2.1, hostInterconnectIPInLinux=172.30.2.2, nodeInterconnectSubnet=192.168.16.0/24, vxlanSubnet=192.168.30.0/24, serviceCIDR=10.96.0.0/12, assignedPodIPs=map[], podToIP=map[], remotePodToIP=map[kube-system/contiv-ui-7cd697dd66-9ctxc:<IP=10.1.1.4>], extIfToIPNet=map[]" loc="ipam/ipam.go(371)" logger=ipam
+time="2019-12-06 16:32:38.30808" level=info msg="Configuring physical NIC GigabitEthernet0/8/0" loc="ipnet/resync_events.go(231)" logger=ipnet
+time="2019-12-06 16:32:38.30815" level=info msg="Configuring GigabitEthernet0/8/0 to use 192.168.16.2" loc="ipnet/resync_events.go(255)" logger=ipnet
+time="2019-12-06 16:32:38.30871" level=info msg="Creating VRF table configuration: vrfID=0, protocol=IPV4, label(without protocol)=mainVRF" loc="ipnet/node.go(514)" logger=ipnet
+time="2019-12-06 16:32:38.30880" level=info msg="Creating VRF table configuration: vrfID=1, protocol=IPV4, label(without protocol)=podVRF" loc="ipnet/node.go(514)" logger=ipnet
+time="2019-12-06 16:32:38.30905" level=info msg="IPNet plugin internal state after RESYNC: <useDHCP: false, watchingDHCP: false, nodeIP: 192.168.16.2, nodeIPNet: 192.168.16.0/24, hostIPs: [10.0.2.15 10.20.0.10], vppIfaceToPod: {}, podCustomIf: {}, pendingAddPodCustomIf: [], customNetworks: {stub: <config: <nil>, interfaces: []>}" loc="ipnet/resync_events.go(117)" logger=ipnet
+time="2019-12-06 16:32:38.30925" level=debug msg="No matching pods were found for the service function name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" , skipping this SFC" loc="processor/processor_impl.go(439)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:38.31896" level=debug msg="dhcp-proxy descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.31908" level=debug msg="linux-interface-watcher descriptor retrieved 4 items: \n -  1. [linux-interface-watcher]: \"linux/interface/host-name/lo\" (from-SB)\n   <EMPTY>\n -  2. [linux-interface-watcher]: \"linux/interface/host-name/enp0s3\" (from-SB)\n   <EMPTY>\n -  3. [linux-interface-watcher]: \"linux/interface/host-name/enp0s9\" (from-SB)\n   <EMPTY>\n -  4. [linux-interface-watcher]: \"linux/interface/host-name/docker0\" (from-SB)\n   <EMPTY>" loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.31941" level=debug msg="microservice descriptor retrieved 1 item: \n -  1. [microservice]: \"linux/microservice/k8s-worker1\" (from-SB)\n   <EMPTY>" loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.31948" level=debug msg="netalloc-ip-address descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.31988" level=debug msg="linux-interface descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.31994" level=debug msg="linux-arp descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.32002" level=debug msg="linux-ipt-rulechain-descriptor descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.32020" level=debug msg="linux-route descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.32222" level=debug msg="Memif socket dump completed, found 1 entries: map[/run/vpp/memif.sock:0]" loc="vpp1904/dump_interface_vppcalls.go(287)" logger=vpp-ifplugin
+time="2019-12-06 16:32:38.39243" level=debug msg="Memif socket dump completed, found 1 entries: map[/run/vpp/memif.sock:0]" loc="vpp1904/dump_interface_vppcalls.go(287)" logger=vpp-ifplugin
+time="2019-12-06 16:32:38.55592" level=debug msg="vpp-interface descriptor retrieved 1 item: \n -  1. [vpp-interface]: \"config/vpp/v2/interfaces/UNTAGGED-local0\" (from-SB)\n   { name:\"UNTAGGED-local0\" type:SOFTWARE_LOOPBACK  }\n   Metadata: &{SwIfIndex:0 Vrf:0 IPAddresses:[] TAPHostIfName:}" loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.55601" level=debug msg="publish add to ifplugin_ifstate{{UNTAGGED-local0 false false vpp-interface-index} 0xc000985b60}" loc="mem/inmemory_name_mapping.go(277)" logger=vpp-ifplugin.if-descriptor
+time="2019-12-06 16:32:38.56662" level=debug msg="vpp-acl descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.57102" level=debug msg="vpp-arp descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.57346" level=debug msg="vpp-bridge-domain descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.57539" level=debug msg="vpp-dhcp descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.57621" level=debug msg="vpp-interface-link-state descriptor retrieved 1 item: \n -  1. [vpp-interface-link-state]: \"vpp/interface/UNTAGGED-local0/link-state/DOWN\" (from-SB)\n   <EMPTY>" loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.57685" level=debug msg="vpp-ip-scan-neighbor descriptor retrieved 1 item: \n -  1. [vpp-ip-scan-neighbor]: \"config/vpp/v2/ipscanneigh-global\" (from-SB)\n   { scan_interval:1 max_proc_time:20 max_update:10 scan_int_delay:1 stale_threshold:4  }" loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.57778" level=debug msg="vpp-l2-fib descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.58210" level=debug msg="vpp-nat44-dnat descriptor retrieved 1 item: \n -  1. [vpp-nat44-dnat]: \"config/vpp/nat/v2/dnat44/kube-system/kube-dns\" (from-NB)\n   { label:\"kube-system/kube-dns\"  }" loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.58603" level=debug msg="vpp-nat44-global descriptor retrieved 1 item: \n -  1. [vpp-nat44-global]: \"config/vpp/nat/v2/nat44-global\" (from-SB)\n   { virtual_reassembly:<timeout:2 max_reassemblies:1024 max_fragments:5 >  }" loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.58992" level=debug msg="vpp-proxy-arp descriptor retrieved 1 item: \n -  1. [vpp-proxy-arp]: \"config/vpp/v2/proxyarp-global\" (unknown)\n   {  }" loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.59010" level=debug msg="punt exceptions are not supported in this VPP version" loc="vpp1904/dump_vppcalls.go(122)" logger=vpp-punt-plugin
+time="2019-12-06 16:32:38.59015" level=debug msg="vpp-punt-exception descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.59036" level=debug msg="ip redirect punt not supported in this VPP version" loc="vpp1904/dump_vppcalls.go(112)" logger=vpp-punt-plugin
+time="2019-12-06 16:32:38.59045" level=debug msg="vpp-punt-ipredirect descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.59422" level=debug msg="vpp-punt-to-host descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.59577" level=debug msg="vpp-span descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.59762" level=debug msg="vpp-stn-rules descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.59944" level=debug msg="vpp-vrf-table descriptor retrieved 2 items: \n -  1. [vpp-vrf-table]: \"config/vpp/v2/vrf-table/id/0/protocol/IPV4\" (unknown)\n   { label:\"ipv4-VRF:0\"  }\n   Metadata: &{Index:0 Protocol:IPV4}\n -  2. [vpp-vrf-table]: \"config/vpp/v2/vrf-table/id/0/protocol/IPV6\" (unknown)\n   { protocol:IPV6 label:\"ipv6-VRF:0\"  }\n   Metadata: &{Index:0 Protocol:IPV6}" loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.60214" level=debug msg="vpp-route descriptor retrieved 7 items: \n -  1. [vpp-route]: \"config/vpp/v2/route/vrf/0/dst/0.0.0.0/0/gw/0.0.0.0\" (unknown)\n   { type:DROP dst_network:\"0.0.0.0/0\" next_hop_addr:\"0.0.0.0\" weight:1  }\n -  2. [vpp-route]: \"config/vpp/v2/route/vrf/0/dst/0.0.0.0/32/gw/0.0.0.0\" (unknown)\n   { type:DROP dst_network:\"0.0.0.0/32\" next_hop_addr:\"0.0.0.0\" weight:1  }\n -  3. [vpp-route]: \"config/vpp/v2/route/vrf/0/dst/224.0.0.0/4/gw/0.0.0.0\" (unknown)\n   { type:DROP dst_network:\"224.0.0.0/4\" next_hop_addr:\"0.0.0.0\" weight:1  }\n -  4. [vpp-route]: \"config/vpp/v2/route/vrf/0/dst/240.0.0.0/4/gw/0.0.0.0\" (unknown)\n   { type:DROP dst_network:\"240.0.0.0/4\" next_hop_addr:\"0.0.0.0\" weight:1  }\n -  5. [vpp-route]: \"config/vpp/v2/route/vrf/0/dst/255.255.255.255/32/gw/0.0.0.0\" (unknown)\n   { type:DROP dst_network:\"255.255.255.255/32\" next_hop_addr:\"0.0.0.0\" weight:1  }\n -  6. [vpp-route]: \"config/vpp/v2/route/vrf/0/dst/::/0/gw/::\" (unknown)\n   { type:DROP dst_network:\"::/0\" next_hop_addr:\"::\" weight:1  }\n -  7. [vpp-route]: \"config/vpp/v2/route/vrf/0/dst/fe80::/10/gw/::\" (unknown)\n   { dst_network:\"fe80::/10\" next_hop_addr:\"::\" weight:1  }" loc="kvscheduler/refresh.go(140)" logger=kvscheduler
+time="2019-12-06 16:32:38.60319" level=debug msg="vpp-xconnect descriptor retrieved 0 items: " loc="kvscheduler/refresh.go(140)" logger=kvscheduler
++======================================================================================================================+
+| #0 - NB Transaction                                                                                       FullResync |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 0
+      - type: NB Transaction, Full Resync
+      - Description: Database Resync
+      - values:
+          - key: config/linux/interfaces/v2/interface/tap-vpp1
+            val: { name:"tap-vpp1" type:TAP_TO_VPP host_if_name:"vpp1" enabled:true ip_addresses:"172.30.2.2/24" mtu:1450 tap:<vpp_tap_if_name:"tap-vpp2" >  }
+          - key: config/linux/l3/v2/route/10.1.0.0/16/tap-vpp1
+            val: { outgoing_interface:"tap-vpp1" scope:GLOBAL dst_network:"10.1.0.0/16" gw_addr:"172.30.2.1"  }
+          - key: config/linux/l3/v2/route/10.96.0.0/12/tap-vpp1
+            val: { outgoing_interface:"tap-vpp1" scope:GLOBAL dst_network:"10.96.0.0/12" gw_addr:"172.30.2.1"  }
+          - key: config/vpp/l2/v2/bridge-domain/vxlanBD
+            val: { name:"vxlanBD" forward:true interfaces:<name:"vxlanBVI" bridged_virtual_interface:true split_horizon_group:1 > interfaces:<name:"vxlan-default-1" split_horizon_group:1 >  }
+          - key: config/vpp/l2/v2/fib/vxlanBD/mac/12:2b:00:00:00:01
+            val: { phys_address:"12:2b:00:00:00:01" bridge_domain:"vxlanBD" outgoing_interface:"vxlan-default-1" static_config:true  }
+          - key: config/vpp/nat/v2/dnat44/DNAT-identities
+            val: { label:"DNAT-identities" id_mappings:<ip_address:"192.168.16.2" port:4789 protocol:UDP > id_mappings:<vrf_id:1 ip_address:"192.168.16.2" protocol:UDP > id_mappings:<ip_address:"192.168.16.2" protocol:UDP >  }
+          - key: config/vpp/nat/v2/dnat44/default/kubernetes
+            val: { label:"default/kubernetes" st_mappings:<external_ip:"10.96.0.1" external_port:443 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:6443 > twice_nat:SELF >  }
+          - key: config/vpp/nat/v2/dnat44/kube-system/contiv-etcd
+            val: { label:"kube-system/contiv-etcd" st_mappings:<external_ip:"192.168.16.1" external_port:32379 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:12379 > twice_nat:SELF > st_mappings:<external_ip:"10.20.0.2" external_port:32379 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:12379 > twice_nat:SELF > st_mappings:<external_ip:"192.168.16.2" external_port:32379 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:12379 > twice_nat:SELF > st_mappings:<external_ip:"10.20.0.10" external_port:32379 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:12379 > twice_nat:SELF > st_mappings:<external_ip:"10.99.89.206" external_port:12379 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:12379 > twice_nat:SELF >  }
+          - key: config/vpp/nat/v2/dnat44/kube-system/contiv-ui-svc
+            val: { label:"kube-system/contiv-ui-svc" st_mappings:<external_ip:"192.168.16.1" external_port:32500 local_ips:<vrf_id:1 local_ip:"10.1.1.4" local_port:9500 > twice_nat:SELF > st_mappings:<external_ip:"10.20.0.2" external_port:32500 local_ips:<vrf_id:1 local_ip:"10.1.1.4" local_port:9500 > twice_nat:SELF > st_mappings:<external_ip:"192.168.16.2" external_port:32500 local_ips:<vrf_id:1 local_ip:"10.1.1.4" local_port:9500 > twice_nat:SELF > st_mappings:<external_ip:"10.20.0.10" external_port:32500 local_ips:<vrf_id:1 local_ip:"10.1.1.4" local_port:9500 > twice_nat:SELF > st_mappings:<external_ip:"10.108.165.162" external_port:9500 local_ips:<vrf_id:1 local_ip:"10.1.1.4" local_port:9500 > twice_nat:SELF >  }
+          - key: config/vpp/nat/v2/dnat44/kube-system/kube-dns
+            val: { label:"kube-system/kube-dns"  }
+          - key: config/vpp/nat/v2/nat44-global
+            val: { forwarding:true nat_interfaces:<name:"vxlanBVI" > nat_interfaces:<name:"tap-vpp2" > nat_interfaces:<name:"vxlanBVI" is_inside:true > nat_interfaces:<name:"tap-vpp2" is_inside:true > nat_interfaces:<name:"GigabitEthernet0/8/0" output_feature:true > address_pool:<address:"192.168.16.2" vrf_id:4294967295 > address_pool:<address:"10.1.2.254" vrf_id:4294967295 twice_nat:true >  }
+          - key: config/vpp/v2/arp/vxlanBVI/192.168.30.1
+            val: { interface:"vxlanBVI" ip_address:"192.168.30.1" phys_address:"12:2b:00:00:00:01" static:true  }
+          - key: config/vpp/v2/interfaces/GigabitEthernet0/8/0
+            val: { name:"GigabitEthernet0/8/0" type:DPDK enabled:true ip_addresses:"192.168.16.2/24"  }
+          - key: config/vpp/v2/interfaces/podGwLoop
+            val: { name:"podGwLoop" type:SOFTWARE_LOOPBACK enabled:true ip_addresses:"10.1.2.1/24" vrf:1  }
+          - key: config/vpp/v2/interfaces/tap-vpp2
+            val: { name:"tap-vpp2" type:TAP enabled:true phys_address:"34:3c:00:00:00:02" ip_addresses:"172.30.2.1/24" mtu:1450 rx_modes:<mode:DEFAULT default_mode:true > tap:<version:2 rx_ring_size:1024 tx_ring_size:1024 enable_gso:true >  }
+          - key: config/vpp/v2/interfaces/vxlan-default-1
+            val: { name:"vxlan-default-1" type:VXLAN_TUNNEL enabled:true vxlan:<src_address:"192.168.16.2" dst_address:"192.168.16.1" vni:10 >  }
+          - key: config/vpp/v2/interfaces/vxlanBVI
+            val: { name:"vxlanBVI" type:SOFTWARE_LOOPBACK enabled:true phys_address:"12:2b:00:00:00:02" ip_addresses:"192.168.30.2/24" vrf:1  }
+          - key: config/vpp/v2/ipscanneigh-global
+            val: { mode:IPv4 scan_interval:1 stale_threshold:4  }
+          - key: config/vpp/v2/route/if/GigabitEthernet0/8/0/vrf/0/dst/0.0.0.0/0/gw/192.168.16.100
+            val: { dst_network:"0.0.0.0/0" next_hop_addr:"192.168.16.100" outgoing_interface:"GigabitEthernet0/8/0"  }
+          - key: config/vpp/v2/route/if/tap-vpp2/vrf/0/dst/10.0.2.15/32/gw/172.30.2.2
+            val: { dst_network:"10.0.2.15/32" next_hop_addr:"172.30.2.2" outgoing_interface:"tap-vpp2"  }
+          - key: config/vpp/v2/route/if/tap-vpp2/vrf/0/dst/10.20.0.10/32/gw/172.30.2.2
+            val: { dst_network:"10.20.0.10/32" next_hop_addr:"172.30.2.2" outgoing_interface:"tap-vpp2"  }
+          - key: config/vpp/v2/route/if/vxlanBVI/vrf/1/dst/10.1.1.0/24/gw/192.168.30.1
+            val: { vrf_id:1 dst_network:"10.1.1.0/24" next_hop_addr:"192.168.30.1" outgoing_interface:"vxlanBVI"  }
+          - key: config/vpp/v2/route/if/vxlanBVI/vrf/1/dst/10.20.0.2/32/gw/192.168.30.1
+            val: { vrf_id:1 dst_network:"10.20.0.2/32" next_hop_addr:"192.168.30.1" outgoing_interface:"vxlanBVI"  }
+          - key: config/vpp/v2/route/if/vxlanBVI/vrf/1/dst/172.30.1.0/24/gw/192.168.30.1
+            val: { vrf_id:1 dst_network:"172.30.1.0/24" next_hop_addr:"192.168.30.1" outgoing_interface:"vxlanBVI"  }
+          - key: config/vpp/v2/route/vrf/0/dst/10.1.0.0/16/gw/0.0.0.0
+            val: { type:INTER_VRF dst_network:"10.1.0.0/16" next_hop_addr:"0.0.0.0" via_vrf_id:1  }
+          - key: config/vpp/v2/route/vrf/0/dst/10.20.0.2/32/gw/0.0.0.0
+            val: { type:INTER_VRF dst_network:"10.20.0.2/32" next_hop_addr:"0.0.0.0" via_vrf_id:1  }
+          - key: config/vpp/v2/route/vrf/0/dst/172.30.0.0/16/gw/0.0.0.0
+            val: { type:INTER_VRF dst_network:"172.30.0.0/16" next_hop_addr:"0.0.0.0" via_vrf_id:1  }
+          - key: config/vpp/v2/route/vrf/1/dst/0.0.0.0/0/gw/0.0.0.0
+            val: { type:INTER_VRF vrf_id:1 dst_network:"0.0.0.0/0" next_hop_addr:"0.0.0.0"  }
+          - key: config/vpp/v2/route/vrf/1/dst/10.1.0.0/16/gw/0.0.0.0
+            val: { type:DROP vrf_id:1 dst_network:"10.1.0.0/16" next_hop_addr:"0.0.0.0"  }
+          - key: config/vpp/v2/route/vrf/1/dst/172.30.0.0/16/gw/0.0.0.0
+            val: { type:DROP vrf_id:1 dst_network:"172.30.0.0/16" next_hop_addr:"0.0.0.0"  }
+          - key: config/vpp/v2/route/vrf/1/dst/172.30.2.0/24/gw/0.0.0.0
+            val: { type:INTER_VRF vrf_id:1 dst_network:"172.30.2.0/24" next_hop_addr:"0.0.0.0"  }
+          - key: config/vpp/v2/vrf-table/id/0/protocol/IPV4
+            val: { label:"mainVRF-IPv4"  }
+          - key: config/vpp/v2/vrf-table/id/1/protocol/IPV4
+            val: { id:1 label:"podVRF-IPv4"  }
+
+time="2019-12-06 16:32:38.98115" level=debug msg="publish add to ifplugin_ifstate{{GigabitEthernet0/8/0 false false vpp-interface-index} 0xc000a30ae0}" loc="mem/inmemory_name_mapping.go(277)" logger=vpp-ifplugin.if-descriptor
+time="2019-12-06 16:32:38.98284" level=debug msg="Interface 1 set to VRF 0" loc="vpp1904/vrf_vppcalls.go(54)" logger=vpp-ifplugin
+time="2019-12-06 16:32:38.98529" level=debug msg="publish add to ifplugin_ifstate{{podGwLoop false false vpp-interface-index} 0xc000b925d0}" loc="mem/inmemory_name_mapping.go(277)" logger=vpp-ifplugin.if-descriptor
+time="2019-12-06 16:32:39.00508" level=debug msg="publish add to ifplugin_ifstate{{tap-vpp2 false false vpp-interface-index} 0xc000b7bb90}" loc="mem/inmemory_name_mapping.go(277)" logger=vpp-ifplugin.if-descriptor
+time="2019-12-06 16:32:39.02705" level=debug msg="Interface 3 set to VRF 0" loc="vpp1904/vrf_vppcalls.go(54)" logger=vpp-ifplugin
+time="2019-12-06 16:32:39.02909" level=debug msg="publish add to ifplugin_ifstate{{vxlan-default-1 false false vpp-interface-index} 0xc000bc1f20}" loc="mem/inmemory_name_mapping.go(277)" logger=vpp-ifplugin.if-descriptor
+time="2019-12-06 16:32:39.03069" level=debug msg="Interface 4 set to VRF 0" loc="vpp1904/vrf_vppcalls.go(54)" logger=vpp-ifplugin
+time="2019-12-06 16:32:39.03222" level=debug msg="publish add to ifplugin_ifstate{{vxlanBVI false false vpp-interface-index} 0xc000b9b860}" loc="mem/inmemory_name_mapping.go(277)" logger=vpp-ifplugin.if-descriptor
+time="2019-12-06 16:32:39.04308" level=debug msg="Interface 2 set to VRF 1" loc="vpp1904/vrf_vppcalls.go(54)" logger=vpp-ifplugin
+time="2019-12-06 16:32:39.04373" level=debug msg="Interface 5 set to VRF 1" loc="vpp1904/vrf_vppcalls.go(54)" logger=vpp-ifplugin
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:38.31 +0000 UTC -> 2019-12-06 16:32:39.047 +0000 UTC, dur: 737ms):
+      1. DELETE [RECREATE DISCOVERED]:
+          - key: config/vpp/v2/vrf-table/id/0/protocol/IPV4
+          - value: { label:"ipv4-VRF:0"  } 
+      2. CREATE [RECREATE]:
+          - key: config/vpp/v2/vrf-table/id/0/protocol/IPV4
+          - value: { label:"mainVRF-IPv4"  } 
+      3. CREATE:
+          - key: config/vpp/l2/v2/bridge-domain/vxlanBD
+          - value: { name:"vxlanBD" forward:true interfaces:<name:"vxlanBVI" bridged_virtual_interface:true split_horizon_group:1 > interfaces:<name:"vxlan-default-1" split_horizon_group:1 >  } 
+      4. CREATE:
+          - key: config/vpp/v2/interfaces/GigabitEthernet0/8/0
+          - value: { name:"GigabitEthernet0/8/0" type:DPDK enabled:true ip_addresses:"192.168.16.2/24"  } 
+      5. CREATE [DERIVED]:
+          - key: vpp/interface/GigabitEthernet0/8/0/vrf/0/ip-version/v4
+          - value: <EMPTY> 
+      6. CREATE [DERIVED]:
+          - key: vpp/interface/GigabitEthernet0/8/0/address/static/192.168.16.2/24
+          - value: <EMPTY> 
+      7. CREATE [DERIVED]:
+          - key: vpp/interface/GigabitEthernet0/8/0/has-IP-address
+          - value: <EMPTY> 
+      8. CREATE:
+          - key: config/vpp/v2/interfaces/podGwLoop
+          - value: { name:"podGwLoop" type:SOFTWARE_LOOPBACK enabled:true ip_addresses:"10.1.2.1/24" vrf:1  } 
+      9. CREATE:
+          - key: config/vpp/v2/interfaces/tap-vpp2
+          - value: { name:"tap-vpp2" type:TAP enabled:true phys_address:"34:3c:00:00:00:02" ip_addresses:"172.30.2.1/24" mtu:1450 rx_modes:<mode:DEFAULT default_mode:true > tap:<version:2 rx_ring_size:1024 tx_ring_size:1024 enable_gso:true >  } 
+      10. CREATE:
+          - key: config/linux/interfaces/v2/interface/tap-vpp1
+          - value: { name:"tap-vpp1" type:TAP_TO_VPP host_if_name:"vpp1" enabled:true ip_addresses:"172.30.2.2/24" mtu:1450 tap:<vpp_tap_if_name:"tap-vpp2" >  } 
+      11. CREATE [PROPERTY]:
+          - key: linux/interface/state/tap-vpp1/UP
+          - value: <EMPTY> 
+      12. CREATE [DERIVED]:
+          - key: linux/interface/tap-vpp1/address/static/172.30.2.2/24
+          - value: <EMPTY> 
+      13. CREATE:
+          - key: config/linux/l3/v2/route/10.1.0.0/16/tap-vpp1
+          - value: { outgoing_interface:"tap-vpp1" scope:GLOBAL dst_network:"10.1.0.0/16" gw_addr:"172.30.2.1"  } 
+      14. CREATE:
+          - key: config/linux/l3/v2/route/10.96.0.0/12/tap-vpp1
+          - value: { outgoing_interface:"tap-vpp1" scope:GLOBAL dst_network:"10.96.0.0/12" gw_addr:"172.30.2.1"  } 
+      15. CREATE [DERIVED NOOP IS-PENDING]:
+          - key: vpp/interface/tap-vpp2/rx-modes
+          - value: { name:"tap-vpp2" type:TAP rx_modes:<mode:DEFAULT default_mode:true >  } 
+      16. CREATE [DERIVED]:
+          - key: vpp/interface/tap-vpp2/vrf/0/ip-version/v4
+          - value: <EMPTY> 
+      17. CREATE [DERIVED]:
+          - key: vpp/interface/tap-vpp2/address/static/172.30.2.1/24
+          - value: <EMPTY> 
+      18. CREATE [DERIVED]:
+          - key: vpp/interface/tap-vpp2/has-IP-address
+          - value: <EMPTY> 
+      19. CREATE:
+          - key: config/vpp/v2/interfaces/vxlan-default-1
+          - value: { name:"vxlan-default-1" type:VXLAN_TUNNEL enabled:true vxlan:<src_address:"192.168.16.2" dst_address:"192.168.16.1" vni:10 >  } 
+      20. CREATE [DERIVED]:
+          - key: vpp/bd/vxlanBD/interface/vxlan-default-1
+          - value: { name:"vxlan-default-1" split_horizon_group:1  } 
+      21. CREATE:
+          - key: config/vpp/l2/v2/fib/vxlanBD/mac/12:2b:00:00:00:01
+          - value: { phys_address:"12:2b:00:00:00:01" bridge_domain:"vxlanBD" outgoing_interface:"vxlan-default-1" static_config:true  } 
+      22. CREATE [DERIVED]:
+          - key: vpp/interface/vxlan-default-1/vrf/0/ip-version/v4
+          - value: <EMPTY> 
+      23. CREATE:
+          - key: config/vpp/v2/interfaces/vxlanBVI
+          - value: { name:"vxlanBVI" type:SOFTWARE_LOOPBACK enabled:true phys_address:"12:2b:00:00:00:02" ip_addresses:"192.168.30.2/24" vrf:1  } 
+      24. CREATE:
+          - key: config/vpp/v2/arp/vxlanBVI/192.168.30.1
+          - value: { interface:"vxlanBVI" ip_address:"192.168.30.1" phys_address:"12:2b:00:00:00:01" static:true  } 
+      25. CREATE [DERIVED]:
+          - key: vpp/bd/vxlanBD/interface/vxlanBVI
+          - value: { name:"vxlanBVI" bridged_virtual_interface:true split_horizon_group:1  } 
+      26. CREATE:
+          - key: config/vpp/v2/route/if/GigabitEthernet0/8/0/vrf/0/dst/0.0.0.0/0/gw/192.168.16.100
+          - value: { dst_network:"0.0.0.0/0" next_hop_addr:"192.168.16.100" outgoing_interface:"GigabitEthernet0/8/0"  } 
+      27. CREATE:
+          - key: config/vpp/v2/route/if/tap-vpp2/vrf/0/dst/10.0.2.15/32/gw/172.30.2.2
+          - value: { dst_network:"10.0.2.15/32" next_hop_addr:"172.30.2.2" outgoing_interface:"tap-vpp2"  } 
+      28. CREATE:
+          - key: config/vpp/v2/route/if/tap-vpp2/vrf/0/dst/10.20.0.10/32/gw/172.30.2.2
+          - value: { dst_network:"10.20.0.10/32" next_hop_addr:"172.30.2.2" outgoing_interface:"tap-vpp2"  } 
+      29. CREATE:
+          - key: config/vpp/v2/vrf-table/id/1/protocol/IPV4
+          - value: { id:1 label:"podVRF-IPv4"  } 
+      30. CREATE:
+          - key: config/vpp/nat/v2/dnat44/DNAT-identities
+          - value: { label:"DNAT-identities" id_mappings:<ip_address:"192.168.16.2" port:4789 protocol:UDP > id_mappings:<vrf_id:1 ip_address:"192.168.16.2" protocol:UDP > id_mappings:<ip_address:"192.168.16.2" protocol:UDP >  } 
+      31. CREATE:
+          - key: config/vpp/nat/v2/dnat44/default/kubernetes
+          - value: { label:"default/kubernetes" st_mappings:<external_ip:"10.96.0.1" external_port:443 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:6443 > twice_nat:SELF >  } 
+      32. CREATE:
+          - key: config/vpp/nat/v2/dnat44/kube-system/contiv-etcd
+          - value: { label:"kube-system/contiv-etcd" st_mappings:<external_ip:"192.168.16.1" external_port:32379 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:12379 > twice_nat:SELF > st_mappings:<external_ip:"10.20.0.2" external_port:32379 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:12379 > twice_nat:SELF > st_mappings:<external_ip:"192.168.16.2" external_port:32379 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:12379 > twice_nat:SELF > st_mappings:<external_ip:"10.20.0.10" external_port:32379 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:12379 > twice_nat:SELF > st_mappings:<external_ip:"10.99.89.206" external_port:12379 local_ips:<vrf_id:1 local_ip:"10.20.0.2" local_port:12379 > twice_nat:SELF >  } 
+      33. CREATE:
+          - key: config/vpp/nat/v2/dnat44/kube-system/contiv-ui-svc
+          - value: { label:"kube-system/contiv-ui-svc" st_mappings:<external_ip:"192.168.16.1" external_port:32500 local_ips:<vrf_id:1 local_ip:"10.1.1.4" local_port:9500 > twice_nat:SELF > st_mappings:<external_ip:"10.20.0.2" external_port:32500 local_ips:<vrf_id:1 local_ip:"10.1.1.4" local_port:9500 > twice_nat:SELF > st_mappings:<external_ip:"192.168.16.2" external_port:32500 local_ips:<vrf_id:1 local_ip:"10.1.1.4" local_port:9500 > twice_nat:SELF > st_mappings:<external_ip:"10.20.0.10" external_port:32500 local_ips:<vrf_id:1 local_ip:"10.1.1.4" local_port:9500 > twice_nat:SELF > st_mappings:<external_ip:"10.108.165.162" external_port:9500 local_ips:<vrf_id:1 local_ip:"10.1.1.4" local_port:9500 > twice_nat:SELF >  } 
+      34. CREATE:
+          - key: config/vpp/v2/route/if/vxlanBVI/vrf/1/dst/10.1.1.0/24/gw/192.168.30.1
+          - value: { vrf_id:1 dst_network:"10.1.1.0/24" next_hop_addr:"192.168.30.1" outgoing_interface:"vxlanBVI"  } 
+      35. CREATE:
+          - key: config/vpp/v2/route/if/vxlanBVI/vrf/1/dst/10.20.0.2/32/gw/192.168.30.1
+          - value: { vrf_id:1 dst_network:"10.20.0.2/32" next_hop_addr:"192.168.30.1" outgoing_interface:"vxlanBVI"  } 
+      36. CREATE:
+          - key: config/vpp/v2/route/if/vxlanBVI/vrf/1/dst/172.30.1.0/24/gw/192.168.30.1
+          - value: { vrf_id:1 dst_network:"172.30.1.0/24" next_hop_addr:"192.168.30.1" outgoing_interface:"vxlanBVI"  } 
+      37. CREATE:
+          - key: config/vpp/v2/route/vrf/0/dst/10.1.0.0/16/gw/0.0.0.0
+          - value: { type:INTER_VRF dst_network:"10.1.0.0/16" next_hop_addr:"0.0.0.0" via_vrf_id:1  } 
+      38. CREATE:
+          - key: config/vpp/v2/route/vrf/0/dst/10.20.0.2/32/gw/0.0.0.0
+          - value: { type:INTER_VRF dst_network:"10.20.0.2/32" next_hop_addr:"0.0.0.0" via_vrf_id:1  } 
+      39. CREATE:
+          - key: config/vpp/v2/route/vrf/0/dst/172.30.0.0/16/gw/0.0.0.0
+          - value: { type:INTER_VRF dst_network:"172.30.0.0/16" next_hop_addr:"0.0.0.0" via_vrf_id:1  } 
+      40. CREATE:
+          - key: config/vpp/v2/route/vrf/1/dst/0.0.0.0/0/gw/0.0.0.0
+          - value: { type:INTER_VRF vrf_id:1 dst_network:"0.0.0.0/0" next_hop_addr:"0.0.0.0"  } 
+      41. CREATE:
+          - key: config/vpp/v2/route/vrf/1/dst/10.1.0.0/16/gw/0.0.0.0
+          - value: { type:DROP vrf_id:1 dst_network:"10.1.0.0/16" next_hop_addr:"0.0.0.0"  } 
+      42. CREATE:
+          - key: config/vpp/v2/route/vrf/1/dst/172.30.0.0/16/gw/0.0.0.0
+          - value: { type:DROP vrf_id:1 dst_network:"172.30.0.0/16" next_hop_addr:"0.0.0.0"  } 
+      43. CREATE:
+          - key: config/vpp/v2/route/vrf/1/dst/172.30.2.0/24/gw/0.0.0.0
+          - value: { type:INTER_VRF vrf_id:1 dst_network:"172.30.2.0/24" next_hop_addr:"0.0.0.0"  } 
+      44. CREATE [DERIVED]:
+          - key: vpp/interface/podGwLoop/vrf/1/ip-version/v4
+          - value: <EMPTY> 
+      45. CREATE [DERIVED]:
+          - key: vpp/interface/podGwLoop/address/static/10.1.2.1/24
+          - value: <EMPTY> 
+      46. CREATE [DERIVED]:
+          - key: vpp/interface/podGwLoop/has-IP-address
+          - value: <EMPTY> 
+      47. CREATE [DERIVED]:
+          - key: vpp/interface/vxlanBVI/vrf/1/ip-version/v4
+          - value: <EMPTY> 
+      48. CREATE [DERIVED]:
+          - key: vpp/interface/vxlanBVI/address/static/192.168.30.2/24
+          - value: <EMPTY> 
+      49. CREATE [DERIVED]:
+          - key: vpp/interface/vxlanBVI/has-IP-address
+          - value: <EMPTY> 
+      50. UPDATE [WAS-OBTAINED]:
+          - key: config/vpp/nat/v2/nat44-global
+          - prev-value: { virtual_reassembly:<timeout:2 max_reassemblies:1024 max_fragments:5 >  } 
+          - new-value: { forwarding:true nat_interfaces:<name:"vxlanBVI" > nat_interfaces:<name:"tap-vpp2" > nat_interfaces:<name:"vxlanBVI" is_inside:true > nat_interfaces:<name:"tap-vpp2" is_inside:true > nat_interfaces:<name:"GigabitEthernet0/8/0" output_feature:true > address_pool:<address:"192.168.16.2" vrf_id:4294967295 > address_pool:<address:"10.1.2.254" vrf_id:4294967295 twice_nat:true >  } 
+      51. CREATE [DERIVED]:
+          - key: vpp/nat44/address/10.1.2.254/twice-nat/on
+          - value: { address:"10.1.2.254" vrf_id:4294967295 twice_nat:true  } 
+      52. CREATE [DERIVED]:
+          - key: vpp/nat44/address/192.168.16.2/twice-nat/off
+          - value: { address:"192.168.16.2" vrf_id:4294967295  } 
+      53. CREATE [DERIVED]:
+          - key: vpp/nat44/interface/GigabitEthernet0/8/0/feature/out
+          - value: { name:"GigabitEthernet0/8/0" output_feature:true  } 
+      54. CREATE [DERIVED]:
+          - key: vpp/nat44/interface/tap-vpp2/feature/in
+          - value: { name:"tap-vpp2" is_inside:true  } 
+      55. CREATE [DERIVED]:
+          - key: vpp/nat44/interface/tap-vpp2/feature/out
+          - value: { name:"tap-vpp2"  } 
+      56. CREATE [DERIVED]:
+          - key: vpp/nat44/interface/vxlanBVI/feature/in
+          - value: { name:"vxlanBVI" is_inside:true  } 
+      57. CREATE [DERIVED]:
+          - key: vpp/nat44/interface/vxlanBVI/feature/out
+          - value: { name:"vxlanBVI"  } 
+      58. UPDATE [WAS-OBTAINED]:
+          - key: config/vpp/v2/ipscanneigh-global
+          - prev-value: { scan_interval:1 max_proc_time:20 max_update:10 scan_int_delay:1 stale_threshold:4  } 
+          - new-value: { mode:IPv4 scan_interval:1 stale_threshold:4  } 
+x----------------------------------------------------------------------------------------------------------------------x
+| #0 - NB Transaction                                                                                     took 737.3ms |
+x----------------------------------------------------------------------------------------------------------------------x
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*   FINALIZED EVENT: Database Resync (Remote DB)                                                                              #0 *
+*   HANDLED BY: contivconf, nodesync, podmanager, device, idalloc, ipam, ipnet, service, sfc, policy                 took 1.382s *
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*   NEW EVENT: Delete Pod default/linux-cnf21                                                                                 #1 *
+*   EVENT HANDLERS: statscollector, service, ipnet, device, podmanager                                                           *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+time="2019-12-06 16:32:39.04932" level=debug msg="Transaction commit result: err=<nil>" loc="controller/plugin_controller.go(842)" logger=controller
+time="2019-12-06 16:32:39.04944" level=debug msg="ServiceProcessor - processDeletingPod()" loc="processor/processor_impl.go(181)" logger=service.-serviceProcessor podID=default/linux-cnf21
+time="2019-12-06 16:32:39.04951" level=debug msg="Deleting custom tap interface, name: tap1, network: stub" loc="ipnet/pod.go(246)" logger=ipnet
++======================================================================================================================+
+| #1 - NB Transaction                                                                                                  |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 1
+      - type: NB Transaction
+      - Description: Delete Pod default/linux-cnf21
+          * ipnet: un-configure custom pod interfaces
+      - values:
+          - key: config/linux/interfaces/v2/interface/linux-tap-tap1-ce31fe6cc61ae7bcdb6697af301320345d3a4178be8ff47b
+            val: <NIL>
+          - key: config/vpp/v2/interfaces/vpp-tap-tap1-ce31fe6cc61ae7bcdb6697af301320345d3a4178be8ff47b1f
+            val: <NIL>
+
+time="2019-12-06 16:32:39.05092" level=debug msg="Transaction commit result: err=<nil>" loc="controller/plugin_controller.go(842)" logger=controller
+time="2019-12-06 16:32:39.05096" level=info msg="Transaction 2 successful!" loc="kvscheduler/txn_process.go(401)" logger=kvscheduler
+time="2019-12-06 16:32:39.05101" level=debug msg="CNI Delete request reply: {Result:0 Error: Interfaces:[] Routes:[] Dns:[] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}" loc="podmanager/podmanager.go(382)" logger=podmanager
+time="2019-12-06 16:32:39.05105" level=info msg="Transaction 3 successful!" loc="kvscheduler/txn_process.go(401)" logger=kvscheduler
+time="2019-12-06 16:32:39.05112" level=info msg="Transaction 4 successful!" loc="kvscheduler/txn_process.go(401)" logger=kvscheduler
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations:
+      <NONE>
+x----------------------------------------------------------------------------------------------------------------------x
+| #1 - NB Transaction                                                                                       took 500µs |
+x----------------------------------------------------------------------------------------------------------------------x
+
++======================================================================================================================+
+| #2 - SB Notification                                                                                                 |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 2
+      - type: SB Notification
+      - values:
+          - key: vpp/interface/GigabitEthernet0/8/0/link-state/DOWN
+            val: <EMPTY>
+
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:39.051 +0000 UTC -> 2019-12-06 16:32:39.051 +0000 UTC, dur: 0s):
+      1. CREATE [OBTAINED]:
+          - key: vpp/interface/GigabitEthernet0/8/0/link-state/DOWN
+          - value: <EMPTY> 
+x----------------------------------------------------------------------------------------------------------------------x
+| #2 - SB Notification                                                                                         took 0s |
+x----------------------------------------------------------------------------------------------------------------------x
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*   FINALIZED EVENT: Delete Pod default/linux-cnf21                                                                           #1 *
+*   HANDLED BY: statscollector, service, ipnet, device, podmanager                                                      took 2ms *
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
++======================================================================================================================+
+| #3 - SB Notification                                                                                                 |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 3
+      - type: SB Notification
+      - values:
+          - key: vpp/interface/podGwLoop/link-state/UP
+            val: <EMPTY>
+
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:39.051 +0000 UTC -> 2019-12-06 16:32:39.051 +0000 UTC, dur: 0s):
+      1. CREATE [OBTAINED]:
+          - key: vpp/interface/podGwLoop/link-state/UP
+          - value: <EMPTY> 
+x----------------------------------------------------------------------------------------------------------------------x
+| #3 - SB Notification                                                                                         took 0s |
+x----------------------------------------------------------------------------------------------------------------------x
+
++======================================================================================================================+
+| #4 - SB Notification                                                                                                 |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 4
+      - type: SB Notification
+      - values:
+          - key: vpp/interface/tap-vpp2/link-state/DOWN
+            val: <EMPTY>
+
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:39.051 +0000 UTC -> 2019-12-06 16:32:39.051 +0000 UTC, dur: 0s):
+      1. CREATE [OBTAINED]:
+          - key: vpp/interface/tap-vpp2/link-state/DOWN
+          - value: <EMPTY> 
+x----------------------------------------------------------------------------------------------------------------------x
+| #4 - SB Notification                                                                                         took 0s |
+x----------------------------------------------------------------------------------------------------------------------x
+
++======================================================================================================================+
+| #5 - SB Notification                                                                                                 |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 5
+      - type: SB Notification
+      - values:
+          - key: vpp/interface/vxlan-default-1/link-state/UP
+            val: <EMPTY>
+
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:39.051 +0000 UTC -> 2019-12-06 16:32:39.051 +0000 UTC, dur: 0s):
+      1. CREATE [OBTAINED]:
+          - key: vpp/interface/vxlan-default-1/link-state/UP
+          - value: <EMPTY> 
+x----------------------------------------------------------------------------------------------------------------------x
+| #5 - SB Notification                                                                                      took 100µs |
+x----------------------------------------------------------------------------------------------------------------------x
+
+time="2019-12-06 16:32:39.05135" level=info msg="Transaction 5 successful!" loc="kvscheduler/txn_process.go(401)" logger=kvscheduler
++======================================================================================================================+
+| #6 - SB Notification                                                                                                 |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 6
+      - type: SB Notification
+      - values:
+          - key: vpp/interface/vxlanBVI/link-state/UP
+            val: <EMPTY>
+
+time="2019-12-06 16:32:39.05150" level=info msg="Transaction 6 successful!" loc="kvscheduler/txn_process.go(401)" logger=kvscheduler
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:39.051 +0000 UTC -> 2019-12-06 16:32:39.051 +0000 UTC, dur: 0s):
+      1. CREATE [OBTAINED]:
+          - key: vpp/interface/vxlanBVI/link-state/UP
+          - value: <EMPTY> 
+x----------------------------------------------------------------------------------------------------------------------x
+| #6 - SB Notification                                                                                         took 0s |
+x----------------------------------------------------------------------------------------------------------------------x
+
+time="2019-12-06 16:32:39.09701" level=info msg="Delete pod request received {0.3.1 e08bcb5ca1c3aed8fc6f79efb74acc6e2b591b4cbd4938a47e0d41bea5f10b9c  eth0 {\"cniVersion\":\"0.3.1\",\"grpcServer\":\"/var/run/contiv/cni.sock\",\"logFile\":\"/var/run/contiv/cni.log\",\"name\":\"k8s-pod-network\",\"type\":\"contiv-cni\"} IgnoreUnknown=1;K8S_POD_NAMESPACE=default;K8S_POD_NAME=linux-cnf12;K8S_POD_INFRA_CONTAINER_ID=e08bcb5ca1c3aed8fc6f79efb74acc6e2b591b4cbd4938a47e0d41bea5f10b9c   {} [] 0}" loc="podmanager/podmanager.go(311)" logger=podmanager
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*   NEW EVENT: Delete Pod default/linux-cnf12                                                                                 #2 *
+*   EVENT HANDLERS: statscollector, service, ipnet, device, podmanager                                                           *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+time="2019-12-06 16:32:39.09712" level=debug msg="ServiceProcessor - processDeletingPod()" loc="processor/processor_impl.go(181)" logger=service.-serviceProcessor podID=default/linux-cnf12
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*   FINALIZED EVENT: Delete Pod default/linux-cnf12                                                                           #2 *
+*   HANDLED BY: statscollector, service, ipnet, device, podmanager                                                       took 0s *
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+time="2019-12-06 16:32:39.09717" level=warning msg="Unknown pod to delete: default/linux-cnf12" loc="podmanager/podmanager.go(246)" logger=podmanager
+time="2019-12-06 16:32:39.09723" level=debug msg="CNI Delete request reply: {Result:0 Error: Interfaces:[] Routes:[] Dns:[] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}" loc="podmanager/podmanager.go(382)" logger=podmanager
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*   NEW EVENT: Add Pod default/linux-cnf12                                                                                    #3 *
+*              * Container: e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583e735b4e73                                     *
+*              * Network namespace: /proc/11926/ns/net                                                                           *
+*   EVENT HANDLERS: podmanager, ipnet, service                                                                                   *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+time="2019-12-06 16:32:39.50997" level=info msg="Add pod request received {0.3.1 e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583e735b4e73 /proc/11926/ns/net eth0 {\"cniVersion\":\"0.3.1\",\"grpcServer\":\"/var/run/contiv/cni.sock\",\"logFile\":\"/var/run/contiv/cni.log\",\"name\":\"k8s-pod-network\",\"type\":\"contiv-cni\"} IgnoreUnknown=1;K8S_POD_NAMESPACE=default;K8S_POD_NAME=linux-cnf12;K8S_POD_INFRA_CONTAINER_ID=e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583e735b4e73   {} [] 0}" loc="podmanager/podmanager.go(276)" logger=podmanager
+time="2019-12-06 16:32:39.51017" level=info msg="Assigned new pod IP 10.1.2.2" loc="ipam/ipam.go(1014)" logger=ipam
+time="2019-12-06 16:32:39.51023" level=debug msg="Current pool of assigned pod IP addresses: map[10.1.2.2:<pod=default/linux-cnf12>]" loc="ipam/ipam.go(1373)" logger=ipam
+time="2019-12-06 16:32:39.51030" level=info msg="Executing CMD: nsenter -t 11926 -n sysctl net.ipv6.conf.all.disable_ipv6=0" loc="ipnet/pod.go(1134)" logger=ipnet
+time="2019-12-06 16:32:39.51485" level=info msg="CMD output: net.ipv6.conf.all.disable_ipv6 = 0\n" loc="ipnet/pod.go(1145)" logger=ipnet
+time="2019-12-06 16:32:39.51510" level=debug msg="ServiceProcessor - processNewPod()" loc="processor/processor_impl.go(147)" logger=service.-serviceProcessor name=linux-cnf12 namespace=default
++======================================================================================================================+
+| #7 - NB Transaction                                                                                                  |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 7
+      - type: NB Transaction
+      - Description: Add Pod default/linux-cnf12
+          * ipnet: configure IP connectivity
+          * service: update frontends
+      - values:
+          - key: config/linux/interfaces/v2/interface/linux-loop-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844
+            val: { name:"linux-loop-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844" type:LOOPBACK namespace:<type:FD reference:"/proc/11926/ns/net" > enabled:true ip_addresses:"127.0.0.1/8" ip_addresses:"::1/128"  }
+          - key: config/linux/interfaces/v2/interface/linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445
+            val: { name:"linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445" type:TAP_TO_VPP namespace:<type:FD reference:"/proc/11926/ns/net" > host_if_name:"eth0" enabled:true ip_addresses:"10.1.2.2/32" phys_address:"02:fe:84:91:0e:c1" mtu:1450 tap:<vpp_tap_if_name:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583" >  }
+          - key: config/linux/l3/v2/arp/linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445/10.1.2.1
+            val: { interface:"linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445" ip_address:"10.1.2.1" hw_address:"02:fe:7b:6e:f1:3e"  }
+          - key: config/linux/l3/v2/route/0.0.0.0/0/linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445
+            val: { outgoing_interface:"linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445" scope:GLOBAL dst_network:"0.0.0.0/0" gw_addr:"10.1.2.1"  }
+          - key: config/linux/l3/v2/route/10.1.2.1/32/linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445
+            val: { outgoing_interface:"linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445" scope:LINK dst_network:"10.1.2.1/32"  }
+          - key: config/vpp/nat/v2/nat44-global
+            val: { forwarding:true nat_interfaces:<name:"vxlanBVI" is_inside:true > nat_interfaces:<name:"tap-vpp2" is_inside:true > nat_interfaces:<name:"GigabitEthernet0/8/0" output_feature:true > nat_interfaces:<name:"vxlanBVI" > nat_interfaces:<name:"tap-vpp2" > nat_interfaces:<name:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583" > address_pool:<address:"192.168.16.2" vrf_id:4294967295 > address_pool:<address:"10.1.2.254" vrf_id:4294967295 twice_nat:true >  }
+          - key: config/vpp/v2/arp/vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583/10.1.2.2
+            val: { interface:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583" ip_address:"10.1.2.2" phys_address:"02:fe:84:91:0e:c1" static:true  }
+          - key: config/vpp/v2/interfaces/vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583
+            val: { name:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583" type:TAP enabled:true phys_address:"02:fe:7b:6e:f1:3e" vrf:1 mtu:1450 unnumbered:<interface_with_ip:"podGwLoop" > tap:<version:2 rx_ring_size:1024 tx_ring_size:1024 enable_gso:true >  }
+          - key: config/vpp/v2/route/if/vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583/vrf/1/dst/10.1.2.2/32/gw/10.1.2.2
+            val: { vrf_id:1 dst_network:"10.1.2.2/32" next_hop_addr:"10.1.2.2" outgoing_interface:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583"  }
+
+time="2019-12-06 16:32:39.51989" level=info msg="Add pod request received {0.3.1 e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621ae45b1208 /proc/11927/ns/net eth0 {\"cniVersion\":\"0.3.1\",\"grpcServer\":\"/var/run/contiv/cni.sock\",\"logFile\":\"/var/run/contiv/cni.log\",\"name\":\"k8s-pod-network\",\"type\":\"contiv-cni\"} IgnoreUnknown=1;K8S_POD_NAMESPACE=default;K8S_POD_NAME=linux-cnf21;K8S_POD_INFRA_CONTAINER_ID=e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621ae45b1208   {} [] 0}" loc="podmanager/podmanager.go(276)" logger=podmanager
+time="2019-12-06 16:32:39.53960" level=debug msg="publish add to ifplugin_ifstate{{vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583 false false vpp-interface-index} 0xc0006ecf30}" loc="mem/inmemory_name_mapping.go(277)" logger=vpp-ifplugin.if-descriptor
+time="2019-12-06 16:32:39.58139" level=debug msg="Interface 6 set to VRF 1" loc="vpp1904/vrf_vppcalls.go(54)" logger=vpp-ifplugin
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:39.515 +0000 UTC -> 2019-12-06 16:32:39.583 +0000 UTC, dur: 68ms):
+      1. CREATE:
+          - key: config/linux/interfaces/v2/interface/linux-loop-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844
+          - value: { name:"linux-loop-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844" type:LOOPBACK namespace:<type:FD reference:"/proc/11926/ns/net" > enabled:true ip_addresses:"127.0.0.1/8" ip_addresses:"::1/128"  } 
+      2. CREATE [DERIVED]:
+          - key: linux/interface/linux-loop-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844/address/static/127.0.0.1/8
+          - value: <EMPTY> 
+      3. CREATE [DERIVED]:
+          - key: linux/interface/linux-loop-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844/address/static/::1/128
+          - value: <EMPTY> 
+      4. CREATE [PROPERTY]:
+          - key: linux/interface/state/linux-loop-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844/UP
+          - value: <EMPTY> 
+      5. CREATE:
+          - key: config/vpp/v2/interfaces/vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583
+          - value: { name:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583" type:TAP enabled:true phys_address:"02:fe:7b:6e:f1:3e" vrf:1 mtu:1450 unnumbered:<interface_with_ip:"podGwLoop" > tap:<version:2 rx_ring_size:1024 tx_ring_size:1024 enable_gso:true >  } 
+      6. CREATE:
+          - key: config/linux/interfaces/v2/interface/linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445
+          - value: { name:"linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445" type:TAP_TO_VPP namespace:<type:FD reference:"/proc/11926/ns/net" > host_if_name:"eth0" enabled:true ip_addresses:"10.1.2.2/32" phys_address:"02:fe:84:91:0e:c1" mtu:1450 tap:<vpp_tap_if_name:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583" >  } 
+      7. CREATE [DERIVED]:
+          - key: linux/interface/linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445/address/static/10.1.2.2/32
+          - value: <EMPTY> 
+      8. CREATE [PROPERTY]:
+          - key: linux/interface/state/linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445/UP
+          - value: <EMPTY> 
+      9. CREATE:
+          - key: config/linux/l3/v2/arp/linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445/10.1.2.1
+          - value: { interface:"linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445" ip_address:"10.1.2.1" hw_address:"02:fe:7b:6e:f1:3e"  } 
+      10. CREATE:
+          - key: config/linux/l3/v2/route/10.1.2.1/32/linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445
+          - value: { outgoing_interface:"linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445" scope:LINK dst_network:"10.1.2.1/32"  } 
+      11. CREATE [PROPERTY]:
+          - key: linux/link-local-route/linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445/dest-address/10.1.2.1/32
+          - value: <EMPTY> 
+      12. CREATE:
+          - key: config/linux/l3/v2/route/0.0.0.0/0/linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445
+          - value: { outgoing_interface:"linux-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8445" scope:GLOBAL dst_network:"0.0.0.0/0" gw_addr:"10.1.2.1"  } 
+      13. CREATE:
+          - key: config/vpp/v2/arp/vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583/10.1.2.2
+          - value: { interface:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583" ip_address:"10.1.2.2" phys_address:"02:fe:84:91:0e:c1" static:true  } 
+      14. CREATE [DERIVED]:
+          - key: vpp/interface/vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583/vrf/from-interface/podGwLoop
+          - value: <EMPTY> 
+      15. CREATE [DERIVED]:
+          - key: vpp/interface/unnumbered/vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583
+          - value: { interface_with_ip:"podGwLoop"  } 
+      16. CREATE:
+          - key: config/vpp/v2/route/if/vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583/vrf/1/dst/10.1.2.2/32/gw/10.1.2.2
+          - value: { vrf_id:1 dst_network:"10.1.2.2/32" next_hop_addr:"10.1.2.2" outgoing_interface:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583"  } 
+      17. CREATE [DERIVED]:
+          - key: vpp/nat44/interface/vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583/feature/out
+          - value: { name:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583"  } 
+x----------------------------------------------------------------------------------------------------------------------x
+| #7 - NB Transaction                                                                                      took 67.7ms |
+x----------------------------------------------------------------------------------------------------------------------x
+
++======================================================================================================================+
+| #8 - SB Notification                                                                                                 |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 8
+      - type: SB Notification
+      - values:
+          - key: linux/interface/host-name/vpp1
+            val: <EMPTY>
+
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:39.583 +0000 UTC -> 2019-12-06 16:32:39.583 +0000 UTC, dur: 0s):
+      1. CREATE [OBTAINED]:
+          - key: linux/interface/host-name/vpp1
+          - value: <EMPTY> 
+x----------------------------------------------------------------------------------------------------------------------x
+| #8 - SB Notification                                                                                      took 100µs |
+x----------------------------------------------------------------------------------------------------------------------x
+
+time="2019-12-06 16:32:39.58345" level=debug msg="Transaction commit result: err=<nil>" loc="controller/plugin_controller.go(842)" logger=controller
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*   FINALIZED EVENT: Add Pod default/linux-cnf12                                                                              #3 *
+*   HANDLED BY: podmanager, ipnet, service                                                                             took 73ms *
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+time="2019-12-06 16:32:39.58359" level=info msg="Transaction 8 successful!" loc="kvscheduler/txn_process.go(401)" logger=kvscheduler
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*   NEW EVENT: Add Pod default/linux-cnf21                                                                                    #4 *
+*              * Container: e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621ae45b1208                                     *
+*              * Network namespace: /proc/11927/ns/net                                                                           *
+*   EVENT HANDLERS: podmanager, ipnet, service                                                                                   *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
++======================================================================================================================+
+| #9 - SB Notification                                                                                                 |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 9
+      - type: SB Notification
+      - values:
+          - key: vpp/interface/vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583/link-state/DOWN
+            val: <EMPTY>
+
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:39.584 +0000 UTC -> 2019-12-06 16:32:39.584 +0000 UTC, dur: 0s):
+      1. CREATE [OBTAINED]:
+          - key: vpp/interface/vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583/link-state/DOWN
+          - value: <EMPTY> 
+x----------------------------------------------------------------------------------------------------------------------x
+| #9 - SB Notification                                                                                      took 100µs |
+x----------------------------------------------------------------------------------------------------------------------x
+
+time="2019-12-06 16:32:39.58375" level=info msg="Assigned new pod IP 10.1.2.3" loc="ipam/ipam.go(1014)" logger=ipam
+time="2019-12-06 16:32:39.58386" level=debug msg="Current pool of assigned pod IP addresses: map[10.1.2.2:<pod=default/linux-cnf12> 10.1.2.3:<pod=default/linux-cnf21>]" loc="ipam/ipam.go(1373)" logger=ipam
+time="2019-12-06 16:32:39.58402" level=info msg="Transaction 9 successful!" loc="kvscheduler/txn_process.go(401)" logger=kvscheduler
+time="2019-12-06 16:32:39.58404" level=info msg="Executing CMD: nsenter -t 11927 -n sysctl net.ipv6.conf.all.disable_ipv6=0" loc="ipnet/pod.go(1134)" logger=ipnet
+time="2019-12-06 16:32:39.58440" level=debug msg="CNI Add request reply: {Result:0 Error: Interfaces:[name:\"eth0\" sandbox:\"/proc/11926/ns/net\" ip_addresses:<address:\"10.1.2.2/32\" gateway:\"10.1.2.1\" > ] Routes:[dst:\"0.0.0.0/0\" gw:\"10.1.2.1\" ] Dns:[] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}" loc="podmanager/podmanager.go(369)" logger=podmanager
+time="2019-12-06 16:32:39.58647" level=info msg="CMD output: net.ipv6.conf.all.disable_ipv6 = 0\n" loc="ipnet/pod.go(1145)" logger=ipnet
+time="2019-12-06 16:32:39.58665" level=debug msg="ServiceProcessor - processNewPod()" loc="processor/processor_impl.go(147)" logger=service.-serviceProcessor name=linux-cnf21 namespace=default
++======================================================================================================================+
+| #10 - NB Transaction                                                                                                 |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 10
+      - type: NB Transaction
+      - Description: Add Pod default/linux-cnf21
+          * ipnet: configure IP connectivity
+          * service: update frontends
+      - values:
+          - key: config/linux/interfaces/v2/interface/linux-loop-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34
+            val: { name:"linux-loop-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34" type:LOOPBACK namespace:<type:FD reference:"/proc/11927/ns/net" > enabled:true ip_addresses:"127.0.0.1/8" ip_addresses:"::1/128"  }
+          - key: config/linux/interfaces/v2/interface/linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346
+            val: { name:"linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346" type:TAP_TO_VPP namespace:<type:FD reference:"/proc/11927/ns/net" > host_if_name:"eth0" enabled:true ip_addresses:"10.1.2.3/32" phys_address:"02:fe:77:bd:32:f2" mtu:1450 tap:<vpp_tap_if_name:"vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621" >  }
+          - key: config/linux/l3/v2/arp/linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346/10.1.2.1
+            val: { interface:"linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346" ip_address:"10.1.2.1" hw_address:"02:fe:88:42:cd:0d"  }
+          - key: config/linux/l3/v2/route/0.0.0.0/0/linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346
+            val: { outgoing_interface:"linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346" scope:GLOBAL dst_network:"0.0.0.0/0" gw_addr:"10.1.2.1"  }
+          - key: config/linux/l3/v2/route/10.1.2.1/32/linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346
+            val: { outgoing_interface:"linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346" scope:LINK dst_network:"10.1.2.1/32"  }
+          - key: config/vpp/nat/v2/nat44-global
+            val: { forwarding:true nat_interfaces:<name:"vxlanBVI" is_inside:true > nat_interfaces:<name:"tap-vpp2" is_inside:true > nat_interfaces:<name:"GigabitEthernet0/8/0" output_feature:true > nat_interfaces:<name:"vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621" > nat_interfaces:<name:"vxlanBVI" > nat_interfaces:<name:"tap-vpp2" > nat_interfaces:<name:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583" > address_pool:<address:"192.168.16.2" vrf_id:4294967295 > address_pool:<address:"10.1.2.254" vrf_id:4294967295 twice_nat:true >  }
+          - key: config/vpp/v2/arp/vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621/10.1.2.3
+            val: { interface:"vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621" ip_address:"10.1.2.3" phys_address:"02:fe:77:bd:32:f2" static:true  }
+          - key: config/vpp/v2/interfaces/vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621
+            val: { name:"vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621" type:TAP enabled:true phys_address:"02:fe:88:42:cd:0d" vrf:1 mtu:1450 unnumbered:<interface_with_ip:"podGwLoop" > tap:<version:2 rx_ring_size:1024 tx_ring_size:1024 enable_gso:true >  }
+          - key: config/vpp/v2/route/if/vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621/vrf/1/dst/10.1.2.3/32/gw/10.1.2.3
+            val: { vrf_id:1 dst_network:"10.1.2.3/32" next_hop_addr:"10.1.2.3" outgoing_interface:"vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621"  }
+
+time="2019-12-06 16:32:39.58908" level=info msg="Delete pod request received {0.3.1 6e44d0f5bd565de86c357544433b4b4a5696643a553fe99672094d8b29c023cb  eth0 {\"cniVersion\":\"0.3.1\",\"grpcServer\":\"/var/run/contiv/cni.sock\",\"logFile\":\"/var/run/contiv/cni.log\",\"name\":\"k8s-pod-network\",\"type\":\"contiv-cni\"} IgnoreUnknown=1;K8S_POD_NAMESPACE=default;K8S_POD_NAME=linux-cnf23;K8S_POD_INFRA_CONTAINER_ID=6e44d0f5bd565de86c357544433b4b4a5696643a553fe99672094d8b29c023cb   {} [] 0}" loc="podmanager/podmanager.go(311)" logger=podmanager
+time="2019-12-06 16:32:39.60442" level=debug msg="publish add to ifplugin_ifstate{{vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621 false false vpp-interface-index} 0xc000681470}" loc="mem/inmemory_name_mapping.go(277)" logger=vpp-ifplugin.if-descriptor
+time="2019-12-06 16:32:39.64083" level=debug msg="Interface 7 set to VRF 1" loc="vpp1904/vrf_vppcalls.go(54)" logger=vpp-ifplugin
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:39.587 +0000 UTC -> 2019-12-06 16:32:39.642 +0000 UTC, dur: 56ms):
+      1. CREATE:
+          - key: config/linux/interfaces/v2/interface/linux-loop-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34
+          - value: { name:"linux-loop-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34" type:LOOPBACK namespace:<type:FD reference:"/proc/11927/ns/net" > enabled:true ip_addresses:"127.0.0.1/8" ip_addresses:"::1/128"  } 
+      2. CREATE [DERIVED]:
+          - key: linux/interface/linux-loop-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34/address/static/127.0.0.1/8
+          - value: <EMPTY> 
+      3. CREATE [DERIVED]:
+          - key: linux/interface/linux-loop-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34/address/static/::1/128
+          - value: <EMPTY> 
+      4. CREATE [PROPERTY]:
+          - key: linux/interface/state/linux-loop-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34/UP
+          - value: <EMPTY> 
+      5. CREATE:
+          - key: config/vpp/v2/interfaces/vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621
+          - value: { name:"vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621" type:TAP enabled:true phys_address:"02:fe:88:42:cd:0d" vrf:1 mtu:1450 unnumbered:<interface_with_ip:"podGwLoop" > tap:<version:2 rx_ring_size:1024 tx_ring_size:1024 enable_gso:true >  } 
+      6. CREATE:
+          - key: config/linux/interfaces/v2/interface/linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346
+          - value: { name:"linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346" type:TAP_TO_VPP namespace:<type:FD reference:"/proc/11927/ns/net" > host_if_name:"eth0" enabled:true ip_addresses:"10.1.2.3/32" phys_address:"02:fe:77:bd:32:f2" mtu:1450 tap:<vpp_tap_if_name:"vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621" >  } 
+      7. CREATE [DERIVED]:
+          - key: linux/interface/linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346/address/static/10.1.2.3/32
+          - value: <EMPTY> 
+      8. CREATE [PROPERTY]:
+          - key: linux/interface/state/linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346/UP
+          - value: <EMPTY> 
+      9. CREATE:
+          - key: config/linux/l3/v2/arp/linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346/10.1.2.1
+          - value: { interface:"linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346" ip_address:"10.1.2.1" hw_address:"02:fe:88:42:cd:0d"  } 
+      10. CREATE:
+          - key: config/linux/l3/v2/route/10.1.2.1/32/linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346
+          - value: { outgoing_interface:"linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346" scope:LINK dst_network:"10.1.2.1/32"  } 
+      11. CREATE [PROPERTY]:
+          - key: linux/link-local-route/linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346/dest-address/10.1.2.1/32
+          - value: <EMPTY> 
+      12. CREATE:
+          - key: config/linux/l3/v2/route/0.0.0.0/0/linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346
+          - value: { outgoing_interface:"linux-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d346" scope:GLOBAL dst_network:"0.0.0.0/0" gw_addr:"10.1.2.1"  } 
+      13. CREATE:
+          - key: config/vpp/v2/arp/vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621/10.1.2.3
+          - value: { interface:"vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621" ip_address:"10.1.2.3" phys_address:"02:fe:77:bd:32:f2" static:true  } 
+      14. CREATE [DERIVED]:
+          - key: vpp/interface/vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621/vrf/from-interface/podGwLoop
+          - value: <EMPTY> 
+      15. CREATE [DERIVED]:
+          - key: vpp/interface/unnumbered/vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621
+          - value: { interface_with_ip:"podGwLoop"  } 
+      16. CREATE:
+          - key: config/vpp/v2/route/if/vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621/vrf/1/dst/10.1.2.3/32/gw/10.1.2.3
+          - value: { vrf_id:1 dst_network:"10.1.2.3/32" next_hop_addr:"10.1.2.3" outgoing_interface:"vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621"  } 
+      17. CREATE [DERIVED]:
+          - key: vpp/nat44/interface/vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621/feature/out
+          - value: { name:"vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621"  } 
+x----------------------------------------------------------------------------------------------------------------------x
+| #10 - NB Transaction                                                                                     took 55.7ms |
+x----------------------------------------------------------------------------------------------------------------------x
+
++======================================================================================================================+
+| #11 - SB Notification                                                                                                |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 11
+      - type: SB Notification
+      - values:
+          - key: vpp/interface/vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621/link-state/DOWN
+            val: <EMPTY>
+
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:39.643 +0000 UTC -> 2019-12-06 16:32:39.643 +0000 UTC, dur: 0s):
+      1. CREATE [OBTAINED]:
+          - key: vpp/interface/vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621/link-state/DOWN
+          - value: <EMPTY> 
+x----------------------------------------------------------------------------------------------------------------------x
+| #11 - SB Notification                                                                                     took 100µs |
+x----------------------------------------------------------------------------------------------------------------------x
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*   FINALIZED EVENT: Add Pod default/linux-cnf21                                                                              #4 *
+*   HANDLED BY: podmanager, ipnet, service                                                                             took 59ms *
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*   NEW EVENT: Delete Pod default/linux-cnf23                                                                                 #5 *
+*   EVENT HANDLERS: statscollector, service, ipnet, device, podmanager                                                           *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+time="2019-12-06 16:32:39.64285" level=info msg="Transaction 11 successful!" loc="kvscheduler/txn_process.go(401)" logger=kvscheduler
+time="2019-12-06 16:32:39.64285" level=debug msg="Transaction commit result: err=<nil>" loc="controller/plugin_controller.go(842)" logger=controller
+time="2019-12-06 16:32:39.64301" level=debug msg="ServiceProcessor - processDeletingPod()" loc="processor/processor_impl.go(181)" logger=service.-serviceProcessor podID=default/linux-cnf23
+time="2019-12-06 16:32:39.64308" level=warning msg="Unknown pod to delete: default/linux-cnf23" loc="podmanager/podmanager.go(246)" logger=podmanager
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*   FINALIZED EVENT: Delete Pod default/linux-cnf23                                                                           #5 *
+*   HANDLED BY: statscollector, service, ipnet, device, podmanager                                                       took 0s *
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+time="2019-12-06 16:32:39.64319" level=debug msg="CNI Delete request reply: {Result:0 Error: Interfaces:[] Routes:[] Dns:[] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}" loc="podmanager/podmanager.go(382)" logger=podmanager
+time="2019-12-06 16:32:39.64338" level=debug msg="CNI Add request reply: {Result:0 Error: Interfaces:[name:\"eth0\" sandbox:\"/proc/11927/ns/net\" ip_addresses:<address:\"10.1.2.3/32\" gateway:\"10.1.2.1\" > ] Routes:[dst:\"0.0.0.0/0\" gw:\"10.1.2.1\" ] Dns:[] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}" loc="podmanager/podmanager.go(369)" logger=podmanager
+time="2019-12-06 16:32:39.92190" level=info msg="Add pod request received {0.3.1 98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864eedcc6c12e8 /proc/12145/ns/net eth0 {\"cniVersion\":\"0.3.1\",\"grpcServer\":\"/var/run/contiv/cni.sock\",\"logFile\":\"/var/run/contiv/cni.log\",\"name\":\"k8s-pod-network\",\"type\":\"contiv-cni\"} IgnoreUnknown=1;K8S_POD_NAMESPACE=default;K8S_POD_NAME=linux-cnf23;K8S_POD_INFRA_CONTAINER_ID=98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864eedcc6c12e8   {} [] 0}" loc="podmanager/podmanager.go(276)" logger=podmanager
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*   NEW EVENT: Add Pod default/linux-cnf23                                                                                    #6 *
+*              * Container: 98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864eedcc6c12e8                                     *
+*              * Network namespace: /proc/12145/ns/net                                                                           *
+*   EVENT HANDLERS: podmanager, ipnet, service                                                                                   *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+time="2019-12-06 16:32:39.92206" level=info msg="Assigned new pod IP 10.1.2.4" loc="ipam/ipam.go(1014)" logger=ipam
+time="2019-12-06 16:32:39.92212" level=debug msg="Current pool of assigned pod IP addresses: map[10.1.2.2:<pod=default/linux-cnf12> 10.1.2.3:<pod=default/linux-cnf21> 10.1.2.4:<pod=default/linux-cnf23>]" loc="ipam/ipam.go(1373)" logger=ipam
+time="2019-12-06 16:32:39.92218" level=info msg="Executing CMD: nsenter -t 12145 -n sysctl net.ipv6.conf.all.disable_ipv6=0" loc="ipnet/pod.go(1134)" logger=ipnet
+time="2019-12-06 16:32:39.92331" level=info msg="CMD output: net.ipv6.conf.all.disable_ipv6 = 0\n" loc="ipnet/pod.go(1145)" logger=ipnet
+time="2019-12-06 16:32:39.92345" level=debug msg="ServiceProcessor - processNewPod()" loc="processor/processor_impl.go(147)" logger=service.-serviceProcessor name=linux-cnf23 namespace=default
++======================================================================================================================+
+| #12 - NB Transaction                                                                                                 |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 12
+      - type: NB Transaction
+      - Description: Add Pod default/linux-cnf23
+          * service: update frontends
+          * ipnet: configure IP connectivity
+      - values:
+          - key: config/linux/interfaces/v2/interface/linux-loop-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a0386
+            val: { name:"linux-loop-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a0386" type:LOOPBACK namespace:<type:FD reference:"/proc/12145/ns/net" > enabled:true ip_addresses:"127.0.0.1/8" ip_addresses:"::1/128"  }
+          - key: config/linux/interfaces/v2/interface/linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864
+            val: { name:"linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864" type:TAP_TO_VPP namespace:<type:FD reference:"/proc/12145/ns/net" > host_if_name:"eth0" enabled:true ip_addresses:"10.1.2.4/32" phys_address:"02:fe:29:17:16:5d" mtu:1450 tap:<vpp_tap_if_name:"vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee" >  }
+          - key: config/linux/l3/v2/arp/linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864/10.1.2.1
+            val: { interface:"linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864" ip_address:"10.1.2.1" hw_address:"02:fe:d6:e8:e9:a2"  }
+          - key: config/linux/l3/v2/route/0.0.0.0/0/linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864
+            val: { outgoing_interface:"linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864" scope:GLOBAL dst_network:"0.0.0.0/0" gw_addr:"10.1.2.1"  }
+          - key: config/linux/l3/v2/route/10.1.2.1/32/linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864
+            val: { outgoing_interface:"linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864" scope:LINK dst_network:"10.1.2.1/32"  }
+          - key: config/vpp/nat/v2/nat44-global
+            val: { forwarding:true nat_interfaces:<name:"vxlanBVI" is_inside:true > nat_interfaces:<name:"tap-vpp2" is_inside:true > nat_interfaces:<name:"GigabitEthernet0/8/0" output_feature:true > nat_interfaces:<name:"vpp-tap-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be844583" > nat_interfaces:<name:"vpp-tap-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d34621" > nat_interfaces:<name:"vxlanBVI" > nat_interfaces:<name:"vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee" > nat_interfaces:<name:"tap-vpp2" > address_pool:<address:"192.168.16.2" vrf_id:4294967295 > address_pool:<address:"10.1.2.254" vrf_id:4294967295 twice_nat:true >  }
+          - key: config/vpp/v2/arp/vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee/10.1.2.4
+            val: { interface:"vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee" ip_address:"10.1.2.4" phys_address:"02:fe:29:17:16:5d" static:true  }
+          - key: config/vpp/v2/interfaces/vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee
+            val: { name:"vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee" type:TAP enabled:true phys_address:"02:fe:d6:e8:e9:a2" vrf:1 mtu:1450 unnumbered:<interface_with_ip:"podGwLoop" > tap:<version:2 rx_ring_size:1024 tx_ring_size:1024 enable_gso:true >  }
+          - key: config/vpp/v2/route/if/vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee/vrf/1/dst/10.1.2.4/32/gw/10.1.2.4
+            val: { vrf_id:1 dst_network:"10.1.2.4/32" next_hop_addr:"10.1.2.4" outgoing_interface:"vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee"  }
+
+time="2019-12-06 16:32:39.95847" level=debug msg="publish add to ifplugin_ifstate{{vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee false false vpp-interface-index} 0xc000bcaf00}" loc="mem/inmemory_name_mapping.go(277)" logger=vpp-ifplugin.if-descriptor
+time="2019-12-06 16:32:40.00196" level=debug msg="Interface 8 set to VRF 1" loc="vpp1904/vrf_vppcalls.go(54)" logger=vpp-ifplugin
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:39.924 +0000 UTC -> 2019-12-06 16:32:40.007 +0000 UTC, dur: 83ms):
+      1. CREATE:
+          - key: config/linux/interfaces/v2/interface/linux-loop-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a0386
+          - value: { name:"linux-loop-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a0386" type:LOOPBACK namespace:<type:FD reference:"/proc/12145/ns/net" > enabled:true ip_addresses:"127.0.0.1/8" ip_addresses:"::1/128"  } 
+      2. CREATE [DERIVED]:
+          - key: linux/interface/linux-loop-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a0386/address/static/127.0.0.1/8
+          - value: <EMPTY> 
+      3. CREATE [DERIVED]:
+          - key: linux/interface/linux-loop-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a0386/address/static/::1/128
+          - value: <EMPTY> 
+      4. CREATE [PROPERTY]:
+          - key: linux/interface/state/linux-loop-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a0386/UP
+          - value: <EMPTY> 
+      5. CREATE:
+          - key: config/vpp/v2/interfaces/vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee
+          - value: { name:"vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee" type:TAP enabled:true phys_address:"02:fe:d6:e8:e9:a2" vrf:1 mtu:1450 unnumbered:<interface_with_ip:"podGwLoop" > tap:<version:2 rx_ring_size:1024 tx_ring_size:1024 enable_gso:true >  } 
+      6. CREATE:
+          - key: config/linux/interfaces/v2/interface/linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864
+          - value: { name:"linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864" type:TAP_TO_VPP namespace:<type:FD reference:"/proc/12145/ns/net" > host_if_name:"eth0" enabled:true ip_addresses:"10.1.2.4/32" phys_address:"02:fe:29:17:16:5d" mtu:1450 tap:<vpp_tap_if_name:"vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee" >  } 
+      7. CREATE [DERIVED]:
+          - key: linux/interface/linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864/address/static/10.1.2.4/32
+          - value: <EMPTY> 
+      8. CREATE [PROPERTY]:
+          - key: linux/interface/state/linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864/UP
+          - value: <EMPTY> 
+      9. CREATE:
+          - key: config/linux/l3/v2/arp/linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864/10.1.2.1
+          - value: { interface:"linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864" ip_address:"10.1.2.1" hw_address:"02:fe:d6:e8:e9:a2"  } 
+      10. CREATE:
+          - key: config/linux/l3/v2/route/10.1.2.1/32/linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864
+          - value: { outgoing_interface:"linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864" scope:LINK dst_network:"10.1.2.1/32"  } 
+      11. CREATE [PROPERTY]:
+          - key: linux/link-local-route/linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864/dest-address/10.1.2.1/32
+          - value: <EMPTY> 
+      12. CREATE:
+          - key: config/linux/l3/v2/route/0.0.0.0/0/linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864
+          - value: { outgoing_interface:"linux-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864" scope:GLOBAL dst_network:"0.0.0.0/0" gw_addr:"10.1.2.1"  } 
+      13. CREATE:
+          - key: config/vpp/v2/arp/vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee/10.1.2.4
+          - value: { interface:"vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee" ip_address:"10.1.2.4" phys_address:"02:fe:29:17:16:5d" static:true  } 
+      14. CREATE [DERIVED]:
+          - key: vpp/interface/vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee/vrf/from-interface/podGwLoop
+          - value: <EMPTY> 
+      15. CREATE [DERIVED]:
+          - key: vpp/interface/unnumbered/vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee
+          - value: { interface_with_ip:"podGwLoop"  } 
+      16. CREATE:
+          - key: config/vpp/v2/route/if/vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee/vrf/1/dst/10.1.2.4/32/gw/10.1.2.4
+          - value: { vrf_id:1 dst_network:"10.1.2.4/32" next_hop_addr:"10.1.2.4" outgoing_interface:"vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee"  } 
+      17. CREATE [DERIVED]:
+          - key: vpp/nat44/interface/vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee/feature/out
+          - value: { name:"vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee"  } 
+x----------------------------------------------------------------------------------------------------------------------x
+| #12 - NB Transaction                                                                                     took 83.2ms |
+x----------------------------------------------------------------------------------------------------------------------x
+
++======================================================================================================================+
+| #13 - SB Notification                                                                                                |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 13
+      - type: SB Notification
+      - values:
+          - key: vpp/interface/vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee/link-state/DOWN
+            val: <EMPTY>
+
+time="2019-12-06 16:32:40.00727" level=debug msg="Transaction commit result: err=<nil>" loc="controller/plugin_controller.go(842)" logger=controller
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:40.007 +0000 UTC -> 2019-12-06 16:32:40.007 +0000 UTC, dur: 0s):
+      1. CREATE [OBTAINED]:
+          - key: vpp/interface/vpp-tap-98cc4863c413ade613b7321323352bbde127d9cc62f9e99a03864ee/link-state/DOWN
+          - value: <EMPTY> 
+x----------------------------------------------------------------------------------------------------------------------x
+| #13 - SB Notification                                                                                     took 100µs |
+x----------------------------------------------------------------------------------------------------------------------x
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*   FINALIZED EVENT: Add Pod default/linux-cnf23                                                                              #6 *
+*   HANDLED BY: podmanager, ipnet, service                                                                             took 85ms *
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+time="2019-12-06 16:32:40.00736" level=info msg="Transaction 13 successful!" loc="kvscheduler/txn_process.go(401)" logger=kvscheduler
+time="2019-12-06 16:32:40.00754" level=debug msg="CNI Add request reply: {Result:0 Error: Interfaces:[name:\"eth0\" sandbox:\"/proc/12145/ns/net\" ip_addresses:<address:\"10.1.2.4/32\" gateway:\"10.1.2.1\" > ] Routes:[dst:\"0.0.0.0/0\" gw:\"10.1.2.1\" ] Dns:[] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}" loc="podmanager/podmanager.go(369)" logger=podmanager
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*   NEW EVENT: Kubernetes State Change                                                                                        #7 *
+*              * resource: pod                                                                                                   *
+*              * key: k8s/pod/linux-cnf21/namespace/default                                                                      *
+*              * prev-value: name:"linux-cnf21" namespace:"default" label:<key:"cnf" value:"linux-cnf2" >                        *
+*                    host_ip_address:"10.20.0.10" container:<name:"busybox" > annotations:<key:"contivpp.io/custom-if"           *
+*                    value:"tap1/tap/stub" > labels:<key:"cnf" value:"linux-cnf2" >                                              *
+*              * new-value: name:"linux-cnf21" namespace:"default" label:<key:"cnf" value:"linux-cnf2" >                         *
+*                    ip_address:"10.1.2.3" host_ip_address:"10.20.0.10" container:<name:"busybox" >                              *
+*                    annotations:<key:"contivpp.io/custom-if" value:"tap1/tap/stub" > labels:<key:"cnf" value:"linux-cnf2" >     *
+*   EVENT HANDLERS: podmanager, ipam, ipnet, sfc, policy                                                                         *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+time="2019-12-06 16:32:40.23831" level=debug msg="New / Updated pod: name:\"linux-cnf21\" namespace:\"default\" label:<key:\"cnf\" value:\"linux-cnf2\" > ip_address:\"10.1.2.3\" host_ip_address:\"10.20.0.10\" container:<name:\"busybox\" > annotations:<key:\"contivpp.io/custom-if\" value:\"tap1/tap/stub\" > labels:<key:\"cnf\" value:\"linux-cnf2\" > " loc="processor/processor_impl.go(186)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.23846" level=debug msg="Pod default/linux-cnf21 matches SFC name:\"linux-chain\" chain:<name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" > chain:<name:\"CNF 2\" pod_selector:<key:\"cnf\" value:\"linux-cnf2\" > interface:\"tap1\" > " loc="processor/processor_impl.go(379)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.23857" level=info msg="Updated SFC: name:\"linux-chain\" chain:<name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" > chain:<name:\"CNF 2\" pod_selector:<key:\"cnf\" value:\"linux-cnf2\" > interface:\"tap1\" > " loc="processor/processor_impl.go(288)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.23868" level=debug msg="No matching pods were found for the service function name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" , skipping this SFC" loc="processor/processor_impl.go(439)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.23882" level=debug msg="Pods selected for policy pre-processing: [default/linux-cnf21]" loc="processor/processor.go(94)" logger=policy.-policyProcessor
+time="2019-12-06 16:32:40.23891" level=debug msg="PolicyConfigurator Configure()" loc="configurator/configurator_impl.go(136)" logger=policy.-policyConfigurator pod=default/linux-cnf21 policies="[]"
+time="2019-12-06 16:32:40.23903" level=debug msg="ACL RendererTxn Render()" egress-count=0 ingress-count=0 loc="acl/acl_renderer.go(125)" logger=policy.-aclRenderer pod=default/linux-cnf21 removed=false
+time="2019-12-06 16:32:40.23913" level=debug msg="Updating pod" config="map[default/linux-cnf21:PodIP:10.1.2.3/32 Ingress:[] Egress:[] Removed:false]" loc="cache/cache_impl.go(189)" logger=policy.-aclCache newPodConfig="{10.1.2.3/32 [] [] false}" podID=default/linux-cnf21
+time="2019-12-06 16:32:40.23926" level=debug msg="tables in transaction were refreshed" global="Rule Table NODE-GLOBAL <type: Global, rules: [], pods: {}>" loc="cache/cache_impl.go(462)" local="[Rule Table 9612b07b5ecb5a5 <type: Local, rules: [], pods: {default/linux-cnf21}>]" logger=policy.-aclCache
+time="2019-12-06 16:32:40.23934" level=debug msg="New local table was created in the transaction" loc="cache/cache_impl.go(307)" logger=policy.-aclCache table=9612b07b5ecb5a5
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*   FINALIZED EVENT: Kubernetes State Change                                                                                  #7 *
+*   HANDLED BY: podmanager, ipam, ipnet, sfc, policy                                                                    took 1ms *
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*   NEW EVENT (follow-up to #7): Pod Custom Interfaces Update                                                                 #8 *
+*              * Pod ID: default/linux-cnf21                                                                                     *
+*              * Pod Labels: map[cnf:linux-cnf2]                                                                                 *
+*              * pod Annotations: map[contivpp.io/custom-if:tap1/tap/stub]                                                       *
+*   EVENT HANDLERS: ipnet, sfc                                                                                                   *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+time="2019-12-06 16:32:40.23950" level=debug msg="Configuring custom tap interface, name: tap1, network: stub" loc="ipnet/pod.go(241)" logger=ipnet
+time="2019-12-06 16:32:40.23958" level=debug msg="Update pod custom ifs: Pod Custom Interfaces Update\n* Pod ID: default/linux-cnf21\n* Pod Labels: map[cnf:linux-cnf2]\n* pod Annotations: map[contivpp.io/custom-if:tap1/tap/stub]" loc="processor/processor_impl.go(221)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.23969" level=debug msg="Pod default/linux-cnf21 matches SFC name:\"linux-chain\" chain:<name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" > chain:<name:\"CNF 2\" pod_selector:<key:\"cnf\" value:\"linux-cnf2\" > interface:\"tap1\" > " loc="processor/processor_impl.go(379)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.23980" level=info msg="Updated SFC: name:\"linux-chain\" chain:<name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" > chain:<name:\"CNF 2\" pod_selector:<key:\"cnf\" value:\"linux-cnf2\" > interface:\"tap1\" > " loc="processor/processor_impl.go(288)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.23991" level=debug msg="No matching pods were found for the service function name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" , skipping this SFC" loc="processor/processor_impl.go(439)" logger=sfc.-sfcProcessor
++======================================================================================================================+
+| #14 - NB Transaction                                                                                                 |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 14
+      - type: NB Transaction
+      - Description: Pod Custom Interfaces Update
+          * ipnet: configure custom pod interfaces
+      - values:
+          - key: config/linux/interfaces/v2/interface/linux-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef
+            val: { name:"linux-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef" type:TAP_TO_VPP namespace:<type:FD reference:"/proc/11927/ns/net" > host_if_name:"tap1" enabled:true phys_address:"02:fe:9b:76:6b:2e" mtu:1450 tap:<vpp_tap_if_name:"vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d" >  }
+          - key: config/vpp/v2/interfaces/vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d
+            val: { name:"vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d" type:TAP enabled:true phys_address:"02:fe:64:89:94:d1" vrf:1 mtu:1450 tap:<version:2 rx_ring_size:1024 tx_ring_size:1024 enable_gso:true >  }
+
+time="2019-12-06 16:32:40.26156" level=debug msg="publish add to ifplugin_ifstate{{vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d false false vpp-interface-index} 0xc000b9b320}" loc="mem/inmemory_name_mapping.go(277)" logger=vpp-ifplugin.if-descriptor
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:40.24 +0000 UTC -> 2019-12-06 16:32:40.316 +0000 UTC, dur: 76ms):
+      1. CREATE:
+          - key: config/vpp/v2/interfaces/vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d
+          - value: { name:"vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d" type:TAP enabled:true phys_address:"02:fe:64:89:94:d1" vrf:1 mtu:1450 tap:<version:2 rx_ring_size:1024 tx_ring_size:1024 enable_gso:true >  } 
+      2. CREATE:
+          - key: config/linux/interfaces/v2/interface/linux-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef
+          - value: { name:"linux-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef" type:TAP_TO_VPP namespace:<type:FD reference:"/proc/11927/ns/net" > host_if_name:"tap1" enabled:true phys_address:"02:fe:9b:76:6b:2e" mtu:1450 tap:<vpp_tap_if_name:"vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d" >  } 
+      3. CREATE [PROPERTY]:
+          - key: linux/interface/state/linux-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef/UP
+          - value: <EMPTY> 
+x----------------------------------------------------------------------------------------------------------------------x
+| #14 - NB Transaction                                                                                     took 75.9ms |
+x----------------------------------------------------------------------------------------------------------------------x
+
++======================================================================================================================+
+| #15 - SB Notification                                                                                                |
++======================================================================================================================+
+  * transaction arguments:
+      - seqNum: 15
+      - type: SB Notification
+      - values:
+          - key: vpp/interface/vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d/link-state/DOWN
+            val: <EMPTY>
+
+time="2019-12-06 16:32:40.31639" level=debug msg="Transaction commit result: err=<nil>" loc="controller/plugin_controller.go(842)" logger=controller
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*   FINALIZED EVENT: Pod Custom Interfaces Update                                                                             #8 *
+*   HANDLED BY: ipnet, sfc                                                                                             took 77ms *
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*   NEW EVENT: Kubernetes State Change                                                                                        #9 *
+*              * resource: pod                                                                                                   *
+*              * key: k8s/pod/linux-cnf12/namespace/default                                                                      *
+*              * prev-value: name:"linux-cnf12" namespace:"default" label:<key:"cnf" value:"linux-cnf1" >                        *
+*                    host_ip_address:"10.20.0.10" container:<name:"busybox" > annotations:<key:"contivpp.io/custom-if"           *
+*                    value:"tap1/tap/stub" > labels:<key:"cnf" value:"linux-cnf1" >                                              *
+*              * new-value: name:"linux-cnf12" namespace:"default" label:<key:"cnf" value:"linux-cnf1" >                         *
+*                    ip_address:"10.1.2.2" host_ip_address:"10.20.0.10" container:<name:"busybox" >                              *
+*                    annotations:<key:"contivpp.io/custom-if" value:"tap1/tap/stub" > labels:<key:"cnf" value:"linux-cnf1" >     *
+*   EVENT HANDLERS: podmanager, ipam, ipnet, sfc, policy                                                                         *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+o----------------------------------------------------------------------------------------------------------------------o
+  * executed operations (2019-12-06 16:32:40.316 +0000 UTC -> 2019-12-06 16:32:40.317 +0000 UTC, dur: 0s):
+      1. CREATE [OBTAINED]:
+          - key: vpp/interface/vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d/link-state/DOWN
+          - value: <EMPTY> 
+x----------------------------------------------------------------------------------------------------------------------x
+| #15 - SB Notification                                                                                     took 300µs |
+x----------------------------------------------------------------------------------------------------------------------x
+
+time="2019-12-06 16:32:40.31681" level=debug msg="New / Updated pod: name:\"linux-cnf12\" namespace:\"default\" label:<key:\"cnf\" value:\"linux-cnf1\" > ip_address:\"10.1.2.2\" host_ip_address:\"10.20.0.10\" container:<name:\"busybox\" > annotations:<key:\"contivpp.io/custom-if\" value:\"tap1/tap/stub\" > labels:<key:\"cnf\" value:\"linux-cnf1\" > " loc="processor/processor_impl.go(186)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.31694" level=debug msg="Pod default/linux-cnf12 matches SFC name:\"linux-chain\" chain:<name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" > chain:<name:\"CNF 2\" pod_selector:<key:\"cnf\" value:\"linux-cnf2\" > interface:\"tap1\" > " loc="processor/processor_impl.go(379)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.31684" level=info msg="Transaction 15 successful!" loc="kvscheduler/txn_process.go(401)" logger=kvscheduler
+time="2019-12-06 16:32:40.31712" level=info msg="Updated SFC: name:\"linux-chain\" chain:<name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" > chain:<name:\"CNF 2\" pod_selector:<key:\"cnf\" value:\"linux-cnf2\" > interface:\"tap1\" > " loc="processor/processor_impl.go(288)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.31731" level=debug msg="No matching pods were found for the service function name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" , skipping this SFC" loc="processor/processor_impl.go(439)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.31753" level=debug msg="Pods selected for policy pre-processing: [default/linux-cnf12]" loc="processor/processor.go(94)" logger=policy.-policyProcessor
+time="2019-12-06 16:32:40.31780" level=debug msg="PolicyConfigurator Configure()" loc="configurator/configurator_impl.go(136)" logger=policy.-policyConfigurator pod=default/linux-cnf12 policies="[]"
+time="2019-12-06 16:32:40.31794" level=debug msg="ACL RendererTxn Render()" egress-count=0 ingress-count=0 loc="acl/acl_renderer.go(125)" logger=policy.-aclRenderer pod=default/linux-cnf12 removed=false
+time="2019-12-06 16:32:40.31816" level=debug msg="Updating pod" config="map[default/linux-cnf12:PodIP:10.1.2.2/32 Ingress:[] Egress:[] Removed:false]" loc="cache/cache_impl.go(189)" logger=policy.-aclCache newPodConfig="{10.1.2.2/32 [] [] false}" podID=default/linux-cnf12
+time="2019-12-06 16:32:40.31841" level=debug msg="tables in transaction were refreshed" global="Rule Table NODE-GLOBAL <type: Global, rules: [], pods: {}>" loc="cache/cache_impl.go(462)" local="[Rule Table 9612b07b5ecb5a5 <type: Local, rules: [], pods: {default/linux-cnf21, default/linux-cnf12}>]" logger=policy.-aclCache
+time="2019-12-06 16:32:40.31861" level=debug msg="Local table was re-assigned to different set of pods in the transaction" loc="cache/cache_impl.go(284)" logger=policy.-aclCache newPods="{default/linux-cnf21, default/linux-cnf12}" origPods="{default/linux-cnf21}" table=9612b07b5ecb5a5
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+*   FINALIZED EVENT: Kubernetes State Change                                                                                  #9 *
+*   HANDLED BY: podmanager, ipam, ipnet, sfc, policy                                                                    took 2ms *
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*   NEW EVENT (follow-up to #9): Pod Custom Interfaces Update                                                                #10 *
+*              * Pod ID: default/linux-cnf12                                                                                     *
+*              * Pod Labels: map[cnf:linux-cnf1]                                                                                 *
+*              * pod Annotations: map[contivpp.io/custom-if:tap1/tap/stub]                                                       *
+*   EVENT HANDLERS: ipnet, sfc                                                                                                   *
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+time="2019-12-06 16:32:40.31887" level=debug msg="Configuring custom tap interface, name: tap1, network: stub" loc="ipnet/pod.go(241)" logger=ipnet
+time="2019-12-06 16:32:40.31903" level=debug msg="Update pod custom ifs: Pod Custom Interfaces Update\n* Pod ID: default/linux-cnf12\n* Pod Labels: map[cnf:linux-cnf1]\n* pod Annotations: map[contivpp.io/custom-if:tap1/tap/stub]" loc="processor/processor_impl.go(221)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.31921" level=debug msg="Pod default/linux-cnf12 matches SFC name:\"linux-chain\" chain:<name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" > chain:<name:\"CNF 2\" pod_selector:<key:\"cnf\" value:\"linux-cnf2\" > interface:\"tap1\" > " loc="processor/processor_impl.go(379)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.31940" level=info msg="Updated SFC: name:\"linux-chain\" chain:<name:\"CNF 1\" pod_selector:<key:\"cnf\" value:\"linux-cnf1\" > interface:\"tap1\" > chain:<name:\"CNF 2\" pod_selector:<key:\"cnf\" value:\"linux-cnf2\" > interface:\"tap1\" > " loc="processor/processor_impl.go(288)" logger=sfc.-sfcProcessor
+time="2019-12-06 16:32:40.31968" level=info msg="Add SFC: ContivSFC Name: linux-chain Network: , Chain: [<Pod: {ID: default/linux-cnf12, NodeID: 2, Local:true, InputInterface: <ConfigName: vpp-tap-tap1-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8, CRDName: tap1>, OutputInterface:<ConfigName: vpp-tap-tap1-e03afc5bb8910d3469c35694edb3d7865fe9e36d47936a5be8, CRDName: tap1>}>, <Pod: {ID: default/linux-cnf21, NodeID: 2, Local:true, InputInterface: <ConfigName: vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d, CRDName: tap1>, OutputInterface:<ConfigName: vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d, CRDName: tap1>}>]" loc="l2xconn/l2xconn_renderer.go(80)" logger=sfc.-sfcL2xconnRenderer
+time="2019-12-06 16:32:40.31989" level=debug msg="creation of SFC chain linux-chain will use only these service function instances: <Pod: {ID: default/linux-cnf21, NodeID: 2, Local:true, InputInterface: <ConfigName: vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d, CRDName: tap1>, OutputInterface:<ConfigName: vpp-tap-tap1-e80795b62bd15b95acfdb6ad401794b3cdd010923b9b77ef0d, CRDName: tap1>}>" loc="l2xconn/l2xconn_renderer.go(478)" logger=sfc.-sfcL2xconnRenderer
+time="2019-12-06 16:32:42.83108" level=error msg="contiv-agent terminated, stopping VPP" loc="contiv-init/main.go(466)" logger=contiv-init
+time="2019-12-06 16:32:43.00636" level=debug msg=exiting loc="contiv-init/main.go(473)" logger=contiv-init

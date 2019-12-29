@@ -1,0 +1,94 @@
+time="2019-12-06 16:32:29.79736" level=debug msg="Starting contiv-init process" loc="contiv-init/main.go(304)" logger=contiv-init
+time="2019-12-06 16:32:29.79779" level=debug msg="Connecting to Etcd.." endpoints="[10.20.0.10:32379]" loc="etcd/bytes_broker_impl.go(60)" logger=contiv-init
+time="2019-12-06 16:32:29.79982" level=info msg="Connected to Etcd (took 2.070077ms)" endpoints="[10.20.0.10:32379]" loc="etcd/bytes_broker_impl.go(60)" logger=contiv-init
+time="2019-12-06 16:32:29.80395" level=debug msg="STN not requested" loc="contiv-init/main.go(381)" logger=contiv-init
+time="2019-12-06 16:32:29.80402" level=debug msg="Starting VPP" loc="contiv-init/main.go(409)" logger=contiv-init
+time="2019-12-06 16:32:29.80250" level=info msg="bolt path: /var/bolt/bolt.db" loc="bolt/bolt.go(66)" logger=bolt
+time="2019-12-06 16:32:29.80377" level=info msg="Contiv configuration: {InterfaceConfig:{MTUSize:1450 UseTAPInterfaces:true TAPInterfaceVersion:2 TAPv2RxRingSize:1024 TAPv2TxRingSize:1024 Vmxnet3RxRingSize:0 Vmxnet3TxRingSize:0 InterfaceRxMode: TCPChecksumOffloadDisabled:true EnableGSO:true} RoutingConfig:{MainVRFID:0 PodVRFID:1 NodeToNodeTransport:vxlan UseSRv6ForServices:false UseSRv6ForServiceFunctionChaining:false UseDX6ForSrv6NodetoNodeTransport:false RouteServiceCIDRToVPP:true} IPNeighborScanConfig:{ScanIPNeighbors:true IPNeighborScanInterval:1 IPNeighborStaleThreshold:4} StealFirstNIC:false StealInterface: STNSocketFile:/var/run/contiv/stn.sock STNVersion:2 NatExternalTraffic:true EnablePacketTrace:false CRDNodeConfigurationDisabled:true IPAMConfig:{UseExternalIPAM:false ContivCIDR: ServiceCIDR:10.96.0.0/12 NodeInterconnectDHCP:false PodSubnetCIDR:10.1.0.0/16 PodSubnetOneNodePrefixLen:24 VPPHostSubnetCIDR:172.30.0.0/16 VPPHostSubnetOneNodePrefixLen:24 NodeInterconnectCIDR:192.168.16.0/24 VxlanCIDR:192.168.30.0/24 DefaultGateway:192.168.16.100 SRv6:{ServicePolicyBSIDSubnetCIDR:8fff::/16 ServicePodLocalSIDSubnetCIDR:9300::/16 ServiceHostLocalSIDSubnetCIDR:9300::/16 ServiceNodeLocalSIDSubnetCIDR:9000::/16 NodeToNodePodLocalSIDSubnetCIDR:9501::/16 NodeToNodeHostLocalSIDSubnetCIDR:9500::/16 NodeToNodePodPolicySIDSubnetCIDR:8501::/16 NodeToNodeHostPolicySIDSubnetCIDR:8500::/16 SFCPolicyBSIDSubnetCIDR:8eee::/16 SFCServiceFunctionSIDSubnetCIDR:9600::/16 SFCEndLocalSIDSubnetCIDR:9310::/16 SFCIDLengthUsedInSidForServiceFunction:16}} NodeConfig:[]}" loc="contivconf/contivconf.go(355)" logger=contivconf
+time="2019-12-06 16:32:29.80390" level=info msg="ContivConf state after re-load: useDHCP=false, mainInterface=, mainInterfaceIPs=[], otherInterfaces=[], defaultGw=192.168.16.100, dpdkIfaces=[], stnInterface=, stnIPAddresses=[], stnGW=<nil>, stnRoutes=[]" loc="contivconf/contivconf.go(846)" logger=contivconf
+time="2019-12-06 16:32:29.82011" level=debug msg="Starting contiv-agent" loc="contiv-init/main.go(421)" logger=contiv-init
+time="2019-12-06 16:32:29.86783" level=debug msg="vlib_plugin_early_init:361: plugin path /usr/lib/x86_64-linux-gnu/vpp_plugins:/usr/lib/vpp_plugins\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.87023" level=debug msg="load_one_plugin:189: Loaded plugin: abf_plugin.so (Access Control List (ACL) Based Forwarding)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.87452" level=debug msg="load_one_plugin:189: Loaded plugin: acl_plugin.so (Access Control Lists (ACL))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.87525" level=debug msg="load_one_plugin:189: Loaded plugin: avf_plugin.so (Intel Adaptive Virtual Function (AVF) Device Driver)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.87548" level=debug msg="load_one_plugin:189: Loaded plugin: cdp_plugin.so (Cisco Discovery Protocol (CDP))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.87566" level=debug msg="load_one_plugin:189: Loaded plugin: crypto_ia32_plugin.so (Intel IA32 Software Crypto Engine)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.88161" level=debug msg="load_one_plugin:189: Loaded plugin: crypto_ipsecmb_plugin.so (Intel IPSEC Multi-buffer Crypto Engine)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.88187" level=debug msg="load_one_plugin:189: Loaded plugin: crypto_openssl_plugin.so (OpenSSL Crypto Engine)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.88212" level=debug msg="load_one_plugin:189: Loaded plugin: ct6_plugin.so (IPv6 Connection Tracker)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93026" level=debug msg="load_one_plugin:189: Loaded plugin: dpdk_plugin.so (Data Plane Development Kit (DPDK))\nload_one_plugin:189: Loaded plugin: flowprobe_plugin.so (Flow per Packet)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93134" level=debug msg="load_one_plugin:189: Loaded plugin: gbp_plugin.so (Group Based Policy (GBP))\nload_one_plugin:189: Loaded plugin: gtpu_plugin.so (GPRS Tunnelling Protocol, User Data (GTPv1-U))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93138" level=debug msg="load_one_plugin:189: Loaded plugin: igmp_plugin.so (Internet Group Management Protocol (IGMP))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93160" level=debug msg="load_one_plugin:189: Loaded plugin: ikev2_plugin.so (Internet Key Exchange (IKEv2) Protocol)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93171" level=debug msg="load_one_plugin:189: Loaded plugin: ila_plugin.so (Identifier Locator Addressing (ILA) for IPv6)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93261" level=debug msg="load_one_plugin:189: Loaded plugin: ioam_plugin.so (Inbound Operations, Administration, and Maintenance (OAM))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93298" level=debug msg="load_one_plugin:117: Plugin disabled (default): ixge_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93309" level=debug msg="load_one_plugin:189: Loaded plugin: l2e_plugin.so (Layer 2 (L2) Emulation)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93332" level=debug msg="load_one_plugin:189: Loaded plugin: lacp_plugin.so (Link Aggregation Control Protocol (LACP))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93348" level=debug msg="load_one_plugin:189: Loaded plugin: lb_plugin.so (Load Balancer (LB))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93356" level=debug msg="load_one_plugin:189: Loaded plugin: mactime_plugin.so (Time-based MAC Source Address Filter)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93378" level=debug msg="load_one_plugin:189: Loaded plugin: map_plugin.so (Mapping of Address and Port (MAP))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93507" level=debug msg="load_one_plugin:189: Loaded plugin: memif_plugin.so (Packet Memory Interface (memif) -- Experimental)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.93988" level=debug msg="load_one_plugin:189: Loaded plugin: nat_plugin.so (Network Address Translation (NAT))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94056" level=debug msg="load_one_plugin:189: Loaded plugin: nsh_plugin.so (Network Service Header (NSH))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94066" level=debug msg="load_one_plugin:189: Loaded plugin: nsim_plugin.so (Network Delay Simulator)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94182" level=debug msg="load_one_plugin:189: Loaded plugin: perfmon_plugin.so (Performance Monitor)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94191" level=debug msg="load_one_plugin:189: Loaded plugin: pppoe_plugin.so (PPP over Ethernet (PPPoE))\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94217" level=debug msg="load_one_plugin:189: Loaded plugin: quic_plugin.so (Quic Transport Protocol)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94277" level=debug msg="load_one_plugin:189: Loaded plugin: rdma_plugin.so (RDMA IBverbs Device Driver)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94289" level=debug msg="load_one_plugin:189: Loaded plugin: srv6ad_plugin.so (Dynamic Segment Routing for IPv6 (SRv6) Proxy)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94295" level=debug msg="load_one_plugin:189: Loaded plugin: srv6am_plugin.so (Masquerading Segment Routing for IPv6 (SRv6) Proxy)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94303" level=debug msg="load_one_plugin:189: Loaded plugin: srv6as_plugin.so (Static Segment Routing for IPv6 (SRv6) Proxy)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94320" level=debug msg="load_one_plugin:189: Loaded plugin: stn_plugin.so (VPP Steals the NIC (STN) for Container Integration)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94327" level=debug msg="load_one_plugin:189: Loaded plugin: svs_plugin.so (Source Virtual Routing and Fowarding (VRF) Select)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94416" level=debug msg="load_one_plugin:189: Loaded plugin: tlsmbedtls_plugin.so (Transport Layer Security (TLS) Engine, Mbedtls Based)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94542" level=debug msg="load_one_plugin:189: Loaded plugin: tlsopenssl_plugin.so (Transport Layer Security (TLS) Engine, OpenSSL Based)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94797" level=debug msg="load_one_plugin:117: Plugin disabled (default): unittest_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.94871" level=debug msg="load_one_plugin:189: Loaded plugin: vmxnet3_plugin.so (VMWare Vmxnet3 Device Driver)\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.95106" level=info msg="Starting agent version: v3.3.2-10-g0bf74cd9c-dirty" BuildDate="2019-12-06T12:02+01:00" CommitHash=0bf74cd9cb43252a92a09531c4ee468fa39662b6 loc="agent/agent.go(134)" logger=agent
+time="2019-12-06 16:32:29.95212" level=debug msg="/usr/bin/vpp[11349]: clib_elf_parse_file: open `linux-vdso.so.1': No such file or directory\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:29.95211" level=debug msg="setting logger level: statscollector -> info" loc="logrus/registry.go(171)" logger=defaultLogger
+time="2019-12-06 16:32:29.95215" level=debug msg="-> Init(): status-check" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95219" level=debug msg="-> Init(): probe" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95223" level=debug msg="-> Init(): prometheus" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95227" level=debug msg="-> Init(): kvscheduler" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95253" level=debug msg="kvscheduler config found: &{RecordTransactionHistory:true TransactionHistoryAgeLimit:60 PermanentlyRecordedInitPeriod:10 EnableTxnSimulation:false PrintTxnSummary:true}" loc="kvscheduler/plugin_scheduler.go(214)" logger=kvscheduler
+time="2019-12-06 16:32:29.95258" level=debug msg="KVScheduler configuration: {RecordTransactionHistory:true TransactionHistoryAgeLimit:60 PermanentlyRecordedInitPeriod:10 EnableTxnSimulation:false PrintTxnSummary:true}" loc="kvscheduler/plugin_scheduler.go(166)" logger=kvscheduler
+time="2019-12-06 16:32:29.95271" level=debug msg="Registering handler: /scheduler/txn-history" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95277" level=debug msg="Registering handler: /scheduler/key-timeline" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95281" level=debug msg="Registering handler: /scheduler/graph-snapshot" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95286" level=debug msg="Registering handler: /scheduler/flag-stats" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95291" level=debug msg="Registering handler: /scheduler/downstream-resync" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95296" level=debug msg="Registering handler: /scheduler/dump" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95301" level=debug msg="Registering handler: /scheduler/status" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95305" level=debug msg="Registering handler: /scheduler/graph" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95309" level=debug msg="Registering handler: /scheduler/stats" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95316" level=debug msg="-> Init(): resync" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95322" level=debug msg="-> Init(): govpp" loc="agent/agent.go(220)" logger=agent
+time="2019-12-06 16:32:29.95406" level=debug msg="config loaded from file \"/etc/vpp-agent/govpp.conf\"" loc="govppmux/config.go(62)" logger=govpp
+time="2019-12-06 16:32:29.95412" level=debug msg="config: &{TraceEnabled:false ReconnectResync:false HealthCheckProbeInterval:3s HealthCheckReplyTimeout:500ms HealthCheckThreshold:3 ReplyTimeout:3s ConnectViaShm:false ShmPrefix: BinAPISocketPath: StatsSocketPath: RetryRequestCount:0 RetryRequestTimeout:500ms RetryConnectCount:0 RetryConnectTimeout:1s}" loc="govppmux/plugin_impl_govppmux.go(90)" logger=govpp
+time="2019-12-06 16:32:29.95416" level=debug msg="Registering handler: /govppmux/stats" loc="rest/plugin_impl_rest.go(116)" logger=http
+time="2019-12-06 16:32:29.95421" level=debug msg="connecting to VPP.." loc="govppmux/plugin_impl_govppmux.go(122)" logger=govpp
+time="2019-12-06 16:32:30.06660" level=debug msg="/usr/bin/vpp[11349]: tls_init_ca_chain:753: Could not initialize TLS CA certificates\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.06725" level=debug msg="/usr/bin/vpp[11349]: tls_openssl_init:824: failed to initialize TLS CA chain\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.06787" level=debug msg="/usr/bin/vpp[11349]: tls_init_ca_chain:585: Could not initialize TLS CA certificates\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.06844" level=debug msg="/usr/bin/vpp[11349]: tls_mbedtls_init:624: failed to initialize TLS CA chain\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07529" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: avf_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07593" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: mactime_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07661" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: lb_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07716" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: flowprobe_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07776" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: ioam_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07830" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: ct6_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07879" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: stn_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07938" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: nat_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.07988" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: pppoe_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08033" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: lacp_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08082" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: acl_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08133" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: nsim_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08184" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: nsh_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08248" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: ikev2_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08302" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: vmxnet3_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08351" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: gtpu_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08398" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: cdp_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.08453" level=debug msg="/usr/bin/vpp[11349]: load_one_vat_plugin:67: Loaded plugin: memif_test_plugin.so\n" loc="contiv-init/vpplogger.go(23)" logger=vpp
+time="2019-12-06 16:32:30.09774" level=debug msg="/usr/bin/vpp[11349]: dpdk: EAL init args: -c 2 -n 4 --in-memory --file-prefix vpp -w 0000:00:08.0 --master-lcore 1 \n" loc="contiv-init/vpplogger.go(23)" logger=vpp

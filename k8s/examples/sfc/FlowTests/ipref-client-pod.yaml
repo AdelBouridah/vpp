@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: iperf-overlay-client
+  labels:
+    app: iperf-overlay-client
+spec:
+  containers:
+  - name: iperf-overlay-server
+    image: networkstatic/iperf3:latest
+
