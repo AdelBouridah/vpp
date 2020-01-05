@@ -20,3 +20,14 @@ spec:
   gateway: 10.130.1.254
 
 ---
+# Configuration for node config in the cluster
+apiVersion: nodeconfig.contiv.vpp/v1
+kind: NodeConfig
+metadata:
+  name: k8s-worker2
+spec:
+  mainVPPInterface:
+    interfaceName: "GigabitEthernet0/8/0"
+  gateway: 10.130.1.254
+
+---

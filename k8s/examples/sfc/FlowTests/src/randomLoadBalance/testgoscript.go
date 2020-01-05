@@ -37,7 +37,7 @@ func main() {
 		/*s := k.Hash("foo" + strconv.Itoa(i))
 		fmt.Println(i, s)
 		m[s]++*/
-		j:=rand.Intn(3)
+		j:=rand.Intn(len(temp)-1)
 		cmd := exec.Command("kubectl", "exec", temp[j], "--","iperf", "-c", "192.168.187.2")
 		//cmd := exec.Command("kubectl", "get", "pods", )
 		out, err := cmd.CombinedOutput()

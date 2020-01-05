@@ -114,11 +114,14 @@ testFlowsOverPaths(){
 }
 getPodNames
 checkReadiness
+
 setuprpcnf1
 setuprpcnf2
 setuprpcnf3
 setuprpcnf4
-testConnectivity
 : <<'END_COMMENT'
 END_COMMENT
+testConnectivity
+
+
 
