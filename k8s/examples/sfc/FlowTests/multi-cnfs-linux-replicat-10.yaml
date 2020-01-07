@@ -9,7 +9,7 @@ metadata:
    cnf: linux-cnf1-rp
 spec:
   # modify replicas according to your case
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       cnf: linux-cnf1-rp
@@ -38,7 +38,7 @@ metadata:
    cnf: linux-cnf2-rp
 spec:
   # modify replicas according to your case
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       cnf: linux-cnf2-rp
@@ -70,7 +70,7 @@ metadata:
    cnf: linux-cnf3-rp
 spec:
   # modify replicas according to your case
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       cnf: linux-cnf3-rp
@@ -102,7 +102,7 @@ metadata:
    cnf: linux-cnf4-rp
 spec:
   # modify replicas according to your case
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       cnf: linux-cnf4-rp
