@@ -1,0 +1,171 @@
+package main
+
+import (
+	"fmt"
+	"ketama"
+	"strconv"
+	"os/exec"
+	"strings"
+	"log"
+	"os"
+	//"io"
+	//"encoding/json"
+	"sync"
+	//"bytes"
+)
+
+func worker(cnfInput string, jobs <-chan int, results chan<- int) {
+    for j := range jobs {
+        fmt.Println("worker", id, "started  job", j)
+        time.Sleep(time.Second)
+        fmt.Println("worker", id, "finished job", j)
+        results <- j * 2
+    }
+}
+
+func main() {
+	fmt.Println(" *************************************************************************")
+	fmt.Println(" ******			Get Inputs PAths CNFs 		     **********")
+	fmt.Println(" *************************************************************************")
+	// 1. get INput paths CNF - Pods names  (to execute later iperf on these cnfs)
+	cmdget := exec.Command("kubectl", "get", "pods", )
+	cmdgrep := exec.Command("grep", "-oE","rep-linux-cnf1\\S*")
+
+	// Get cmdget's stdout and attach it to grep's stdin.
+	pipe, _ := cmdget.StdoutPipe()
+	defer pipe.Close()
+
+	cmdgrep.Stdin = pipe
+
+	// Run cmdget first.
+	cmdget.Start()
+
+	// Run and get the output of grep.
+	res, _ := cmdgrep.Output()
+	a:=string(res)
+	inputsCNFs := strings.Split(a,"\n")
+	//inputsCNFs contain all the inputs CNFs, whereas the last element is a whitespace one because of the '\n'
+
+	fmt.Println(" *************************************************************************")
+	fmt.Println(" ******			Get Output Paths CNFs		     **********")
+	fmt.Println(" *************************************************************************")
+	// 2. get Output paths CNF - Pods names  (to execute later iperf on these cnfs)
+	cmd2get := exec.Command("kubectl", "get", "pods", )
+	cmd2grep := exec.Command("grep", "-oE","rep-linux-cnf4\\S*")
+
+	// Get cmdget's stdout and attach it to grep's stdin.
+	pipe2, _ := cmd2get.StdoutPipe()
+	defer pipe2.Close()
+
+	cmd2grep.Stdin = pipe2
+
+	// Run cmdget first.
+	cmd2get.Start()
+
+	// Run and get the output of grep.
+	res2, _ := cmd2grep.Output()
+	a2:=string(res2)
+	outputsCNFs := strings.Split(a2,"\n")
+	//outputsCNFs contain all the inputs CNFs, whereas the last element is a whitespace one because of the '\n'
+	//tests 
+	for i := 0; i <= len(outputsCNFs)-2; i++ {
+		fmt.Println("cnf outputs	", outputsCNFs[i])
+	}
+	fmt.Println(" **************************************************************************************************")
+	fmt.Println(" ******   Make output iperf servers listen on sevral Ports -For parallel Flows test      **********")
+	fmt.Println(" **************************************************************************************************")
+	for i := 0; i <= len(outputsCNFs)-2; i++ {
+		for j := 25; j <= 26; j++ {
+			//fmt.Println("cnf outputs	", outputsCNFs[i])*/
+			cmd := exec.Command("kubectl", "exec", outputsCNFs[i] , "--","iperf", "-s", "-p", "500"+strconv.Itoa(j))
+			//cmd := exec.Command("kubectl", "get", "pods", )
+			err := cmd.Start()
+			if err != nil {
+				log.Fatalf("cmd.Run() failed with %s\n", err)
+			}
+			//fmt.Printf("combined out:\n%s\n", string(out))
+			fmt.Println("CNF listen on  port  %s ", outputsCNFs[i] , " on port 500"+strconv.Itoa(j))
+		}
+	}
+	fmt.Println(" *************************************************************************")
+	fmt.Println(" ******			Create the Ring for Ketama           **********")
+	fmt.Println(" *************************************************************************")
+	var buckets []ketama.Bucket
+
+	for i := 0; i <= len(inputsCNFs)-2; i++ {
+		b := &ketama.Bucket{Label: inputsCNFs[i], Weight: 1}
+		buckets = append(buckets, *b)
+		//fmt.Println(inputsCNFs[i])
+	}
+
+	k, _ := ketama.New(buckets)
+
+	fmt.Println(" *************************************************************************")
+	fmt.Println(" ******			TEST IPERF - BEGIN 		     **********")
+	fmt.Println(" *************************************************************************")
+	var wg sync.WaitGroup
+	wg.Add(6)
+	fmt.Println("Running for loop…")
+	for i := 0; i < 3; i++ {
+		s := k.Hash("iperf" + strconv.Itoa(i))
+		//fmt.Println(i, s)
+		for j := 25; j <= 26; j++ {
+
+			go func() {
+				//var z string 
+				cmd := exec.Command("kubectl", "exec", s , "--","iperf", "-c", "192.168.187.2", "-p", "500"+strconv.Itoa(j))
+				out, err := cmd.CombinedOutput()
+				if err != nil {
+						log.Fatal(err)
+				}	
+				fmt.Println(" "+string(out)+"test iperf ")		
+				/*stdout, err := cmd.StdoutPipe()
+				if err != nil {
+					log.Fatal(err)
+				}
+				if err := cmd.Start(); err != nil {
+					log.Fatal(err)
+				}
+				/*if err := cmd.Wait(); err != nil {
+						log.Fatal(err)
+				}
+				//cmd := exec.Command("kubectl", "get", "pods", )
+				//err := cmd.Start()//result, 
+				/*if err != nil {
+					log.Fatalf("cmd.Run() failed with %s\n", err)
+				}
+				fmt.Println("iperf test for Path with  %s", s, " CNF as input on port %v", "500"+strconv.Itoa(j))*/
+				defer wg.Done()
+			        f, _ := os.Create("tmp/file-path"+strconv.Itoa(i)+"CNF-"+s+"-port-500"+strconv.Itoa(j)+".txt")
+			        //Check(err)
+			        defer f.Close()
+				/*if err := json.NewDecoder(stdout).Decode(&z); err != nil {
+					fmt.Println(" json error")
+					log.Fatal(err)
+				}
+			        buf := new(bytes.Buffer)
+			        buf.ReadFrom(stdoutStderr)
+			        newStr := buf.String()*/
+				fmt.Println("test iperf ********"+string(out)+"test iperf ********")
+				f.WriteString(string(out))
+				f.Sync()
+				
+			}()
+		}
+
+
+	}
+	wg.Wait()
+	fmt.Println("Finished for loop")
+/*k.Hash("iperf" + strconv.Itoa(5))
+				cmd := exec.Command("kubectl", "exec", "rep-linux-cnf1-8z8j8" , "--","iperf", "-c", "192.168.187.2", "-p", "5001", ">", "file.txt")
+			
+				//cmd := exec.Command("kubectl", "get", "pods", )
+				err := cmd.Run()//result, 
+				if err != nil {
+					log.Fatalf("cmd.Run() failed with %s\n", err)
+				}*/
+	fmt.Println(" *************************************************************************")
+	fmt.Println(" ******			TEST IPERF - END 		     **********")
+	fmt.Println(" *************************************************************************")
+}

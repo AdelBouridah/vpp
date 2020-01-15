@@ -1,0 +1,63 @@
+package main
+
+import (
+	"fmt"
+	"maglev"
+	//"strconv"
+	"math/rand"
+
+)
+
+func main() {
+	/*var compatTest = []ketama.Bucket{
+		{"server1", 8699},
+		{"server10", 9462},
+		{"server2", 10885},
+		{"server3", 9980},
+		{"server4", 10237},
+		{"server5", 9099},
+		{"server6", 10997},
+		{"server7", 10365},
+		{"server8", 10380},
+		{"server9", 9896},
+	}*/
+
+	//var buckets []ketama.Bucket
+	servernames:=make([]string,10)
+
+	for i := 0; i <= 9; i++ {
+		servernames[i] = fmt.Sprintf("server%d", i)		
+	}
+
+	k := maglev.New(servernames, maglev.SmallM)//ketama.New(buckets)
+
+	
+        fmt.Println(" *************************************************************************")
+	for i := 0; i < 20; i++ {
+		s := k.Lookup(uint64(rand.Int63()))
+		fmt.Println(" testing maglev by adel", s)
+		
+	}
+/*
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaajaaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaakaaaaaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaaaaaaamaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aakaaaaaaaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaaaaaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaaamaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaaaaaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaaaaaaana"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaataaaaaaa"))
+*/
+fmt.Println(" ******************")
+/*
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaajaaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaakaaaaaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaaaaaaamaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aakaaaaaaaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaaaaaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaaamaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaaaaaaaaaa"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaaaaaaana"))
+fmt.Println(" testing ketama by adel", k.Hash("aaaaaataaaaaaa"))*/
+}
