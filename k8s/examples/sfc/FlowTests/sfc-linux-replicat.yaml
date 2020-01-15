@@ -29,4 +29,11 @@ spec:
       type: Pod
       podSelector:
         cnf: linux-cnf4-rp
+      inputInterface: tap1
+      outputInterface: tap2
+
+    - name: CNF 5
+      type: Pod
+      podSelector:
+        cnf: linux-cnf5-rp
       interface: tap1

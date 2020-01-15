@@ -110,10 +110,10 @@ func (pq *PriorityQueue) update(item *flow, 		 startTime float64, sfcID int, dur
          // Take the items out; they arrive in decreasing priority order.
          for pqFlows.Len() > 0 {
            item := heap.Pop(&pqFlows).(*flow)
-           fmt.Printf("\n%v  :  %v \n", item.startTime, item.id)
+           fmt.Println("\nFlow- \n", item.id, item.startTime,  item.durationFlow, item.roughputFlow)
          }
-
+         /*
          for i:=0;i<100;i++{
             fmt.Println("oneFlow",i, "  est %v", flowArray[i].sfcID)
-         }
+         }*/
  }

@@ -15,12 +15,20 @@ import (
 	"container/heap"
 	"gonum.org/v1/gonum/stat/distuv"
 	"golang.org/x/exp/rand"
+	"math"
+	"encoding/csv"
 )
-func iperfinstance(cnf string, port string, i int, wg *sync.WaitGroup){
+func iperfinstance(cnf string, port string, i int, wg *sync.WaitGroup, flowTime float64, flowRoughput float64){
 	fmt.Println(" ************************************************************************************************")
-	fmt.Println(" ******		Test IPERF Flux ID="+strconv.Itoa(i)+" Path "+cnf+" Port "+port+"     **********")
+	fmt.Println(" ******		Test IPERF Flux ID="+strconv.Itoa(i)+" Path "+cnf+" Port "+port+"           **********")
 	fmt.Println(" *************************************************************************************************")
-	cmd := exec.Command("kubectl", "exec", cnf , "--","iperf", "-c", "192.168.187.2", "-p", port, "-y", "C" ) // CSV Output  "-y", "C"
+	//
+	ftime:= int(math.RoundToEven(flowTime))
+	if (ftime==0){
+		ftime=1
+	}
+	froughput:=int(math.RoundToEven(flowRoughput))
+	cmd := exec.Command("kubectl", "exec", cnf , "--","iperf", "-c", "192.168.187.2", "-p", port, "-y", "C", "-u","-b", strconv.Itoa(froughput)+"m" , "-t", strconv.Itoa(ftime) ) // CSV Output  "-y", "C"
 	out, err := cmd.CombinedOutput()
 	if err != nil {
 		fmt.Println("********************** iperf error ********************")
@@ -28,10 +36,10 @@ func iperfinstance(cnf string, port string, i int, wg *sync.WaitGroup){
 	}
 	fmt.Println(" "+string(out)+"test iperf ")
 	defer wg.Done()
-	f, _ := os.Create("tmp/file-path"+strconv.Itoa(i)+"CNF-"+cnf+"-port-"+port+".txt")
+	f, _ := os.Create("tmp/file-flow"+strconv.Itoa(i)+"Path-"+cnf+"-port-"+port+".txt")
 	defer f.Close()
 	//fmt.Println("test iperf ********\n"+string(out)+"\n ***")
-	f.WriteString(cnf+","+string(out))
+	f.WriteString("FlowID-"+strconv.Itoa(i)+","+"Path-id-"+cnf+","+string(out))
 	f.Sync()
 }
 
@@ -107,24 +115,45 @@ func main() {
 	}
 	startTime:=0.0
 	//startTime:=r.ExpFloat64()/lambda
-	// Put all the Flows in stratTime priority Queue
+	// Put all the Flows in stratTime priority Queue & in inpuFile (trace)
   flowArray:= make([]flow, 0)
 	pqFlows := make(PriorityQueue, 0)
+
+	///////////////////////////////////////////////////////////////////////////
+	///               prepare file of inputs                                ///
+	///////////////////////////////////////////////////////////////////////////
+	// Jitter file
+	fileInputs, errFileInpouts := os.Create("sim/inputParams.txt")
+	checkError("Cannot create file", errFileInpouts)
+	defer fileInputs.Close()
+	lineFile:=make([]string, 6)
 	for i:=0;i<nbrFlux;i++{
 		 startTime=startTime+(r.ExpFloat64()/lambda)
 		 duration:= rDurationFlow.ExpFloat64()/lambda2
-		 sfc:= rSFC.Intn(sfcNumber)
+		 sfc:= rSFC.Intn(sfcNumber-1) + 1  //sfc num is between 1 and sfcNumber
 		 roughtput:=rRoughputFlow.Rand()
 		 oneFlow:=flow{
 				id: i,
 				startTime: startTime,   // Possionien(lambda)
-				sfcID: sfc,
+				sfcID: sfc,						//
 				durationFlow: duration,  //expo
 				roughputFlow: roughtput,  //random-uniform
 		 }
 		 //flowArray[i]=oneFlow
 		 flowArray=append(flowArray, oneFlow)
 		 heap.Push(&pqFlows, &oneFlow)
+		 // Write results in File of inputs fmt.Sprintf("%f",   )
+		 lineFile[0]=strconv.Itoa(i)
+		 lineFile[1]="FlowID-"+strconv.Itoa(i)
+		 lineFile[2]=strconv.Itoa(sfc)
+		 lineFile[3]=fmt.Sprintf("%f",roughtput)
+		 lineFile[4]=fmt.Sprintf("%f",duration)
+		 lineFile[5]=fmt.Sprintf("%f",startTime)
+		 writerFile := csv.NewWriter(fileInputs)
+		 writerFile.Comma=' '
+		 defer writerFile.Flush()
+		 errWrite:= writerFile.Write(lineFile)
+		 checkError("Cannot write to file", errWrite)
 	}
 	fmt.Println(" *****************************************************************************")
 	fmt.Println(" ******	END: GENERATING FLOWS, Tables and priority queue for FLOWS     ******")
@@ -149,9 +178,10 @@ func main() {
 
 		if (mPorts[s]>limitPorts){  //Not usefull usecase, whereas added here to avoid crashing i.e. listening ports must be sufficient
 			// try later to re-initialize mPorts[s]=0
-			fmt.Println("IPERF", item.id ," skiped for limit port depassed or not UDP port ")
+			mPorts[s]=1
+			fmt.Println("limit port depassed re-use from port 1 for path of CNf:",s)
 			//defer wg.Done()
-		}else{
+		}//else{
 
 				var vport string
 				if (mPorts[s]<=9){
@@ -170,8 +200,8 @@ func main() {
 				<-timer1.C
         //fmt.Println("Timer 1 fired", duration)
 				wg.Add(1)
-				go iperfinstance(s, vport, item.id, &wg)
-		}
+				go iperfinstance(s, vport, item.id, &wg, item.durationFlow, item.roughputFlow)
+		//}
 
 		/*go iperfinstance(s, "500"+strconv.Itoa(mPorts[s]), i, &wg)
 		//fmt.Println(i, s)
@@ -194,4 +224,9 @@ func main() {
 	fmt.Println(" *************************************************************************")
 	fmt.Println(" ******			TEST IPERF - END 		     **********")
 	fmt.Println(" *************************************************************************")
+}
+func checkError(message string, err error) {
+    if err != nil {
+        log.Fatal(message, err)
+    }
 }

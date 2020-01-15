@@ -109,9 +109,41 @@ spec:
   template:
     metadata:
       annotations:
-        contivpp.io/custom-if: tap1/tap/stub
+        contivpp.io/custom-if: tap1/tap/stub, tap2/tap/stub
       labels:
         cnf: linux-cnf4-rp
+    spec:
+      containers:
+        - name: busybox
+          image: busybox
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            privileged: true
+          command:
+            - sleep
+            - "3600"
+
+---
+# Linux CNF 1 pod definition. Pod is connected with one additional tap interface
+# in the "stub" network = meaning that it won't have any IP address assigned.
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rep-linux-cnf5
+  labels:
+   cnf: linux-cnf5-rp
+spec:
+  # modify replicas according to your case
+  replicas: 4
+  selector:
+    matchLabels:
+      cnf: linux-cnf5-rp
+  template:
+    metadata:
+      annotations:
+        contivpp.io/custom-if: tap1/tap/stub
+      labels:
+        cnf: linux-cnf5-rp
     spec:
       containers:
         - name: iperf-overlay-server

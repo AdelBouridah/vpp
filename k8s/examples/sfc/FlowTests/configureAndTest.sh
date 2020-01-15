@@ -7,6 +7,7 @@ getPodNames() {
 	rpcnf2=`kubectl get pods |  grep -oE "rep-linux-cnf2\S*"`
 	rpcnf3=`kubectl get pods |  grep -oE "rep-linux-cnf3\S*"`
 	rpcnf4=`kubectl get pods |  grep -oE "rep-linux-cnf4\S*"`
+	rpcnf5=`kubectl get pods |  grep -oE "rep-linux-cnf5\S*"`
 }
 
 checkReadiness() {
@@ -17,7 +18,8 @@ checkReadiness() {
                 duration=$((duration+5))
                 if [ "${duration}" -gt "25" ];then
                         echo "Timed out waiting for pods to be ready."
-                        exit 1
+                        //exit 1
+			return 1
                 fi
                 sleep 5
         done
@@ -67,9 +69,22 @@ setuprpcnf4() {
 	declare -i i=0
 	for line in $rpcnf4; do  
 		i=i+1; 
+		kubectl exec $line -- brctl addbr br1
+		kubectl exec $line -- brctl addif br1 tap1
+		kubectl exec $line -- brctl addif br1 tap2
+		kubectl exec $line -- ip link set dev br1 up
+		kubectl exec $line -- ip link set dev tap1 up
+		kubectl exec $line -- ip link set dev tap2 up
+		echo "Configured cnf4 with linux bridge."
+	done
+}
+setuprpcnf5() {
+	declare -i i=0
+	for line in $rpcnf5; do  
+		i=i+1; 
 		kubectl exec $line -- ip address add 192.168.187.2/24 dev tap1
 		kubectl exec $line -- ip link set dev tap1 up
-		echo "Configured cnf4 with IP 192.168.187.1 for copy"$i;  
+		echo "Configured cnf5 with IP 192.168.187.2 for copy"$i;  
 	done
 }
 
@@ -83,7 +98,7 @@ testConnectivity() {
 		  
 	done
 	i=0
-	for line in $rpcnf4; do  
+	for line in $rpcnf5; do  
 		i=i+1; 
 		kubectl exec $line -- ping -c 1 -I tap1 192.168.187.1
 		echo "Direction 2 - Connectivity verified for path";
@@ -100,7 +115,7 @@ testFlowsOverPaths(){
 		i=i+1; 		  
 	done
 	i=0
-	for line in $rpcnf4; do  
+	for line in $rpcnf5; do  
 		cnfendtab[i]=$line 
 		i=i+1; 
 	done
@@ -115,13 +130,19 @@ testFlowsOverPaths(){
 getPodNames
 checkReadiness
 
+if [ $? -eq 0 ];then
 setuprpcnf1
 setuprpcnf2
 setuprpcnf3
 setuprpcnf4
+setuprpcnf5
+testConnectivity
+fi
 : <<'END_COMMENT'
 END_COMMENT
-testConnectivity
+
+
+
 
 
 
