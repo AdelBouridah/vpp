@@ -15,11 +15,11 @@ import (
 )
 func main() {
 	fmt.Println(" *************************************************************************")
-	fmt.Println(" ******			Get Output Paths CNFs		     **********")
+	fmt.Println(" ******			Get Output Paths CNFs	for all SFCq	     **********")
 	fmt.Println(" *************************************************************************")
 	// 2. get Output paths CNF - Pods names  (to execute later iperf on these cnfs)
 	cmd2get := exec.Command("kubectl", "get", "pods", )
-	cmd2grep := exec.Command("grep", "-oE","rep-linux-cnf5\\S*")
+	cmd2grep := exec.Command("grep", "-oE","cnf5-\\S*")
 
 	// Get cmdget's stdout and attach it to grep's stdin.
 	pipe2, _ := cmd2get.StdoutPipe()
@@ -47,7 +47,7 @@ func main() {
 	endPortsRead, _ := strconv.Atoi(os.Args[2])
 	//fmt.Println(" end ports : "+strconv.Itoa(endPorts))
 	for i := 0; i <= len(outputsCNFs)-2; i++ {
-		// Re-initialize begin and end port for the replicat 
+		// Re-initialize begin and end port for the replicat
 		beginPorts:=beginPortsRead
 		endPorts:=endPortsRead
 		if (endPorts<=9){

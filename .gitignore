@@ -20,3 +20,5 @@ ui/node_modules
 .vagrant-state
 vagrant/config/cert
 vagrant/config/init
+k8s/examples/sfc/FlowTests/src/ketamaLoadBalancer/tmp/
+k8s/examples/sfc/FlowTests/bin/

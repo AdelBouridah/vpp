@@ -18,7 +18,7 @@ import (
 	"math"
 	"encoding/csv"
 )
-func iperfinstance(cnf string, port string, i int, wg *sync.WaitGroup, flowTime float64, flowRoughput float64, sfcID int){
+func iperfinstance(cnf string, port string, i int, wg *sync.WaitGroup, flowTime float64, flowRoughput float64){
 	fmt.Println(" ************************************************************************************************")
 	fmt.Println(" ******		Test IPERF Flux ID="+strconv.Itoa(i)+" Path "+cnf+" Port "+port+"           **********")
 	fmt.Println(" *************************************************************************************************")
@@ -39,7 +39,7 @@ func iperfinstance(cnf string, port string, i int, wg *sync.WaitGroup, flowTime 
 	f, _ := os.Create("tmp/file-flow"+strconv.Itoa(i)+"Path-"+cnf+"-port-"+port+".txt")
 	defer f.Close()
 	//fmt.Println("test iperf ********\n"+string(out)+"\n ***")
-	f.WriteString("FlowID-"+strconv.Itoa(i)+","+"SFC-ID"+strconv.Itoa(sfcID)+","+"Path-id-"+cnf+","+string(out))
+	f.WriteString("FlowID-"+strconv.Itoa(i)+","+"Path-id-"+cnf+","+string(out))
 	f.Sync()
 }
 
@@ -50,9 +50,41 @@ func main() {
 	fmt.Println(" ***********Flows Number, server Ports limit, lambda1, lambda2, SFC Number******************")
 	fmt.Println(" *******************************************************************************************")
 	*/
-   // Before We call inputpaths here
+	fmt.Println(" *************************************************************************")
+	fmt.Println(" ******			Get Inputs Paths CNFs 		     ******************************")
+	fmt.Println(" *************************************************************************")
+	// 1. get INput paths CNF - Pods names  (to execute later iperf on these cnfs)
+	cmdget := exec.Command("kubectl", "get", "pods", )
+	cmdgrep := exec.Command("grep", "-oE","rep-linux-cnf1\\S*")
 
-	// Here Ketam Ring (before)
+	// Get cmdget's stdout and attach it to grep's stdin.
+	pipe, _ := cmdget.StdoutPipe()
+	defer pipe.Close()
+
+	cmdgrep.Stdin = pipe
+
+	// Run cmdget first.
+	cmdget.Start()
+
+	// Run and get the output of grep.
+	res, _ := cmdgrep.Output()
+	a:=string(res)
+	inputsCNFs := strings.Split(a,"\n")
+	//inputsCNFs contain all the inputs CNFs, whereas the last element is a whitespace one because of the '\n'
+
+
+	fmt.Println(" *************************************************************************")
+	fmt.Println(" ******			Create the Ring for Ketama                         **********")
+	fmt.Println(" *************************************************************************")
+	var buckets []ketama.Bucket
+
+	for i := 0; i <= len(inputsCNFs)-2; i++ {
+		b := &ketama.Bucket{Label: inputsCNFs[i], Weight: 1}
+		buckets = append(buckets, *b)
+		//fmt.Println(inputsCNFs[i])
+	}
+
+	k, _ := ketama.New(buckets)
 
 	fmt.Println(" *************************************************************************")
 	fmt.Println(" ******			TEST IPERF - BEGIN 		                             **********")
@@ -84,10 +116,17 @@ func main() {
 	startTime:=0.0
 	//startTime:=r.ExpFloat64()/lambda
 	// Put all the Flows in stratTime priority Queue & in inpuFile (trace)
-	flowArray:= make([]flow, 0)
+  	flowArray:= make([]flow, 0)
 	pqFlows := make(PriorityQueue, 0)
 
-
+	///////////////////////////////////////////////////////////////////////////
+	///               prepare file of inputs                                ///
+	///////////////////////////////////////////////////////////////////////////
+	// Jitter file
+	fileInputs, errFileInpouts := os.Create("sim/inputParams.txt")
+	checkError("Cannot create file", errFileInpouts)
+	defer fileInputs.Close()
+	lineFile:=make([]string, 6)
 	for i:=0;i<nbrFlux;i++{
 		 startTime=startTime+(r.ExpFloat64()/lambda)
 		 duration:= rDurationFlow.ExpFloat64()/lambda2
@@ -103,29 +142,18 @@ func main() {
 		 //flowArray[i]=oneFlow
 		 flowArray=append(flowArray, oneFlow)
 		 heap.Push(&pqFlows, &oneFlow)
-
-	}
-	///////////////////////////////////////////////////////////////////////////
-	///               prepare file of inputs                                ///
-	///////////////////////////////////////////////////////////////////////////
-	//
-	fileInputs, errFileInpouts := os.Create("inputParams.txt")
-	checkError("Cannot create file", errFileInpouts)
-	defer fileInputs.Close()
-	lineFile:=make([]string, 5)
-	for i:=0;i<nbrFlux;i++{
-		// Write results in File of inputs fmt.Sprintf("%f",   )
-		//lineFile[0]=strconv.Itoa(i)
-		lineFile[0]="FlowID-"+strconv.Itoa(flowArray[i].id)
-		lineFile[1]=strconv.Itoa(flowArray[i].sfcID)
-		lineFile[2]=fmt.Sprintf("%f",flowArray[i].roughputFlow)
-		lineFile[3]=fmt.Sprintf("%f",flowArray[i].durationFlow)
-		lineFile[4]=fmt.Sprintf("%f",flowArray[i].startTime)
-		writerFile := csv.NewWriter(fileInputs)
-		writerFile.Comma=' '
-		defer writerFile.Flush()
-		errWrite:= writerFile.Write(lineFile)
-		checkError("Cannot write to file", errWrite)
+		 // Write results in File of inputs fmt.Sprintf("%f",   )
+		 lineFile[0]=strconv.Itoa(i)
+		 lineFile[1]="FlowID-"+strconv.Itoa(i)
+		 lineFile[2]=strconv.Itoa(sfc)
+		 lineFile[3]=fmt.Sprintf("%f",roughtput)
+		 lineFile[4]=fmt.Sprintf("%f",duration)
+		 lineFile[5]=fmt.Sprintf("%f",startTime)
+		 writerFile := csv.NewWriter(fileInputs)
+		 writerFile.Comma=' '
+		 defer writerFile.Flush()
+		 errWrite:= writerFile.Write(lineFile)
+		 checkError("Cannot write to file", errWrite)
 	}
 	fmt.Println(" *****************************************************************************")
 	fmt.Println(" ******	END: GENERATING FLOWS, Tables and priority queue for FLOWS     ******")
@@ -133,38 +161,18 @@ func main() {
 	//fmt.Println(" Flux Numbers : "+strconv.Itoa(nbrFlux))
 	var wg sync.WaitGroup
 	//wg.Add(nbrFlux)
-	fmt.Println(" *************************************************************************")
-	fmt.Println(" ******			Create SFCs Rings for Ketama                       **********")
-	fmt.Println(" ******			Each SFC Ring has its cnf inputs Paths             **********")
-	fmt.Println(" *************************************************************************")
-	// For each SFC
-	allInputPaths:=make([][]string, sfcNumber)
-	ringsSFCs:=make([] *ketama.Continuum, sfcNumber)
-	//var ringsSFCs [] *ketama.Continuum
-	for sfcID:=1; sfcID<=sfcNumber; sfcID++{
-		allInputPaths[sfcID-1]= getInputCnfsSFC(sfcID)
-		ringsElem, errRings:=createKetamaRingSFC(allInputPaths[sfcID-1])
-		checkError("Cant create Ring", errRings)
-		ringsSFCs[sfcID-1]= ringsElem
-	}
 
-	fmt.Println(" *************************************************************************")
-	fmt.Println(" ******			End- creating SFCs Rings for Ketama                **********")
-	fmt.Println(" *************************************************************************")
-
-
-
-
-	mPorts := make(map[string]int)
 	fmt.Println("Running for loop…")
+	mPorts := make(map[string]int)
+	/*tNow:=time.Now()
+	fmt.Printf("Go launched at \n", tNow)*/
 	OldStartTime:=0.0
 	for pqFlows.Len() > 0 {
 		// Get the next flow item to be send
 		item := heap.Pop(&pqFlows).(*flow)
 
-		// Select a path (CNF Input) with ketam in the concerned Ring -Related to the SFC ID
-		//s := k.Hash("iperf" + strconv.Itoa(item.id))
-		s:= ringsSFCs[item.sfcID-1].Hash("iperf" + strconv.Itoa(item.id))
+		// Select a path (CNF Input) with ketam
+		s := k.Hash("iperf" + strconv.Itoa(item.id))
 		mPorts[s]++  // use another port if the path has always iperf in progress
 
 
@@ -192,7 +200,7 @@ func main() {
 				<-timer1.C
         //fmt.Println("Timer 1 fired", duration)
 				wg.Add(1)
-				go iperfinstance(s, vport, item.id, &wg, item.durationFlow, item.roughputFlow, item.sfcID)
+				go iperfinstance(s, vport, item.id, &wg, item.durationFlow, item.roughputFlow)
 		//}
 
 		/*go iperfinstance(s, "500"+strconv.Itoa(mPorts[s]), i, &wg)
@@ -217,48 +225,8 @@ func main() {
 	fmt.Println(" ******			TEST IPERF - END 		     **********")
 	fmt.Println(" *************************************************************************")
 }
-// chech if there is an error and dispaly a meesage in the case
 func checkError(message string, err error) {
     if err != nil {
         log.Fatal(message, err)
     }
-}
-//  create a Ketama ring for a given sfc
-func createKetamaRingSFC(sfcInpuPaths []string)(*ketama.Continuum, error){
-	var buckets []ketama.Bucket
-
-	for i := 0; i <= len(sfcInpuPaths)-2; i++ {
-		b := &ketama.Bucket{Label: sfcInpuPaths[i], Weight: 1}
-		buckets = append(buckets, *b)
-		//fmt.Println(inputsCNFs[i])
-	}
-
-	k, err := ketama.New(buckets)
-	return k, err
-}
-// rerurn input cnfs (paths) fior a gievn sfc
-func getInputCnfsSFC(sfcID int)[]string{
-	fmt.Println(" *************************************************************************")
-	fmt.Println(" ******			Get Inputs Paths CNFs 		     ******************************")
-	fmt.Println(" *************************************************************************")
-	// 1. get INput paths CNF - Pods names  (to execute later iperf on these cnfs)
-	cmdget := exec.Command("kubectl", "get", "pods", )
-	cmdgrep := exec.Command("grep", "-oE","cnf1-sfc"+strconv.Itoa(sfcID)+"\\S*")
-
-	// Get cmdget's stdout and attach it to grep's stdin.
-	pipe, _ := cmdget.StdoutPipe()
-	defer pipe.Close()
-
-	cmdgrep.Stdin = pipe
-
-	// Run cmdget first.
-	cmdget.Start()
-
-	// Run and get the output of grep.
-	res, _ := cmdgrep.Output()
-	a:=string(res)
-	inputsCNFs := strings.Split(a,"\n")
-	//inputsCNFs contain all the inputs CNFs, whereas the last element is a whitespace one because of the '\n'
-	//inputsCNFs=inputsCNFs[0:len(inputsCNFs)-2]
-	return inputsCNFs
 }

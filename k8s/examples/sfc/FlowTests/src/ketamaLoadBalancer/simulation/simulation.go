@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-    csvFile, _ := os.Open("../tmp/testFlows.xls")
+    csvFile, _ := os.Open("testFlows.xls")
     reader := csv.NewReader(bufio.NewReader(csvFile))
     //var lineFlowID,lineOutPut []string
     ///////////////////////////////////////////////////////////////////////////
@@ -42,9 +42,9 @@ func main() {
         lineOutPut, errorOutPut := reader.Read()
         if errorOutPut == io.EOF {
             break
-        } else if errorOutPut != nil {
+        }/* else if errorOutPut != nil {
             log.Fatal(errorOutPut)
-        }
+        }*/
         amoutOfData, _:=strconv.ParseFloat(lineOutPut[7],64)
         splitTimeInterval:=strings.Split(lineOutPut[6], "-")
         timeIntervalEnd, _:=strconv.ParseFloat(splitTimeInterval[1], 64)
